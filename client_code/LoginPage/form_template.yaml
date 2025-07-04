@@ -1,17 +1,22 @@
 components:
 - components:
   - components:
+    - layout_properties: {grid_position: 'YNLGRI,WWEURE'}
+      name: image_1
+      properties: {display_mode: shrink_to_fit, height: 102, source: _/theme/Nova Mentis Logo Green Round.png}
+      type: Image
     - layout_properties: {grid_position: 'DFGTHB,VEQKEC'}
       name: label_1
-      properties: {align: center, text: Nova Nexus Login}
+      properties: {align: center, bold: true, font_size: 20, foreground: 'theme:Primary', text: Nova Nexus Login}
       type: Label
     layout_properties: {grid_position: 'AUEIWD,FOGEBA'}
     name: column_panel_1
     properties: {}
     type: ColumnPanel
-  - layout_properties: {grid_position: 'BNQFOM,XXUSSN'}
-    name: username
-    properties: {text: ''}
+  - data_bindings: []
+    layout_properties: {grid_position: 'BNQFOM,XXUSSN'}
+    name: email
+    properties: {font: Roboto, font_size: null, foreground: '', text: '', type: email, underline: false}
     type: TextBox
   - layout_properties: {grid_position: 'HKPSRA,UHGICK'}
     name: password
@@ -21,7 +26,7 @@ components:
     - event_bindings: {click: login_click}
       layout_properties: {grid_position: 'VGVSUB,HTSWHN'}
       name: login
-      properties: {text: Login}
+      properties: {background: 'theme:Primary', foreground: 'theme:HeadingWhite', icon: '', role: elevated-button, text: Login}
       type: Button
     layout_properties: {grid_position: 'OMKDGP,GUGNNV'}
     name: column_panel_2
