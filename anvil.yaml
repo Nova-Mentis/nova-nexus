@@ -1,15 +1,33 @@
 allow_embedding: false
+db_schema:
+  paths:
+    client: none
+    columns: []
+    server: full
+    title: paths
+  skills:
+    client: none
+    columns: []
+    server: full
+    title: skills
+  users:
+    client: none
+    columns: []
+    server: full
+    title: users
 dependencies: []
-name: M3 App 1
-package_name: M3_App_1
+metadata: {logo_img: 'asset:Nova Mentis Logo Green Round.png', title: Nova Nexus}
+name: Nova Nexus
+package_name: Nova_Nexus
 renamed: true
 runtime_options:
   client_version: '3'
-  server_spec: {base: python310-minimal}
+  server_spec: {base: python310-machine-learning}
   server_version: python3-sandbox
   version: 2
 services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/tables.yml
-startup_form: Form1
+startup: {module: HomePage, type: form}
+startup_form: null
