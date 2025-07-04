@@ -14,4 +14,5 @@ class LoginPage(LoginPageTemplate):
 
   def login_click(self, **event_args):
     """This method is called when the button is clicked"""
+    alert('Hello')
     pass
