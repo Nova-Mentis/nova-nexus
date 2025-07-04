@@ -1,0 +1,13 @@
+components:
+- layout_properties: {grid_position: 'GIGHFH,FZIRJK'}
+  name: button_1
+  properties: {align: left, foreground: 'theme:BodyWhite', text: Dashboard}
+  type: Button
+- layout_properties: {grid_position: 'OXBCNA,GGQYTA'}
+  name: button_2
+  properties: {align: left, foreground: 'theme:BodyWhite', text: Paths}
+  type: Button
+container:
+  properties: {background: 'theme:Primary'}
+  type: ColumnPanel
+is_package: true
