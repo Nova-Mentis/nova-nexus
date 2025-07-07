@@ -23,6 +23,10 @@ components:
   name: settings_btn
   properties: {align: left, foreground: 'theme:BodyWhite', text: Settings}
   type: Button
+- layout_properties: {grid_position: 'UAREKZ,AJSPTP'}
+  name: logout_btn
+  properties: {align: left, foreground: 'theme:BodyWhite', text: Logout}
+  type: Button
 container:
   properties: {background: 'theme:Primary'}
   type: ColumnPanel

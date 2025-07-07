@@ -1,9 +1,4 @@
 components:
-- components: []
-  layout_properties: {slot: nav-right}
-  name: navbar_links
-  properties: {}
-  type: FlowPanel
 - layout_properties: {slot: title}
   name: label_1
   properties: {text: Nova Nexus}

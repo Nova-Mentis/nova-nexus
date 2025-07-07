@@ -1,11 +1,11 @@
 components:
 - layout_properties: {grid_position: 'ILUNDV,BMGQVH'}
   name: label_1
-  properties: {text: Paths}
+  properties: {text: Visions}
   type: Label
 - layout_properties: {full_width_row: false, grid_position: 'ILUNDV,YMBOXR'}
-  name: new_path_btn
-  properties: {background: 'theme:Primary', bold: false, foreground: 'theme:BodyWhite', text: New Path}
+  name: new_vision_btn
+  properties: {background: 'theme:Primary', bold: false, foreground: 'theme:BodyWhite', text: New Vision}
   type: Button
 container:
   properties: {col_widths: '{"BMGQVH":50,"YMBOXR":10}'}
