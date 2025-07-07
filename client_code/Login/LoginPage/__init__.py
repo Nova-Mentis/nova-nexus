@@ -14,5 +14,7 @@ class LoginPage(LoginPageTemplate):
 
   def login_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
-    alert('Hello')
+    anvil.server.call('say_hello', "test")
+    email = LoginPage().email_field.text
+    print("Current email is " + email)
     pass

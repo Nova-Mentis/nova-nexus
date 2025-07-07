@@ -17,4 +17,5 @@ unique_ids:
     Core.Visions: '1751903919214748508339297.292'
     Login: '175190388216990560031178.85435'
   scripts: {}
-  server_modules: {}
+  server_modules:
+    hello_module: '1751904093292503612427181.53564'
