@@ -1,21 +1,20 @@
 allow_embedding: false
 db_schema:
-  paths:
-    client: none
-    columns:
-    - admin_ui: {order: 0, width: 200}
-      name: path_name
-      type: string
-    - admin_ui: {order: 1, width: 200}
-      name: user_id
-      type: string
-    server: full
-    title: paths
-  skills:
+  accounts:
     client: none
     columns: []
     server: full
-    title: skills
+    title: accounts
+  resources:
+    client: none
+    columns: []
+    server: full
+    title: resources
+  steps:
+    client: none
+    columns: []
+    server: full
+    title: steps
   users:
     client: none
     columns:
@@ -39,6 +38,17 @@ db_schema:
       type: string
     server: full
     title: users
+  visions:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: vision_statement
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: user_id
+      type: string
+    server: full
+    title: visions
 dependencies: []
 metadata: {logo_img: 'asset:Nova Mentis Logo Green Round.png', title: Nova Nexus}
 name: Nova Nexus
