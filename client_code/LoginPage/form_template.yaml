@@ -23,9 +23,9 @@ components:
     properties: {placeholder: password}
     type: TextBox
   - components:
-    - event_bindings: {click: login_click}
+    - event_bindings: {click: login_btn_click}
       layout_properties: {grid_position: 'VGVSUB,HTSWHN'}
-      name: login
+      name: login_btn
       properties: {background: 'theme:Primary', foreground: 'theme:HeadingWhite', icon: '', role: elevated-button, text: Login}
       type: Button
     layout_properties: {grid_position: 'OMKDGP,GUGNNV'}

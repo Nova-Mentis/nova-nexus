@@ -12,7 +12,7 @@ class LoginPage(LoginPageTemplate):
 
     # Any code you write here will run before the form opens.
 
-  def login_click(self, **event_args):
+  def login_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
     alert('Hello')
     pass
