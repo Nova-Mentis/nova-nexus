@@ -1,7 +1,0 @@
-components:
-- layout_properties: {grid_position: 'ACGSTF,CVZZCI'}
-  name: label_1
-  properties: {text: Steps}
-  type: Label
-container: {type: ColumnPanel}
-is_package: true
