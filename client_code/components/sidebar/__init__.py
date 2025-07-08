@@ -17,3 +17,8 @@ class sidebar(sidebarTemplate):
     """This method is called when the button is clicked"""
     anvil.users.logout()
     pass
+
+  def dashboard_btn_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('core.dashboard')
+    pass

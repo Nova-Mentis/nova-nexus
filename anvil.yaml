@@ -67,13 +67,15 @@ db_schema:
 dependencies: []
 metadata: {logo_img: 'asset:Nova Mentis Logo Green Round.png', title: Nova Nexus}
 name: Nova Nexus
+native_deps: null
 package_name: Nova_Nexus
 renamed: true
 runtime_options:
   client_version: '3'
+  legacy_features: {__dict__: true, bootstrap3: true, class_names: true, root_container: true}
   server_spec: {base: python310-machine-learning}
   server_version: python3-sandbox
-  version: 2
+  version: 3
 services:
 - client_config: {}
   server_config: {auto_create_missing_columns: false}

@@ -1,13 +1,19 @@
 components:
 - layout_properties: {slot: left-nav}
-  name: sidebar_1
+  name: sidebar
   properties: {}
   type: form:components.sidebar
 - layout_properties: {slot: title}
-  name: label_1
+  name: app_label
   properties: {text: Nova Nexus}
   type: Label
+- components: []
+  layout_properties: {slot: default}
+  name: column_panel_1
+  properties: {}
+  type: ColumnPanel
 container:
   properties: {html: '@theme:standard-page.html', visible: true}
   type: HtmlTemplate
 is_package: true
+slots: {}
