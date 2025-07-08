@@ -18,6 +18,10 @@ components:
     name: email_field
     properties: {font: Roboto, font_size: null, foreground: '', placeholder: email, text: '', type: email, underline: false}
     type: TextBox
+  - layout_properties: {grid_position: 'PYMUZR,YILMEH'}
+    name: email_warn_label
+    properties: {visible: false}
+    type: Label
   - layout_properties: {grid_position: 'HKPSRA,UHGICK'}
     name: password_field
     properties: {placeholder: password}
@@ -28,7 +32,8 @@ components:
       name: login_btn
       properties: {background: 'theme:Primary', foreground: 'theme:HeadingWhite', icon: '', role: elevated-button, text: Login}
       type: Button
-    - layout_properties: {grid_position: 'TGIZRY,CJDAMY'}
+    - event_bindings: {click: register_btn_click}
+      layout_properties: {grid_position: 'TGIZRY,CJDAMY'}
       name: register_btn
       properties: {text: Register}
       type: Button
