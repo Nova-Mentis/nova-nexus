@@ -1,4 +1,4 @@
-from ._anvil_designer import vision_itemTemplate
+from ._anvil_designer import DashboardPageTemplate
 from anvil import *
 import anvil.server
 import anvil.users
@@ -6,7 +6,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
-class vision_item(vision_itemTemplate):
+class DashboardPage(DashboardPageTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)

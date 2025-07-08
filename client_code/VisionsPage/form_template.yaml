@@ -1,6 +1,6 @@
 components:
 - layout_properties: {grid_position: 'MAMZDQ,PBTLGR'}
-  name: label_1
+  name: visions_label
   properties: {role: title, text: Visions}
   type: Label
 container: {type: ColumnPanel}

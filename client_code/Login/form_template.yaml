@@ -1,0 +1,12 @@
+components:
+- layout_properties: {grid_position: 'QEQAZA,FSIOBH'}
+  name: label_1
+  properties: {align: center, text: Nova Nexus Login}
+  type: Label
+- event_bindings: {click: login_btn_click}
+  layout_properties: {grid_position: 'PLFKQW,GWDUCA'}
+  name: login_btn
+  properties: {text: Login}
+  type: Button
+container: {type: ColumnPanel}
+is_package: true
