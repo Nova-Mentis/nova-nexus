@@ -1,16 +1,13 @@
 components:
+- layout_properties: {slot: default}
+  name: content_panel
+  properties: {role: outlined-card}
+  type: ColumnPanel
 - components:
   - event_bindings: {click: logout_btn_click}
     layout_properties: {}
     name: logout_btn
-    properties:
-      role: [elevated-button]
-      text: Logout
-    type: Button
-  - event_bindings: {click: profile_btn_click}
-    layout_properties: {}
-    name: profile_btn
-    properties: {background: 'theme:Primary', foreground: 'theme:BodyWhite', role: elevated-button, text: Profile}
+    properties: {role: elevated-button, text: Logout}
     type: Button
   layout_properties: {slot: nav-right}
   name: navbar_links
@@ -18,45 +15,29 @@ components:
   type: FlowPanel
 - components:
   - event_bindings: {click: dashboard_link_click}
-    layout_properties: {grid_position: 'PXZCEI,TEMVHM'}
+    layout_properties: {grid_position: 'ZMLHCM,QSTZFS'}
     name: dashboard_link
     properties: {text: Dashboard}
     type: Link
   - event_bindings: {click: visions_link_click}
-    layout_properties: {grid_position: 'FHTMDZ,OVJEHG'}
+    layout_properties: {grid_position: 'RMHVMH,GJLMIX'}
     name: visions_link
     properties: {text: Visions}
     type: Link
-  - layout_properties: {grid_position: 'EWESJU,KFXCLX'}
-    name: link_1
-    properties: {text: Steps}
-    type: Link
-  - layout_properties: {grid_position: 'JXLTVO,ACFWLL'}
-    name: link_2
-    properties: {text: Resources}
-    type: Link
-  - layout_properties: {grid_position: 'FHXFQD,KAEYAP'}
-    name: link_3
-    properties: {text: Settings}
-    type: Link
+  - layout_properties: {grid_position: 'LUIUHU,IBOVHI'}
+    name: logged_in_text
+    properties: {font: '', font_size: 10, italic: true, text: Logged in as}
+    type: Label
   layout_properties: {slot: left-nav}
-  name: sidebar
+  name: column_panel_1
   properties: {}
   type: ColumnPanel
 - layout_properties: {slot: title}
   name: label_1
   properties: {text: Nova Nexus}
   type: Label
-- layout_properties: {slot: default}
-  name: content
-  properties: {}
-  type: ColumnPanel
 container:
   properties: {html: '@theme:standard-page.html'}
   type: HtmlTemplate
 is_package: true
-slots:
-  slot_1:
-    index: 0
-    set_layout_properties: {full_width_row: true, grid_position: 'IIQMAE,SEJQSU'}
-    target: {name: column_panel_2, type: container}
+slots: {}

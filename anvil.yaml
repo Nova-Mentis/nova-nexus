@@ -80,6 +80,10 @@ runtime_options:
   server_spec: {base: python310-machine-learning}
   server_version: python3-sandbox
   version: 3
+secrets:
+  openai_api_key:
+    type: secret
+    value: {BF6KUOR6DAO5M6JL: ''}
 services:
 - client_config: {}
   server_config: {auto_create_missing_columns: false}
@@ -87,5 +91,8 @@ services:
 - client_config: {allow_remember_me: true, allow_signup: true, confirm_email: true, enable_automatically: true, remember_me_days: 30, require_secure_passwords: true, use_email: true, use_google: false}
   server_config: {email_from_address: support@nova-mentis.com, user_table: users}
   source: /runtime/services/anvil/users.yml
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/anvil/secrets.yml
 startup: {module: Login, type: form}
 startup_form: null
