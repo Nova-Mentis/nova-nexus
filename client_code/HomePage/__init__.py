@@ -14,8 +14,9 @@ class HomePage(HomePageTemplate):
 
     # Any code you write here will run before the form opens.
 
-  def clear_content_panel():
+  def clear_content_panel(self):
     self.content_panel.clear()
+    self.content_panel.add_component()
 
   def visions_link_click(self, **event_args):
     """This method is called when the link is clicked"""
