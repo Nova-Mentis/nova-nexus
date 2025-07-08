@@ -51,6 +51,9 @@ db_schema:
     - admin_ui: {width: 200}
       name: email_confirmation_key
       type: string
+    - admin_ui: {order: -1, width: 200}
+      name: user_id
+      type: string
     server: full
     title: users
   visions:
@@ -59,9 +62,10 @@ db_schema:
     - admin_ui: {order: 0, width: 200}
       name: vision_statement
       type: string
-    - admin_ui: {order: 1, width: 200}
-      name: user_id
-      type: string
+    - admin_ui: {order: 2, width: 200}
+      name: user
+      target: users
+      type: link_single
     server: full
     title: visions
 dependencies: []

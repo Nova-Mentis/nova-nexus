@@ -1,4 +1,4 @@
-from ._anvil_designer import VisionsTemplate
+from ._anvil_designer import vision_itemTemplate
 from anvil import *
 import anvil.server
 import anvil.users
@@ -6,10 +6,9 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
-class Visions(VisionsTemplate):
+class vision_item(vision_itemTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    current_user = anvil.users.get_user()
 
     # Any code you write here will run before the form opens.

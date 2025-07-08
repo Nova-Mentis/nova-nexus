@@ -3,7 +3,17 @@ components:
   name: content_panel
   properties: {}
   type: ColumnPanel
-- layout_properties: {slot: nav-right}
+- components:
+  - event_bindings: {click: logout_btn_click}
+    layout_properties: {}
+    name: logout_btn
+    properties: {text: Logout}
+    type: Button
+  - layout_properties: {}
+    name: profile_btn
+    properties: {text: Profile}
+    type: Button
+  layout_properties: {slot: nav-right}
   name: navbar_links
   properties: {}
   type: FlowPanel
@@ -17,6 +27,18 @@ components:
     layout_properties: {grid_position: 'FHTMDZ,OVJEHG'}
     name: visions_link
     properties: {text: Visions}
+    type: Link
+  - layout_properties: {grid_position: 'EWESJU,KFXCLX'}
+    name: link_1
+    properties: {text: Steps}
+    type: Link
+  - layout_properties: {grid_position: 'JXLTVO,ACFWLL'}
+    name: link_2
+    properties: {text: Resources}
+    type: Link
+  - layout_properties: {grid_position: 'FHXFQD,KAEYAP'}
+    name: link_3
+    properties: {text: Settings}
     type: Link
   layout_properties: {slot: left-nav}
   name: column_panel_1
