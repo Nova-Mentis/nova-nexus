@@ -1,10 +1,5 @@
 allow_embedding: false
 db_schema:
-  accounts:
-    client: none
-    columns: []
-    server: full
-    title: accounts
   resources:
     client: none
     columns: []
@@ -15,6 +10,7 @@ db_schema:
     columns: []
     server: full
     title: steps
+  tenant: {title: tenant}
   users:
     client: none
     columns:
