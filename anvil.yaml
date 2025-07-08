@@ -83,5 +83,5 @@ services:
 - client_config: {allow_remember_me: true, allow_signup: true, confirm_email: true, enable_automatically: true, remember_me_days: 30, require_secure_passwords: true, use_email: true, use_google: false}
   server_config: {email_from_address: support@nova-mentis.com, user_table: users}
   source: /runtime/services/anvil/users.yml
-startup: {module: home_page, type: form}
+startup: {module: HomePage, type: form}
 startup_form: null

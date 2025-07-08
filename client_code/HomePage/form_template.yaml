@@ -1,0 +1,37 @@
+components:
+- layout_properties: {slot: default}
+  name: content_panel
+  properties: {}
+  type: ColumnPanel
+- layout_properties: {slot: nav-right}
+  name: navbar_links
+  properties: {}
+  type: FlowPanel
+- components:
+  - event_bindings: {click: dashboard_link_click}
+    layout_properties: {grid_position: 'PXZCEI,TEMVHM'}
+    name: dashboard_link
+    properties: {text: Dashboard}
+    type: Link
+  - event_bindings: {click: visions_link_click}
+    layout_properties: {grid_position: 'FHTMDZ,OVJEHG'}
+    name: visions_link
+    properties: {text: Visions}
+    type: Link
+  layout_properties: {slot: left-nav}
+  name: column_panel_1
+  properties: {}
+  type: ColumnPanel
+- layout_properties: {slot: title}
+  name: label_1
+  properties: {text: Nova Nexus}
+  type: Label
+container:
+  properties: {html: '@theme:standard-page.html'}
+  type: HtmlTemplate
+is_package: true
+slots:
+  slot_1:
+    index: 0
+    set_layout_properties: {grid_position: 'GMZARM,RNLROO'}
+    target: {name: content_panel, type: container}
