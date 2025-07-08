@@ -1,20 +1,13 @@
-from ._anvil_designer import LoginPageTemplate
+from ._anvil_designer import dashboardTemplate
 from anvil import *
 import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
-class LoginPage(LoginPageTemplate):
+class dashboard(dashboardTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-
-  def login_btn_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    anvil.server.call('say_hello', "test")
-    email = LoginPage().email_field.text
-    print("Current email is " + email)
-    pass

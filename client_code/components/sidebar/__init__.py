@@ -1,11 +1,11 @@
-from ._anvil_designer import DashboardTemplate
+from ._anvil_designer import sidebarTemplate
 from anvil import *
 import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
-class Dashboard(DashboardTemplate):
+class sidebar(sidebarTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
