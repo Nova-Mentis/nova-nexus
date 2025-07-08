@@ -10,7 +10,6 @@ db_schema:
     columns: []
     server: full
     title: steps
-  tenant: {title: tenant}
   users:
     client: none
     columns:
