@@ -10,5 +10,7 @@ class home_page(home_pageTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    anvil.users.login_with_form()
+    anvil.server.call('print_my_permissions')
 
     # Any code you write here will run before the form opens.

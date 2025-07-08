@@ -23,7 +23,8 @@ components:
   name: settings_btn
   properties: {align: left, foreground: 'theme:BodyWhite', text: Settings}
   type: Button
-- layout_properties: {grid_position: 'UAREKZ,AJSPTP'}
+- event_bindings: {click: logout_btn_click}
+  layout_properties: {grid_position: 'UAREKZ,AJSPTP'}
   name: logout_btn
   properties: {align: left, foreground: 'theme:BodyWhite', text: Logout}
   type: Button

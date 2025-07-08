@@ -11,17 +11,48 @@ db_schema:
     server: full
     title: steps
   tenants:
-    client: full
+    client: none
     columns:
     - admin_ui: {order: 0, width: 200}
       name: tenant_name
       type: string
-    - admin_ui: {order: 1, width: 200}
-      name: assigned_users
-      target: users
-      type: link_multiple
     server: full
     title: tenants
+  users:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: email
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: enabled
+      type: bool
+    - admin_ui: {order: 2, width: 200}
+      name: last_login
+      type: datetime
+    - admin_ui: {order: 3, width: 200}
+      name: password_hash
+      type: string
+    - admin_ui: {order: 4, width: 200}
+      name: n_password_failures
+      type: number
+    - admin_ui: {order: 5, width: 200}
+      name: confirmed_email
+      type: bool
+    - admin_ui: {order: 6, width: 200}
+      name: remembered_logins
+      type: simpleObject
+    - admin_ui: {order: 7, width: 200}
+      name: signed_up
+      type: datetime
+    - admin_ui: {order: 8, width: 200}
+      name: role
+      type: string
+    - admin_ui: {width: 200}
+      name: email_confirmation_key
+      type: string
+    server: full
+    title: users
   visions:
     client: full
     columns:
@@ -45,10 +76,10 @@ runtime_options:
   version: 2
 services:
 - client_config: {}
-  server_config: {}
+  server_config: {auto_create_missing_columns: false}
   source: /runtime/services/tables.yml
-- client_config: {allow_signup: false, confirm_email: true, enable_automatically: true, use_email: true}
-  server_config: {user_table: users}
+- client_config: {allow_remember_me: true, allow_signup: true, confirm_email: true, enable_automatically: true, remember_me_days: 30, require_secure_passwords: true, use_email: true, use_google: false}
+  server_config: {email_from_address: support@nova-mentis.com, user_table: users}
   source: /runtime/services/anvil/users.yml
-startup: {module: login.login_page, type: form}
+startup: {module: core.home_page, type: form}
 startup_form: null
