@@ -1,17 +1,25 @@
 allow_embedding: false
 db_schema:
   resources:
-    client: none
+    client: full
     columns: []
     server: full
     title: resources
   steps:
-    client: none
+    client: full
     columns: []
     server: full
     title: steps
+  tenants:
+    client: full
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: tenant_name
+      type: string
+    server: full
+    title: tenants
   users:
-    client: none
+    client: full
     columns:
     - admin_ui: {order: 1, width: 200}
       name: first_name
@@ -34,7 +42,7 @@ db_schema:
     server: full
     title: users
   visions:
-    client: none
+    client: full
     columns:
     - admin_ui: {order: 0, width: 200}
       name: vision_statement

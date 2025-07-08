@@ -13,6 +13,14 @@ components:
     name: column_panel_1
     properties: {}
     type: ColumnPanel
+  - layout_properties: {grid_position: 'UALLJU,OBCCEA'}
+    name: text_box_1
+    properties: {placeholder: first name}
+    type: TextBox
+  - layout_properties: {grid_position: 'OCLXQZ,UNDQHC'}
+    name: text_box_2
+    properties: {placeholder: last name}
+    type: TextBox
   - data_bindings: []
     layout_properties: {grid_position: 'BNQFOM,XXUSSN'}
     name: email_field
@@ -22,15 +30,15 @@ components:
     name: password_field
     properties: {placeholder: password}
     type: TextBox
+  - layout_properties: {grid_position: 'HEIMJF,SDKKGP'}
+    name: confirm_password_field
+    properties: {font: '', placeholder: confirm password, text: ''}
+    type: TextBox
   - components:
-    - event_bindings: {click: login_btn_click}
+    - event_bindings: {click: register_btn_click}
       layout_properties: {grid_position: 'VGVSUB,HTSWHN'}
-      name: login_btn
-      properties: {background: 'theme:Primary', foreground: 'theme:HeadingWhite', icon: '', role: elevated-button, text: Login}
-      type: Button
-    - layout_properties: {grid_position: 'TGIZRY,CJDAMY'}
       name: register_btn
-      properties: {text: Register}
+      properties: {background: 'theme:Primary', foreground: 'theme:HeadingWhite', icon: '', role: elevated-button, text: Register}
       type: Button
     layout_properties: {grid_position: 'OMKDGP,GUGNNV'}
     name: column_panel_2
