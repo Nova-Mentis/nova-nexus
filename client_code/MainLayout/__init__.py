@@ -20,10 +20,22 @@ class MainLayout(MainLayoutTemplate):
     # Tenant Drop Down
     current_user = anvil.users.get_user()
     
-    if anvil.server.call("is_super_admin", current_user):
+    try:
+      is_super_admin = anvil.server.call("is_super_admin", current_user)
+      tenant_list = anvil.server.call("get_tenants")
+    except anvil.server.SessionExpiredError:
+      anvil.server.reset_session()
+      print("Resetting session as it has expired")
+      is_super_admin = anvil.server.call("is_super_admin", current_user)
+      tenant_list = anvil.server.call("get_tenants")
+
+    if is_super_admin:
       self.tenant_dropdown.visible = True
+      self.user_link.visible = True
+      self.tenant_dropdown.items = tenant_list
     else:
       self.tenant_dropdown.visible = False
+
 
     # Admin
 

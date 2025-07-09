@@ -16,3 +16,4 @@ unique_ids:
   scripts: {}
   server_modules:
     auth: '1751982609669690408009038.3121'
+    tenants: '1752072619300742922434758.388'

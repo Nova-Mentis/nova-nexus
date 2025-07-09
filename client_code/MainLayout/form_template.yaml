@@ -15,7 +15,8 @@ components:
   properties: {}
   type: FlowPanel
 - components:
-  - layout_properties: {grid_position: 'NIEALD,CRMJJD'}
+  - data_bindings: []
+    layout_properties: {grid_position: 'NIEALD,CRMJJD'}
     name: tenant_dropdown
     properties: {background: 'theme:Primary', foreground: 'theme:BodyWhite', role: null, visible: false}
     type: DropDown
@@ -31,7 +32,7 @@ components:
     properties: {foreground: 'theme:BodyWhite', text: Visions}
     type: Link
   - layout_properties: {grid_position: 'KDOHPO,CTOPEJ'}
-    name: user_btn
+    name: user_link
     properties: {foreground: 'theme:BodyWhite', text: Users, visible: false}
     type: Link
   layout_properties: {slot: left-nav}
