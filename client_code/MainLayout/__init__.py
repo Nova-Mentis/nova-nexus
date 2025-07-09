@@ -14,6 +14,19 @@ class MainLayout(MainLayoutTemplate):
     self.init_components(**properties)
     # self.logged_in_text.text = "Logged in as " + anvil.users.get_user()['email']
 
+    # Setup up super admin and admin view
+
+    #Super Admin
+    # Tenant Drop Down
+    current_user = anvil.users.get_user()
+    
+    if anvil.server.call("is_super_admin", current_user):
+      self.tenant_dropdown.visible = True
+    else:
+      self.tenant_dropdown.visible = False
+
+    # Admin
+
     # Any code you write here will run before the form opens.
 
   def logout_btn_click(self, **event_args):

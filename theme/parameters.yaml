@@ -25,7 +25,7 @@ color_scheme:
   - {color: '#FFFFFF', name: On Background}
   - {color: '#000000', name: On Surface}
   - {color: '#FFFFFF', name: Surface Variant}
-  - {color: '#FFFFFF', name: On Surface Variant}
+  - {color: '#000000', name: On Surface Variant}
   - {color: '#ededed', name: Outline}
   - {color: '#FFFFFF', name: On Disabled}
   - {color: '#FFFFFF', name: Disabled Container}

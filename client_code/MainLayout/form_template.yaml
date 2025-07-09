@@ -15,20 +15,25 @@ components:
   properties: {}
   type: FlowPanel
 - components:
+  - layout_properties: {grid_position: 'NIEALD,CRMJJD'}
+    name: tenant_dropdown
+    properties: {background: 'theme:Primary', foreground: 'theme:BodyWhite', role: null, visible: false}
+    type: DropDown
   - event_bindings: {click: dashboard_link_click}
     layout_properties: {grid_position: 'ZMLHCM,QSTZFS'}
     name: dashboard_link
-    properties: {text: Dashboard}
+    properties: {foreground: 'theme:BodyWhite', text: Dashboard}
     type: Link
-  - event_bindings: {click: visions_link_click}
+  - components: []
+    event_bindings: {click: visions_link_click}
     layout_properties: {grid_position: 'RMHVMH,GJLMIX'}
     name: visions_link
-    properties: {text: Visions}
+    properties: {foreground: 'theme:BodyWhite', text: Visions}
     type: Link
-  - layout_properties: {grid_position: 'LUIUHU,IBOVHI'}
-    name: logged_in_text
-    properties: {font: '', font_size: 10, italic: true, text: Logged in as}
-    type: Label
+  - layout_properties: {grid_position: 'KDOHPO,CTOPEJ'}
+    name: user_btn
+    properties: {foreground: 'theme:BodyWhite', text: Users, visible: false}
+    type: Link
   layout_properties: {slot: left-nav}
   name: column_panel_1
   properties: {}

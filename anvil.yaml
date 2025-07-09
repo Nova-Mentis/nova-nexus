@@ -1,10 +1,40 @@
 allow_embedding: false
 db_schema:
+  question_response_options:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: response_option
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: question
+      target: step_questions
+      type: link_single
+    - admin_ui: {order: -1, width: 200}
+      name: created_at
+      type: datetime
+    - admin_ui: {order: 3, width: 200}
+      name: score
+      type: number
+    server: full
+    title: question_response_options
   resources:
     client: full
     columns: []
     server: full
     title: resources
+  step_questions:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: step_question
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: step
+      target: steps
+      type: link_single
+    server: full
+    title: step_questions
   steps:
     client: full
     columns:
@@ -15,6 +45,12 @@ db_schema:
       name: vision
       target: visions
       type: link_single
+    - admin_ui: {order: 2, width: 200}
+      name: created_at
+      type: datetime
+    - admin_ui: {order: 3, width: 200}
+      name: ai_generated
+      type: bool
     server: full
     title: steps
   tenants:
@@ -23,8 +59,62 @@ db_schema:
     - admin_ui: {order: 0, width: 200}
       name: tenant_name
       type: string
+    - admin_ui: {order: 1, width: 200}
+      name: users
+      target: users
+      type: link_multiple
+    - admin_ui: {order: 2, width: 200}
+      name: created_at
+      type: datetime
     server: full
     title: tenants
+  user_question_scores:
+    client: none
+    columns:
+    - admin_ui: {order: -2, width: 200}
+      name: user
+      target: users
+      type: link_single
+    - admin_ui: {order: -3, width: 200}
+      name: recorded_on
+      type: datetime
+    - admin_ui: {order: 2, width: 200}
+      name: vision
+      target: visions
+      type: link_single
+    - admin_ui: {order: 0.5, width: 200}
+      name: step
+      target: steps
+      type: link_single
+    - admin_ui: {order: -1, width: 200}
+      name: response_option
+      target: question_response_options
+      type: link_single
+    server: full
+    title: user_question_scores
+  user_step_scores:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: user
+      target: users
+      type: link_single
+    - admin_ui: {order: 1, width: 200}
+      name: step
+      target: steps
+      type: link_single
+    - admin_ui: {order: 2, width: 200}
+      name: vision
+      target: visions
+      type: link_single
+    - admin_ui: {order: 0.5, width: 200}
+      name: score
+      type: number
+    - admin_ui: {order: -1, width: 200}
+      name: recorded_on
+      type: datetime
+    server: full
+    title: user_step_scores
   users:
     client: none
     columns:
@@ -60,6 +150,33 @@ db_schema:
       type: string
     server: full
     title: users
+  vision_guide_questions:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: vision_guide_question
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: prompt_ideas
+      type: string
+    - admin_ui: {order: 2, width: 200}
+      name: vision_type
+      target: vision_types
+      type: link_single
+    server: full
+    title: vision_guide_questions
+  vision_types:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: vision_type_name
+      type: string
+    - admin_ui: {order: 1, width: 736}
+      name: vision_guide_questions
+      target: vision_guide_questions
+      type: link_multiple
+    server: full
+    title: vision_types
   visions:
     client: full
     columns:
@@ -74,6 +191,12 @@ db_schema:
       name: steps
       target: steps
       type: link_multiple
+    - admin_ui: {order: 0, width: 200}
+      name: vision_name
+      type: string
+    - admin_ui: {order: 4, width: 200}
+      name: created_at
+      type: datetime
     server: full
     title: visions
 dependencies: []

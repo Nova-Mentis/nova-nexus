@@ -1,7 +1,7 @@
 components:
 - components:
   - data_bindings:
-    - {code: 'self.item[''vision_statement'']', property: text, writeback: false}
+    - {code: 'self.item[''vision_name'']', property: text, writeback: false}
     layout_properties: {col_xs: 0, row: BWEDNU, width_xs: 6}
     name: vision_statement
     properties:
@@ -21,7 +21,7 @@ components:
       text: Open Vision
     type: Button
   layout_properties: {full_width_row: true, grid_position: 'LINZXQ,NVCRWI'}
-  name: grid_panel_1
+  name: vision_grid_panel
   properties:
     spacing:
       margin: ['0', null, '0', null]

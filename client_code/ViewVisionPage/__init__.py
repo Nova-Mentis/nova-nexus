@@ -10,5 +10,6 @@ class ViewVisionPage(ViewVisionPageTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    # self.vision_name.text = vision.vision_name
 
     # Any code you write here will run before the form opens.
