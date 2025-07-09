@@ -13,35 +13,68 @@ components_by_slot:
           padding: ['5', '5', '5', '5']
         text: Create a Vision
       type: Label
-    - layout_properties: {full_width_row: true, grid_position: 'BBTKEV,TGJQLH'}
-      name: label_2
-      properties: {text: 'Select Vision Type:'}
-      type: Label
     - components:
-      - layout_properties: {col_xs: 0, row: VKXXYN, width_xs: 2}
-        name: guided_vision_btn
-        properties: {role: elevated-button, text: Guided Vision}
-        type: Button
-      - layout_properties: {col_xs: 2, row: VKXXYN, width_xs: 2}
-        name: custom_vision_btn
-        properties: {role: elevated-button, text: Custom Vision}
-        type: Button
-      layout_properties: {full_width_row: true, grid_position: 'SRBTTP,LZARIR'}
-      name: option_grid_panel
-      properties: {}
-      type: GridPanel
-    - components:
-      - layout_properties: {full_width_row: true, grid_position: 'WZSEBP,CWLTDC'}
-        name: label_3
-        properties: {text: Select the Vision Type}
+      - layout_properties: {full_width_row: true, grid_position: 'TZEXVL,SSNOVG'}
+        name: label_2
+        properties: {text: 'Is This a Guided or Custom Vision?'}
         type: Label
-      - layout_properties: {full_width_row: true, grid_position: 'CWUVMC,CSKCLJ'}
-        name: vision_type_dropdown
-        properties: {align: left}
-        type: DropDown
-      layout_properties: {full_width_row: true, grid_position: 'GVVORC,IDKPNU'}
-      name: type_column_panel
-      properties: {visible: false}
+      - components:
+        - event_bindings: {click: guided_vision_btn_click}
+          layout_properties: {col_xs: 0, row: VKXXYN, width_xs: 2}
+          name: guided_vision_btn
+          properties: {role: elevated-button, text: Guided Vision}
+          type: Button
+        - event_bindings: {click: custom_vision_btn_click}
+          layout_properties: {col_xs: 2, row: VKXXYN, width_xs: 2}
+          name: custom_vision_btn
+          properties: {role: elevated-button, text: Custom Vision}
+          type: Button
+        layout_properties: {full_width_row: true, grid_position: 'SNCRXL,DKURJH'}
+        name: option_grid_panel
+        properties: {}
+        type: GridPanel
+      - components:
+        - layout_properties: {full_width_row: true, grid_position: 'WZSEBP,CWLTDC'}
+          name: label_3
+          properties: {text: 'Select the Vision Type:'}
+          type: Label
+        - layout_properties: {full_width_row: true, grid_position: 'CWUVMC,CSKCLJ'}
+          name: vision_type_dropdown
+          properties: {align: left}
+          type: DropDown
+        layout_properties: {full_width_row: true, grid_position: 'ICRGIK,VSCAVK'}
+        name: type_column_panel
+        properties: {visible: false}
+        type: ColumnPanel
+      - components:
+        - layout_properties: {full_width_row: true, grid_position: 'QXCHXF,WVAHGT'}
+          name: vision_name_label
+          properties: {text: 'Enter in Your Vision Name:'}
+          type: Label
+        - layout_properties: {full_width_row: true, grid_position: 'FZUAQN,DLTOUV'}
+          name: custom_vision_name_input
+          properties: {role: outlined}
+          type: TextBox
+        - layout_properties: {full_width_row: true, grid_position: 'BEBRNS,YCHESA'}
+          name: label_4
+          properties: {text: 'Enter in Your Vision Statement:'}
+          type: Label
+        - layout_properties: {full_width_row: true, grid_position: 'GYQZYZ,WXLJUZ'}
+          name: custom_vision_statement_input
+          properties: {role: outlined}
+          type: TextBox
+        - event_bindings: {click: create_custom_vision_btn_click}
+          layout_properties: {full_width_row: true, grid_position: 'FVRBCZ,HYNTDL'}
+          name: create_custom_vision_btn
+          properties: {align: left, background: 'theme:Primary', foreground: 'theme:BodyWhite', role: elevated-button, text: Create Vision}
+          type: Button
+        layout_properties: {full_width_row: true, grid_position: 'EHBOZH,KXYXUW'}
+        name: custom_vision_statement_panel
+        properties: {visible: false}
+        type: ColumnPanel
+      layout_properties: {full_width_row: true, grid_position: 'WRMYMF,VPCRDD'}
+      name: create_vision_panel
+      properties: {role: outlined-card}
       type: ColumnPanel
     layout_properties: {}
     name: column_panel_1

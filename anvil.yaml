@@ -197,6 +197,10 @@ db_schema:
     - admin_ui: {order: 4, width: 200}
       name: created_at
       type: datetime
+    - admin_ui: {order: 5, width: 200}
+      name: vision_type
+      target: vision_types
+      type: link_single
     server: full
     title: visions
 dependencies: []

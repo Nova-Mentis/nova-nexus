@@ -22,7 +22,8 @@ components_by_slot:
             margin: ['10', null, null, null]
           text: Community Visions
         type: Button
-      - layout_properties: {col_xs: 10, row: MVPMRM, width_xs: 2}
+      - event_bindings: {click: vision_btn_click}
+        layout_properties: {col_xs: 10, row: MVPMRM, width_xs: 2}
         name: vision_btn
         properties:
           background: theme:Primary
@@ -36,10 +37,6 @@ components_by_slot:
       name: grid_panel_1
       properties: {}
       type: GridPanel
-    - layout_properties: {full_width_row: true, grid_position: 'CXDSWG,JEDRPO', row_background: 'theme:Outline'}
-      name: spacer_1
-      properties: {height: '0.05'}
-      type: Spacer
     - layout_properties: {full_width_row: true, grid_position: 'QRHBXZ,HPTYCD'}
       name: vision_list
       properties: {item_template: VisionsPage.VisionItem, role: outlined-card}
