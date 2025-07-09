@@ -51,7 +51,7 @@ components:
     display_mode: shrink_to_fit
     height: 56
     margin: ['10', '10', '10', '10']
-    source: _/theme/Nova Mentis Logo Green Round.png
+    source: _/theme/Nova Nexus Logo.png
   type: Image
 container:
   properties: {background: '', foreground: '', html: '@theme:standard-page.html'}
