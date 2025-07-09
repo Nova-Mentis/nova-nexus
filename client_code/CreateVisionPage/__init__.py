@@ -5,6 +5,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from .. import State
 
 class CreateVisionPage(CreateVisionPageTemplate):
   def __init__(self, **properties):
@@ -29,7 +30,17 @@ class CreateVisionPage(CreateVisionPageTemplate):
 
   def create_custom_vision_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call('create_vision', self.custom_vision_name_input.text, self.custom_vision_statement_input.text, anvil.users.get_user(), self.vision_type_dropdown.selected_value)
+    anvil.server.call('create_vision', 
+                      vision_name=self.custom_vision_name_input.text, 
+                      vision_statement=self.custom_vision_statement_input.text, 
+                      user=anvil.users.get_user(), 
+                      vision_type=self.vision_type_dropdown.selected_value,
+                      tenant=State.tenant
+                     )
     open_form('VisionsPage')
+    pass
+
+  def vision_type_dropdown_change(self, **event_args):
+    """This method is called when an item is selected"""
     pass
     

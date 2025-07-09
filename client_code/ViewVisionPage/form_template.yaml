@@ -1,16 +1,18 @@
 components_by_slot:
   content_slot:
   - components:
-    - data_bindings:
-      - {code: 'self.item[''vision_name'']', property: text, writeback: false}
-      layout_properties: {full_width_row: true, grid_position: 'RGHQNT,BWYPLN'}
-      name: vision_name
-      properties: {bold: true, font: Roboto, foreground: 'theme:Primary', role: headline}
+    - layout_properties: {col_xs: 0, row: BRTIVJ, width_xs: 6}
+      name: label_1
+      properties: {}
       type: Label
+    - layout_properties: {col_xs: 9, row: BRTIVJ, width_xs: 3}
+      name: publish_vision_btn
+      properties: {align: right, role: elevated-button, text: Publish to the Community}
+      type: Button
     layout_properties: {}
-    name: column_panel_1
+    name: grid_panel_1
     properties: {}
-    type: ColumnPanel
+    type: GridPanel
 is_package: true
 item_type: {table_id: 984870}
 layout:

@@ -16,6 +16,7 @@ components:
   type: FlowPanel
 - components:
   - data_bindings: []
+    event_bindings: {change: tenant_dropdown_change}
     layout_properties: {grid_position: 'NIEALD,CRMJJD'}
     name: tenant_dropdown
     properties: {background: 'theme:Primary', foreground: 'theme:BodyWhite', role: null, visible: false}
@@ -23,13 +24,18 @@ components:
   - event_bindings: {click: dashboard_link_click}
     layout_properties: {grid_position: 'ZMLHCM,QSTZFS'}
     name: dashboard_link
-    properties: {foreground: 'theme:BodyWhite', text: Dashboard}
+    properties: {font: Roboto, foreground: 'theme:BodyWhite', text: Dashboard}
     type: Link
   - components: []
     event_bindings: {click: visions_link_click}
     layout_properties: {grid_position: 'RMHVMH,GJLMIX'}
     name: visions_link
-    properties: {foreground: 'theme:BodyWhite', text: Visions}
+    properties: {font: Roboto, foreground: 'theme:BodyWhite', text: Visions}
+    type: Link
+  - event_bindings: {click: profile_link_click}
+    layout_properties: {grid_position: 'DOSCGI,URUPZX'}
+    name: profile_link
+    properties: {font: Roboto, foreground: 'theme:BodyWhite', text: Profile}
     type: Link
   - layout_properties: {grid_position: 'KDOHPO,CTOPEJ'}
     name: user_link

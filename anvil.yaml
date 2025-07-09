@@ -148,6 +148,12 @@ db_schema:
     - admin_ui: {width: 200}
       name: email_confirmation_key
       type: string
+    - admin_ui: {order: -1, width: 200}
+      name: first_name
+      type: string
+    - admin_ui: {order: -0.5, width: 200}
+      name: last_name
+      type: string
     server: full
     title: users
   vision_guide_questions:
@@ -200,6 +206,13 @@ db_schema:
     - admin_ui: {order: 5, width: 200}
       name: vision_type
       target: vision_types
+      type: link_single
+    - admin_ui: {order: 6, width: 200}
+      name: published_on_community
+      type: bool
+    - admin_ui: {order: 7, width: 200}
+      name: tenant
+      target: tenants
       type: link_single
     server: full
     title: visions

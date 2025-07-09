@@ -1,0 +1,75 @@
+components_by_slot:
+  content_slot:
+  - components:
+    - layout_properties: {full_width_row: true, grid_position: 'UZOOTM,RJCBMC'}
+      name: label_1
+      properties:
+        bold: true
+        font: Roboto
+        foreground: theme:Primary
+        role: headline
+        spacing:
+          margin: ['5', '5', '5', '5']
+          padding: ['5', '5', '5', '5']
+        text: Profile
+      type: Label
+    - components:
+      - layout_properties: {full_width_row: true, grid_position: 'KSOUGM,IIRDYM'}
+        name: label_2
+        properties: {text: First Name}
+        type: Label
+      - layout_properties: {full_width_row: true, grid_position: 'WFNWOM,HDJXES'}
+        name: first_name_input
+        properties: {}
+        type: TextBox
+      - layout_properties: {full_width_row: true, grid_position: 'EUBMTK,LMHYXA'}
+        name: label_3
+        properties: {text: Last Name}
+        type: Label
+      - layout_properties: {full_width_row: true, grid_position: 'DOEJAF,IGPPFO'}
+        name: last_name_input
+        properties: {}
+        type: TextBox
+      - layout_properties: {full_width_row: true, grid_position: 'FPJQBK,ISMIDM'}
+        name: label_4
+        properties: {text: Email}
+        type: Label
+      - layout_properties: {full_width_row: true, grid_position: 'FZAXQN,SHOZUP'}
+        name: email
+        properties: {}
+        type: Label
+      - layout_properties: {full_width_row: true, grid_position: 'MVEJPK,BMUHCL'}
+        name: button_2
+        properties: {align: left, role: elevated-button, text: Change Email}
+        type: Button
+      - layout_properties: {full_width_row: true, grid_position: 'RCFLVQ,VKORDV'}
+        name: reset_password_btn
+        properties: {align: left, role: elevated-button, text: Reset Password}
+        type: Button
+      - layout_properties: {full_width_row: true, grid_position: 'KGETWB,RVMLKM'}
+        name: spacer_1
+        properties: {height: 32}
+        type: Spacer
+      - event_bindings: {click: save_btn_click}
+        layout_properties: {full_width_row: true, grid_position: 'ZEPDRY,YCKKQH'}
+        name: save_btn
+        properties:
+          align: left
+          background: theme:Primary
+          foreground: theme:BodyWhite
+          role: elevated-button
+          spacing:
+            margin: ['10', null, null, null]
+            padding: ['10', null, null, null]
+          text: Save
+        type: Button
+      layout_properties: {full_width_row: true, grid_position: 'KBKDIY,ELEDAN'}
+      name: profile_panel
+      properties: {role: outlined-card}
+      type: ColumnPanel
+    layout_properties: {}
+    name: column_panel_1
+    properties: {}
+    type: ColumnPanel
+is_package: true
+layout: {type: 'form:MainLayout'}

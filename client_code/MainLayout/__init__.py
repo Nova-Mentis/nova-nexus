@@ -7,6 +7,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from ..VisionsPage import VisionsPage
 from ..DashboardPage import DashboardPage
+from .. import State
 
 class MainLayout(MainLayoutTemplate):
   def __init__(self, **properties):
@@ -29,15 +30,19 @@ class MainLayout(MainLayoutTemplate):
       is_super_admin = anvil.server.call("is_super_admin", current_user)
       tenant_list = anvil.server.call("get_tenants")
 
+    # Set Tenant
+    self.tenant_dropdown.items = tenant_list
+    State.tenant = self.tenant_dropdown.selected_value
+    print("Selected Tenant is now " + self.tenant_dropdown.selected_value['tenant_name'])
+
     if is_super_admin:
       self.tenant_dropdown.visible = True
       self.user_link.visible = True
-      self.tenant_dropdown.items = tenant_list
     else:
       self.tenant_dropdown.visible = False
 
-
     # Admin
+
 
     # Any code you write here will run before the form opens.
 
@@ -55,4 +60,17 @@ class MainLayout(MainLayoutTemplate):
   def visions_link_click(self, **event_args):
     """This method is called when the link is clicked"""
     open_form('VisionsPage')
+    pass
+
+  def profile_link_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form('UserProfilePage')
+    pass
+
+  def tenant_dropdown_change(self, **event_args):
+    """This method is called when an item is selected"""
+    State.tenant = self.tenant_dropdown.selected_value
+    print("Selected Tenant is now " + self.tenant_dropdown.selected_value['tenant_name'])
+    from anvil.js.window import location
+    location.reload()
     pass

@@ -22,12 +22,12 @@ components_by_slot:
         - event_bindings: {click: guided_vision_btn_click}
           layout_properties: {col_xs: 0, row: VKXXYN, width_xs: 2}
           name: guided_vision_btn
-          properties: {role: elevated-button, text: Guided Vision}
+          properties: {align: left, role: elevated-button, text: Guided Vision}
           type: Button
         - event_bindings: {click: custom_vision_btn_click}
           layout_properties: {col_xs: 2, row: VKXXYN, width_xs: 2}
           name: custom_vision_btn
-          properties: {role: elevated-button, text: Custom Vision}
+          properties: {align: left, role: elevated-button, text: Custom Vision}
           type: Button
         layout_properties: {full_width_row: true, grid_position: 'SNCRXL,DKURJH'}
         name: option_grid_panel
@@ -38,12 +38,17 @@ components_by_slot:
           name: label_3
           properties: {text: 'Select the Vision Type:'}
           type: Label
-        - layout_properties: {full_width_row: true, grid_position: 'CWUVMC,CSKCLJ'}
+        - event_bindings: {change: vision_type_dropdown_change}
+          layout_properties: {full_width_row: true, grid_position: 'CWUVMC,CSKCLJ'}
           name: vision_type_dropdown
           properties: {align: left}
           type: DropDown
         layout_properties: {full_width_row: true, grid_position: 'ICRGIK,VSCAVK'}
         name: type_column_panel
+        properties: {visible: false}
+        type: ColumnPanel
+      - layout_properties: {full_width_row: true, grid_position: 'IJPOTR,ZOQXXP'}
+        name: guided_questions_panel
         properties: {visible: false}
         type: ColumnPanel
       - components:
