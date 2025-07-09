@@ -1,20 +1,14 @@
 components:
-- components: []
-  layout_properties: {slot: default}
-  name: content_panel
-  properties:
-    col_spacing: none
-    role: outlined-card
-    spacing:
-      margin: ['0', '10', '10', '10']
-      padding: ['0', '10', '10', '10']
-    wrap_on: mobile
-  type: ColumnPanel
 - components:
   - event_bindings: {click: logout_btn_click}
     layout_properties: {}
     name: logout_btn
-    properties: {role: elevated-button, text: Logout}
+    properties:
+      role: elevated-button
+      spacing:
+        margin: ['10', '10', '10', '10']
+        padding: [null, '20', null, '20']
+      text: Logout
     type: Button
   layout_properties: {slot: nav-right}
   name: navbar_links
@@ -51,4 +45,8 @@ container:
   properties: {background: '', foreground: '', html: '@theme:standard-page.html'}
   type: HtmlTemplate
 is_package: true
-slots: {}
+slots:
+  content_slot:
+    index: 3
+    set_layout_properties: {slot: default}
+    target: {name: '', type: container}

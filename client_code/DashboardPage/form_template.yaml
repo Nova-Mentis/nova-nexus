@@ -1,0 +1,21 @@
+components_by_slot:
+  content_slot:
+  - components:
+    - layout_properties: {full_width_row: true, grid_position: 'NNILBM,OOZPFN'}
+      name: label_1
+      properties:
+        bold: true
+        font: Roboto
+        foreground: theme:Primary
+        role: headline
+        spacing:
+          margin: ['5', '5', '5', '5']
+          padding: ['5', '5', '5', '5']
+        text: Dashboard
+      type: Label
+    layout_properties: {}
+    name: column_panel_1
+    properties: {}
+    type: ColumnPanel
+is_package: true
+layout: {type: 'form:MainLayout'}

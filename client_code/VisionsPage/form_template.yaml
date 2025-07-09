@@ -1,60 +1,52 @@
-components:
-- components:
-  - layout_properties: {col_xs: 0, row: VGMQJS, width_xs: 2}
-    name: visions_label
-    properties:
-      bold: true
-      font: Roboto
-      foreground: theme:Primary
-      role: headline
-      spacing:
-        margin: ['10', '10', '10', '10']
-        padding: ['10', '10', '10', '10']
-      text: Visions
-    type: Label
-  - layout_properties: {col_xs: 8, row: VGMQJS, width_xs: 2}
-    name: community_vision_btn
-    properties:
-      role: elevated-button
-      spacing:
-        margin: ['10', '10', '10', '10']
-        padding: [null, '20', null, '20']
-      text: Community Visions
-    type: Button
-  - event_bindings: {click: new_vision_btn_click}
-    layout_properties: {col_xs: 10, row: VGMQJS, width_xs: 2}
-    name: new_vision_btn
-    properties:
-      background: theme:Primary
-      foreground: theme:BodyWhite
-      role: elevated-button
-      spacing:
-        margin: ['10', '10', '10', '10']
-        padding: ['10', '20', '10', '20']
-      text: New Vision
-    type: Button
-  layout_properties: {full_width_row: true, grid_position: 'UTGWPX,BTENNY'}
-  name: grid_panel_1
-  properties:
-    spacing:
-      margin: ['0', '0', '0', '0']
-      padding: ['0', '0', '0', '0']
-  type: GridPanel
-- layout_properties: {full_width_row: true, grid_position: 'BRNTCO,KVFZEX', row_background: 'theme:Outline'}
-  name: spacer_1
-  properties: {height: '0.005'}
-  type: Spacer
-- data_bindings:
-  - {code: '', property: items, writeback: false}
-  layout_properties: {full_width_row: true, grid_position: 'PYQNUX,VSJHZJ'}
-  name: repeating_panel_1
-  properties:
-    item_template: VisionsPage.VisionItem
-    margin: ['10', '10', '10', '10']
-  type: RepeatingPanel
-container:
-  properties: {wrap_on: never}
-  type: ColumnPanel
-custom_component: false
+components_by_slot:
+  content_slot:
+  - components:
+    - components:
+      - layout_properties: {col_xs: 0, row: MVPMRM, width_xs: 2}
+        name: label_1
+        properties:
+          bold: true
+          font: Roboto
+          foreground: theme:Primary
+          role: headline
+          spacing:
+            margin: ['5', '5', '5', '5']
+            padding: ['5', '5', '5', '5']
+          text: Visions
+        type: Label
+      - layout_properties: {col_xs: 8, row: MVPMRM, width_xs: 2}
+        name: com_btn
+        properties:
+          role: elevated-button
+          spacing:
+            margin: ['10', null, null, null]
+          text: Community Visions
+        type: Button
+      - layout_properties: {col_xs: 10, row: MVPMRM, width_xs: 2}
+        name: vision_btn
+        properties:
+          background: theme:Primary
+          foreground: theme:BodyWhite
+          role: elevated-button
+          spacing:
+            margin: ['10', null, null, null]
+          text: New Vision
+        type: Button
+      layout_properties: {full_width_row: true, grid_position: 'XVNFSN,ALFTDB'}
+      name: grid_panel_1
+      properties: {}
+      type: GridPanel
+    - layout_properties: {full_width_row: true, grid_position: 'CXDSWG,JEDRPO', row_background: 'theme:Outline'}
+      name: spacer_1
+      properties: {height: '0.05'}
+      type: Spacer
+    - layout_properties: {full_width_row: true, grid_position: 'QRHBXZ,HPTYCD'}
+      name: vision_list
+      properties: {item_template: VisionsPage.VisionItem, role: outlined-card}
+      type: RepeatingPanel
+    layout_properties: {}
+    name: column_panel_1
+    properties: {}
+    type: ColumnPanel
 is_package: true
-item_type: {table_id: 984870}
+layout: {type: 'form:MainLayout'}

@@ -5,13 +5,17 @@ components:
     properties:
       role: title
       spacing:
-        margin: ['5', '5', '5', '5']
+        margin: ['10', '5', '5', '5']
         padding: ['5', '5', '5', '5']
       text: Vision Statement
     type: Label
   - layout_properties: {col_xs: 10, row: BWEDNU, width_xs: 2}
     name: open_vision_btn
-    properties: {role: elevated-button, text: Open Vision}
+    properties:
+      role: elevated-button
+      spacing:
+        margin: ['10', null, null, null]
+      text: Open Vision
     type: Button
   layout_properties: {full_width_row: true, grid_position: 'LINZXQ,NVCRWI'}
   name: grid_panel_1

@@ -13,8 +13,6 @@ class MainLayout(MainLayoutTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     # self.logged_in_text.text = "Logged in as " + anvil.users.get_user()['email']
-    self.content_panel.clear()
-    self.content_panel.add_component(DashboardPage())
 
     # Any code you write here will run before the form opens.
 
@@ -26,12 +24,10 @@ class MainLayout(MainLayoutTemplate):
 
   def dashboard_link_click(self, **event_args):
     """This method is called when the link is clicked"""
-    self.content_panel.clear()
-    self.content_panel.add_component(DashboardPage())
+    open_form('DashboardPage')
     pass
 
   def visions_link_click(self, **event_args):
     """This method is called when the link is clicked"""
-    self.content_panel.clear()
-    self.content_panel.add_component(VisionsPage())
+    open_form('VisionsPage')
     pass
