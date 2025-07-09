@@ -1,4 +1,4 @@
-from ._anvil_designer import HomePageTemplate
+from ._anvil_designer import MainLayoutTemplate
 from anvil import *
 import anvil.server
 import anvil.users
@@ -8,11 +8,11 @@ from anvil.tables import app_tables
 from ..VisionsPage import VisionsPage
 from ..DashboardPage import DashboardPage
 
-class HomePage(HomePageTemplate):
+class MainLayout(MainLayoutTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.logged_in_text.text = "Logged in as " + anvil.users.get_user()['email']
+    # self.logged_in_text.text = "Logged in as " + anvil.users.get_user()['email']
     self.content_panel.clear()
     self.content_panel.add_component(DashboardPage())
 

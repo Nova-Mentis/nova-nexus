@@ -2,7 +2,13 @@ components:
 - components: []
   layout_properties: {slot: default}
   name: content_panel
-  properties: {role: outlined-card}
+  properties:
+    col_spacing: none
+    role: outlined-card
+    spacing:
+      margin: ['0', '10', '10', '10']
+      padding: ['0', '10', '10', '10']
+    wrap_on: mobile
   type: ColumnPanel
 - components:
   - event_bindings: {click: logout_btn_click}

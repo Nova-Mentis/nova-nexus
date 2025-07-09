@@ -29,10 +29,10 @@ color_scheme:
   - {color: '#ededed', name: Outline}
   - {color: '#FFFFFF', name: On Disabled}
   - {color: '#FFFFFF', name: Disabled Container}
-  - {color: '#FFFFFF', name: Light Overlay 1}
-  - {color: '#FFFFFF', name: Light Overlay 2}
+  - {color: '#D5AF37', name: Light Overlay 1}
+  - {color: '#D5AF37', name: Light Overlay 2}
   - {color: '#D5AF37', name: Dark Overlay 1}
-  - {color: '#FFFFFF', name: Dark Overlay 2}
+  - {color: '#D5AF37', name: Dark Overlay 2}
   - {color: '#37715B', name: Primary Overlay 1}
   - {color: '#FFFFFF', name: Primary Overlay 2}
   - {color: '#FFFFFF', name: Primary Overlay 3}
