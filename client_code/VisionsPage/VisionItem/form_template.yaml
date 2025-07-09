@@ -1,7 +1,9 @@
 components:
 - components:
-  - layout_properties: {col_xs: 0, row: BWEDNU, width_xs: 6}
-    name: label_1
+  - data_bindings:
+    - {code: 'self.item[''vision_statement'']', property: text, writeback: false}
+    layout_properties: {col_xs: 0, row: BWEDNU, width_xs: 6}
+    name: vision_statement
     properties:
       role: title
       spacing:
@@ -9,7 +11,8 @@ components:
         padding: ['5', '5', '5', '5']
       text: Vision Statement
     type: Label
-  - layout_properties: {col_xs: 10, row: BWEDNU, width_xs: 2}
+  - event_bindings: {click: open_vision_btn_click}
+    layout_properties: {col_xs: 10, row: BWEDNU, width_xs: 2}
     name: open_vision_btn
     properties:
       role: elevated-button
@@ -25,7 +28,7 @@ components:
   type: GridPanel
 - layout_properties: {full_width_row: true, grid_position: 'AQBINF,CGKOVT', row_background: 'theme:Outline'}
   name: spacer_1
-  properties: {height: '0.05'}
+  properties: {height: '0'}
   type: Spacer
 container: {type: ColumnPanel}
 is_package: true

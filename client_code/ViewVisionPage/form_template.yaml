@@ -1,2 +1,5 @@
 is_package: true
-layout: {type: 'form:MainLayout'}
+item_type: {table_id: 984870}
+layout:
+  data_bindings: []
+  type: form:MainLayout

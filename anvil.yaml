@@ -7,7 +7,14 @@ db_schema:
     title: resources
   steps:
     client: full
-    columns: []
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: step_name
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: vision
+      target: visions
+      type: link_single
     server: full
     title: steps
   tenants:
@@ -56,13 +63,17 @@ db_schema:
   visions:
     client: full
     columns:
-    - admin_ui: {order: 0, width: 200}
+    - admin_ui: {order: 1, width: 200}
       name: vision_statement
       type: string
     - admin_ui: {order: 2, width: 200}
       name: user
       target: users
       type: link_single
+    - admin_ui: {order: 3, width: 200}
+      name: steps
+      target: steps
+      type: link_multiple
     server: full
     title: visions
 dependencies: []

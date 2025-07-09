@@ -1,0 +1,38 @@
+components_by_slot:
+  content_slot:
+  - components:
+    - layout_properties: {full_width_row: true, grid_position: 'OFAXCZ,MMBZFK'}
+      name: label_1
+      properties:
+        bold: true
+        font: Roboto
+        foreground: theme:Primary
+        role: headline
+        spacing:
+          margin: ['5', '5', '5', '5']
+          padding: ['5', '5', '5', '5']
+        text: Create Vision
+      type: Label
+    - layout_properties: {full_width_row: true, grid_position: 'BBTKEV,TGJQLH'}
+      name: label_2
+      properties: {text: 'Select Vision Type:'}
+      type: Label
+    - components:
+      - layout_properties: {col_xs: 0, row: VKXXYN, width_xs: 2}
+        name: guided_vision_btn
+        properties: {text: Guided Vision}
+        type: Button
+      - layout_properties: {col_xs: 2, row: VKXXYN, width_xs: 2}
+        name: custom_vision_btn
+        properties: {text: Custom Vision}
+        type: Button
+      layout_properties: {full_width_row: true, grid_position: 'SRBTTP,LZARIR'}
+      name: grid_panel_1
+      properties: {}
+      type: GridPanel
+    layout_properties: {}
+    name: column_panel_1
+    properties: {}
+    type: ColumnPanel
+is_package: true
+layout: {type: 'form:MainLayout'}
