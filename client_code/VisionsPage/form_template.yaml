@@ -1,8 +1,29 @@
 components:
-- layout_properties: {full_width_row: true, grid_position: 'MAMZDQ,PBTLGR'}
-  name: visions_label
-  properties: {role: title, text: Visions}
-  type: Label
+- components:
+  - layout_properties: {col_xs: 0, row: FDYVME, width_xs: 2}
+    name: visions_label
+    properties:
+      role: title
+      spacing:
+        margin: ['10', '10', '10', '10']
+        padding: ['10', '10', '10', '10']
+      text: Visions
+    type: Label
+  - layout_properties: {col_xs: 10, row: FDYVME, width_xs: 2}
+    name: button_1
+    properties:
+      background: theme:Primary
+      foreground: theme:BodyWhite
+      role: [elevated-button]
+      text: button_1
+    type: Button
+  layout_properties: {full_width_row: true, grid_position: 'UTGWPX,BTENNY'}
+  name: grid_panel_1
+  properties:
+    spacing:
+      margin: ['10', '10', '10', '10']
+      padding: ['10', '10', '10', '10']
+  type: GridPanel
 container: {type: ColumnPanel}
 custom_component: false
 is_package: true
