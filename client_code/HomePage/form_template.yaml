@@ -35,7 +35,11 @@ components:
   type: ColumnPanel
 - layout_properties: {slot: title}
   name: image_1
-  properties: {display_mode: shrink_to_fit, height: 56, source: _/theme/Nova Mentis Logo Green Round.png}
+  properties:
+    display_mode: shrink_to_fit
+    height: 56
+    margin: ['10', '10', '10', '10']
+    source: _/theme/Nova Mentis Logo Green Round.png
   type: Image
 container:
   properties: {background: '', foreground: '', html: '@theme:standard-page.html'}
