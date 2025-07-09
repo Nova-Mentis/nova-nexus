@@ -22,20 +22,20 @@ color_scheme:
   - {color: '#5C7C95', name: On Tertiary Container}
   - {color: '#B3261E', name: Error}
   - {color: '#FFFFFF', name: Surface}
-  - {color: '#1C1B1F', name: On Background}
-  - {color: '#1C1B1F', name: On Surface}
+  - {color: '#FFFFFF', name: On Background}
+  - {color: '#000000', name: On Surface}
   - {color: '#FFFFFF', name: Surface Variant}
-  - {color: '#49454E', name: On Surface Variant}
-  - {color: '#A3A3A3', name: Outline}
-  - {color: 'rgba(28, 27, 31, 0.38)', name: On Disabled}
-  - {color: 'rgba(28, 27, 31, 0.12)', name: Disabled Container}
-  - {color: 'rgba(255, 255, 255, 0.08)', name: Light Overlay 1}
-  - {color: 'rgba(255, 255, 255, 0.12)', name: Light Overlay 2}
-  - {color: 'rgba(30, 25, 43, 0.08)', name: Dark Overlay 1}
-  - {color: 'rgba(30, 25, 43, 0.12)', name: Dark Overlay 2}
-  - {color: 'rgba(103, 80, 164, 0.05)', name: Primary Overlay 1}
-  - {color: 'rgba(103, 80, 164, 0.08)', name: Primary Overlay 2}
-  - {color: 'rgba(103, 80, 164, 0.11)', name: Primary Overlay 3}
+  - {color: '#FFFFFF', name: On Surface Variant}
+  - {color: '#ededed', name: Outline}
+  - {color: '#FFFFFF', name: On Disabled}
+  - {color: '#FFFFFF', name: Disabled Container}
+  - {color: '#FFFFFF', name: Light Overlay 1}
+  - {color: '#FFFFFF', name: Light Overlay 2}
+  - {color: '#FFFFFF', name: Dark Overlay 1}
+  - {color: '#FFFFFF', name: Dark Overlay 2}
+  - {color: '#37715B', name: Primary Overlay 1}
+  - {color: '#FFFFFF', name: Primary Overlay 2}
+  - {color: '#FFFFFF', name: Primary Overlay 3}
   preset_groups:
   - name: Colour Scheme
     options:

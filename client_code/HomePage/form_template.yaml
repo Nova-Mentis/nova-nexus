@@ -1,5 +1,6 @@
 components:
-- layout_properties: {slot: default}
+- components: []
+  layout_properties: {slot: default}
   name: content_panel
   properties: {role: outlined-card}
   type: ColumnPanel
@@ -33,11 +34,11 @@ components:
   properties: {}
   type: ColumnPanel
 - layout_properties: {slot: title}
-  name: label_1
-  properties: {text: Nova Nexus}
-  type: Label
+  name: image_1
+  properties: {display_mode: shrink_to_fit, height: 56, source: _/theme/Nova Mentis Logo Green Round.png}
+  type: Image
 container:
-  properties: {html: '@theme:standard-page.html'}
+  properties: {background: '', foreground: '', html: '@theme:standard-page.html'}
   type: HtmlTemplate
 is_package: true
 slots: {}
