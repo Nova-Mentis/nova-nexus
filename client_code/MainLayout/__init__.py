@@ -32,7 +32,10 @@ class MainLayout(MainLayoutTemplate):
 
     # Set Tenant
     self.tenant_dropdown.items = tenant_list
-    State.tenant = self.tenant_dropdown.selected_value
+    if State.tenant is not None:
+      self.tenant_dropdown.selected_value = State.tenant
+    else:
+      State.tenant = self.tenant_dropdown.selected_value
     print("Selected Tenant is now " + self.tenant_dropdown.selected_value['tenant_name'])
 
     if is_super_admin:
@@ -42,7 +45,6 @@ class MainLayout(MainLayoutTemplate):
       self.tenant_dropdown.visible = False
 
     # Admin
-
 
     # Any code you write here will run before the form opens.
 
@@ -71,6 +73,5 @@ class MainLayout(MainLayoutTemplate):
     """This method is called when an item is selected"""
     State.tenant = self.tenant_dropdown.selected_value
     print("Selected Tenant is now " + self.tenant_dropdown.selected_value['tenant_name'])
-    from anvil.js.window import location
-    location.reload()
+    open_form('DashboardPage')
     pass

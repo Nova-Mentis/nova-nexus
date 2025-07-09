@@ -17,5 +17,5 @@ class Login(LoginTemplate):
     """This method is called when the button is clicked"""
     anvil.users.login_with_form()
     print("Current User is " + anvil.users.get_user()['email'])
-    open_form('MainLayout')
+    open_form('DashboardPage')
     pass
