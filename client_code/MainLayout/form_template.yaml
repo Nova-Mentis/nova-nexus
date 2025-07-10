@@ -41,6 +41,10 @@ components:
     name: user_link
     properties: {foreground: 'theme:BodyWhite', text: Users, visible: false}
     type: Link
+  - layout_properties: {grid_position: 'PTSRBX,QJHSKA'}
+    name: system_link
+    properties: {foreground: 'theme:BodyWhite', text: System, visible: false}
+    type: Link
   layout_properties: {slot: left-nav}
   name: column_panel_1
   properties: {}
