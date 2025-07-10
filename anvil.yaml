@@ -264,7 +264,7 @@ db_schema:
     server: full
     title: visions
 dependencies: []
-metadata: {logo_img: 'asset:Nova Mentis Logo Green Round.png', title: Nova Nexus}
+metadata: {description: Helping you find purpose and direction through personalized visions, logo_img: 'asset:Nova Nexus Logo Round.png', title: Nova Nexus}
 name: Nova Nexus
 native_deps: null
 package_name: Nova_Nexus
@@ -273,6 +273,11 @@ runtime_options:
   client_version: '3'
   legacy_features: {__dict__: true, bootstrap3: true, class_names: true, root_container: true}
   server_spec: {base: python310-machine-learning}
+  server_spec_disabled:
+    base: python310-machine-learning
+    requirements: |-
+      pydantic-ai==0.4.1
+      pydantic
   server_version: python3-sandbox
   version: 3
 secrets:
