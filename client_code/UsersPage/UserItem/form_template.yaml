@@ -1,20 +1,22 @@
 components:
 - components:
-  - layout_properties: {col_xs: 0, row: QTCNRN, width_xs: 2}
-    name: user_name_label
-    properties: {text: user_name}
+  - data_bindings:
+    - {code: 'self.item[''first_name'']', property: text, writeback: false}
+    layout_properties: {col_xs: 0, row: QTCNRN, width_xs: 2}
+    name: first_name
+    properties: {}
     type: Label
-  - layout_properties: {col_xs: 2, row: QTCNRN, width_xs: 2}
-    name: user_email_label
-    properties: {text: user_email}
+  - data_bindings:
+    - {code: 'self.item[''email'']', property: text, writeback: false}
+    layout_properties: {col_xs: 2, row: QTCNRN, width_xs: 2}
+    name: email
+    properties: {}
     type: Label
-  - layout_properties: {col_xs: 4, row: QTCNRN, width_xs: 2}
-    name: label_1
-    properties: {text: created_at}
-    type: Label
-  - layout_properties: {col_xs: 6, row: QTCNRN, width_xs: 2}
-    name: active_label
-    properties: {text: active}
+  - data_bindings:
+    - {code: 'self.item[''signed_up'']', property: text, writeback: false}
+    layout_properties: {col_xs: 4, row: QTCNRN, width_xs: 2}
+    name: signed_up
+    properties: {}
     type: Label
   - layout_properties: {col_xs: 8, row: QTCNRN, width_xs: 2}
     name: button_2
@@ -33,7 +35,7 @@ components:
   properties: {height: ''}
   type: Spacer
 container: {type: ColumnPanel}
-custom_component: true
+custom_component: false
 is_package: true
 properties:
 - {default_binding_prop: true, important: true, name: user, type: object}

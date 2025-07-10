@@ -32,7 +32,7 @@ def update_user_profile(first_name, last_name, email):
 
 @anvil.server.callable
 def get_users_by_tenant(tenant):
-  user_list = app_tables.users.get(assigned_tenant=tenant)
+  user_list = app_tables.users.search(assigned_tenant=tenant)
   return user_list
     
   
