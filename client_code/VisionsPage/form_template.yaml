@@ -55,6 +55,7 @@ components_by_slot:
         layout_properties: {full_width_row: true, grid_position: 'NSYRVT,WEMYSJ'}
         name: vision_data_grid
         properties:
+          auto_header: true
           columns:
           - {data_key: vision_name, expand: false, id: DENOFZ, title: Vision Name, width: 327}
           - {data_key: vision_statement, expand: true, id: WIBBFD, title: Vision Statement, width: 465}
@@ -62,6 +63,7 @@ components_by_slot:
           - {data_key: column_2, expand: false, id: NGGFVP, title: '', width: 170}
           margin: ['0', null, '0', null]
           role: null
+          show_page_controls: true
         type: DataGrid
       layout_properties: {full_width_row: true, grid_position: 'JKJLHX,UZEYYM'}
       name: column_panel_2
