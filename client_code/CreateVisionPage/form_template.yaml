@@ -26,19 +26,51 @@ components_by_slot:
     - components:
       - layout_properties: {full_width_row: true, grid_position: 'TZEXVL,SSNOVG'}
         name: label_2
-        properties: {text: 'Is This a Guided or Custom Vision?'}
+        properties: {text: 'Please select one of the following options:'}
         type: Label
       - components:
         - event_bindings: {click: guided_vision_btn_click}
           layout_properties: {col_xs: 0, row: VKXXYN, width_xs: 2}
           name: guided_vision_btn
-          properties: {align: left, role: elevated-button, text: Guided Vision}
+          properties:
+            align: center
+            role: elevated-button
+            spacing:
+              padding: ['15', null, '15', null]
+            text: I need help creating a Vision
+          type: Button
+        - event_bindings: {click: rough_idea_btn_click}
+          layout_properties: {col_xs: 2, row: VKXXYN, width_xs: 2}
+          name: rough_idea_btn
+          properties:
+            align: center
+            role: elevated-button
+            spacing:
+              padding: ['15', null, '15', null]
+            text: I have some idea of a Vision
           type: Button
         - event_bindings: {click: custom_vision_btn_click}
-          layout_properties: {col_xs: 2, row: VKXXYN, width_xs: 2}
+          layout_properties: {col_xs: 4, row: VKXXYN, width_xs: 2}
           name: custom_vision_btn
-          properties: {align: left, role: elevated-button, text: Custom Vision}
+          properties:
+            align: center
+            role: elevated-button
+            spacing:
+              padding: ['15', null, '15', null]
+            text: I have a clear idea of a Vision
           type: Button
+        - layout_properties: {col_xs: 0, row: VAZBNA, width_xs: 2}
+          name: label_9
+          properties: {align: center, foreground: 'theme:Accent3', italic: true, text: Guided Vision}
+          type: Label
+        - layout_properties: {col_xs: 2, row: VAZBNA, width_xs: 2}
+          name: label_8
+          properties: {align: center, foreground: 'theme:Accent3', italic: true, text: Assisted Vision}
+          type: Label
+        - layout_properties: {col_xs: 4, row: VAZBNA, width_xs: 2}
+          name: label_7
+          properties: {align: center, foreground: 'theme:Accent3', italic: true, text: Custom Vision}
+          type: Label
         layout_properties: {full_width_row: true, grid_position: 'SNCRXL,DKURJH'}
         name: option_grid_panel
         properties: {}
@@ -68,12 +100,33 @@ components_by_slot:
           properties: {item_template: CreateVisionPage.QuestionItem}
           type: RepeatingPanel
         - layout_properties: {full_width_row: true, grid_position: 'IZUPFG,FGAWKD'}
-          name: button_1
+          name: confirm_answers_btn
           properties: {align: left, background: 'theme:Primary', foreground: 'theme:BodyWhite', role: elevated-button, text: Confirm Answers}
           type: Button
         layout_properties: {full_width_row: true, grid_position: 'IJPOTR,ZOQXXP'}
         name: guided_questions_panel
         properties: {visible: false}
+        type: ColumnPanel
+      - components:
+        - layout_properties: {full_width_row: true, grid_position: 'TEYTQQ,TGVVKG'}
+          name: label_10
+          properties: {text: 'Enter in your rough idea of a Vision:'}
+          type: Label
+        - layout_properties: {full_width_row: true, grid_position: 'GVTWHL,JTUCNK'}
+          name: rough_idea_input
+          properties: {placeholder: ''}
+          type: TextBox
+        - layout_properties: {full_width_row: true, grid_position: 'SCTSQY,HMGALV'}
+          name: confirm_rough_ide_btn
+          properties: {align: left, background: 'theme:Primary', foreground: 'theme:BodyWhite', role: elevated-button, text: Confirm Rough Idea}
+          type: Button
+        layout_properties: {full_width_row: true, grid_position: 'FPNMIU,UGLZAC'}
+        name: rough_idea_panel
+        properties:
+          role: null
+          spacing:
+            padding: [null, '0', null, '0']
+          visible: false
         type: ColumnPanel
       - components:
         - layout_properties: {full_width_row: true, grid_position: 'QXCHXF,WVAHGT'}
@@ -95,7 +148,7 @@ components_by_slot:
         - event_bindings: {click: create_custom_vision_btn_click}
           layout_properties: {full_width_row: true, grid_position: 'FVRBCZ,HYNTDL'}
           name: create_custom_vision_btn
-          properties: {align: left, background: 'theme:Primary', foreground: 'theme:BodyWhite', role: elevated-button, text: Create Vision}
+          properties: {align: left, background: 'theme:Primary', foreground: 'theme:BodyWhite', role: elevated-button, text: Confirm Custom Vision}
           type: Button
         layout_properties: {full_width_row: true, grid_position: 'EHBOZH,KXYXUW'}
         name: custom_vision_statement_panel
