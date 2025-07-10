@@ -44,3 +44,8 @@ def create_vision(vision_name, vision_statement, user, vision_type, tenant):
   print("Adding " + vision_name + " vision")
   current_datetime = datetime.now()
   app_tables.visions.add_row(vision_name=vision_name, vision_statement=vision_statement, user=user, vision_type=vision_type, created_at=current_datetime, tenant=tenant)
+  created_vision = app_tables.visions.search(vision_name=vision_name)
+  return created_vision
+
+#@anvil.server.callable
+#def delete_vision(vision):

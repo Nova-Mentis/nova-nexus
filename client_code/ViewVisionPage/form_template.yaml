@@ -4,7 +4,7 @@ components_by_slot:
     - components:
       - layout_properties: {col_xs: 0, row: PXNWTP, width_xs: 2}
         name: vision_name_label
-        properties: {}
+        properties: {bold: true, foreground: 'theme:Primary', role: headline}
         type: Label
       - layout_properties: {col_xs: 9, row: PXNWTP, width_xs: 2}
         name: publish_vision_btn

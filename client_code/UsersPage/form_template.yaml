@@ -10,27 +10,57 @@ components_by_slot:
           foreground: theme:Primary
           role: headline
           spacing:
-            margin: ['5', '5', '5', '5']
-            padding: ['5', '5', '5', '5']
+            margin: ['5', '5', '0', '5']
+            padding: ['5', '5', '0', '0']
           text: Users
         type: Label
       - layout_properties: {col_xs: 10, row: HXYUET, width_xs: 2}
         name: add_user_btn
         properties: {role: elevated-button, text: Add User}
         type: Button
+      - layout_properties: {col_xs: 0, row: ORHLPB, width_xs: 2}
+        name: label_2
+        properties:
+          foreground: theme:Accent3
+          italic: true
+          spacing:
+            margin: ['0', null, '0', '5']
+            padding: ['0', null, '0', '0']
+          text: Manage Users and Profiles
+        type: Label
       layout_properties: {full_width_row: true, grid_position: 'WURMFG,XJCPYB'}
       name: grid_panel_1
       properties: {}
       type: GridPanel
-    - layout_properties: {full_width_row: true, grid_position: 'RAXHDM,FPYFRC', row_background: 'theme:Outline'}
-      name: spacer_1
-      properties: {height: '0'}
-      type: Spacer
-    - data_bindings: []
-      layout_properties: {full_width_row: true, grid_position: 'BOESTB,NSYJIT'}
-      name: user_list
-      properties: {item_template: UsersPage.UserItem}
-      type: RepeatingPanel
+    - components:
+      - components:
+        - name: user_list_panel
+          properties: {item_template: UsersPage.UserItem}
+          type: RepeatingPanel
+        layout_properties: {full_width_row: true, grid_position: 'NRZPTD,RCNTCM'}
+        name: user_data_grid
+        properties:
+          background: ''
+          columns:
+          - {data_key: first_name, id: LUREVI, title: First Name}
+          - {data_key: last_name, id: GRYMPC, title: Last Name}
+          - {data_key: email, id: TFRLPZ, title: Email}
+          - {data_key: enabled, id: LAQZPB, title: Enable}
+          - {data_key: last_login, id: ODUBEB, title: Last Login}
+          - {data_key: signed_up, id: ZQJJWJ, title: Signed Up}
+          - {data_key: role, id: HUERGG, title: Role}
+          - {data_key: column_1, id: KEUNEH, title: ''}
+          - {data_key: column_1, id: PWPHFN, title: ''}
+          role: null
+        type: DataGrid
+      layout_properties: {full_width_row: true, grid_position: 'TUHEQF,TEMKKW'}
+      name: column_panel_2
+      properties:
+        role: outlined-card
+        spacing:
+          margin: [null, null, null, null]
+          padding: ['5', '5', '5', '5']
+      type: ColumnPanel
     layout_properties: {}
     name: column_panel_1
     properties: {}

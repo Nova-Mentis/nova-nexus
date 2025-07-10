@@ -1,34 +1,12 @@
 components:
-- components:
-  - data_bindings:
-    - {code: 'self.item[''vision_name'']', property: text, writeback: false}
-    layout_properties: {col_xs: 0, row: BWEDNU, width_xs: 6}
-    name: vision_name_label
-    properties:
-      role: title
-      spacing:
-        margin: ['10', '5', '5', '5']
-        padding: ['5', '5', '5', '5']
-      text: Vision Name
-    type: Label
-  - event_bindings: {click: open_vision_btn_click}
-    layout_properties: {col_xs: 10, row: BWEDNU, width_xs: 2}
-    name: open_vision_btn
-    properties:
-      role: elevated-button
-      spacing:
-        margin: ['10', null, null, null]
-      text: Open Vision
-    type: Button
-  layout_properties: {full_width_row: true, grid_position: 'LINZXQ,NVCRWI'}
-  name: vision_grid_panel
-  properties:
-    spacing:
-      margin: ['0', null, '0', null]
-  type: GridPanel
-- layout_properties: {full_width_row: true, grid_position: 'AQBINF,CGKOVT', row_background: 'theme:Outline'}
-  name: spacer_1
-  properties: {height: '0'}
-  type: Spacer
-container: {type: ColumnPanel}
+- event_bindings: {click: open_vision_btn_click}
+  layout_properties: {column: SZXPUH}
+  name: open_vision_btn
+  properties: {align: right, role: elevated-button, text: Open Vision}
+  type: Button
+- layout_properties: {column: NGGFVP}
+  name: delete_vision_btn
+  properties: {align: right, role: elevated-button, text: Delete Vision}
+  type: Button
+container: {type: DataRowPanel}
 is_package: true

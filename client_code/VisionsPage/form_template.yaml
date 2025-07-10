@@ -10,8 +10,8 @@ components_by_slot:
           foreground: theme:Primary
           role: headline
           spacing:
-            margin: ['5', '5', '5', '5']
-            padding: ['5', '5', '5', '5']
+            margin: ['5', '5', '0', '5']
+            padding: ['5', '5', '0', '5']
           text: Visions
         type: Label
       - layout_properties: {col_xs: 8, row: MVPMRM, width_xs: 2}
@@ -33,14 +33,43 @@ components_by_slot:
             margin: ['10', null, null, null]
           text: New Vision
         type: Button
+      - layout_properties: {col_xs: 0, row: DROZXD, width_xs: 3}
+        name: label_2
+        properties:
+          foreground: theme:Accent3
+          italic: true
+          spacing:
+            margin: ['0', null, '0', null]
+            padding: ['0', null, '0', null]
+          text: View and Manage Your Visions
+        type: Label
       layout_properties: {full_width_row: true, grid_position: 'XVNFSN,ALFTDB'}
       name: grid_panel_1
       properties: {}
       type: GridPanel
-    - layout_properties: {full_width_row: true, grid_position: 'QRHBXZ,HPTYCD'}
-      name: vision_list
-      properties: {item_template: VisionsPage.VisionItem, role: outlined-card}
-      type: RepeatingPanel
+    - components:
+      - components:
+        - name: vision_repeating_panel
+          properties: {item_template: VisionsPage.VisionItem}
+          type: RepeatingPanel
+        layout_properties: {full_width_row: true, grid_position: 'NSYRVT,WEMYSJ'}
+        name: vision_data_grid
+        properties:
+          columns:
+          - {data_key: vision_name, expand: false, id: DENOFZ, title: Vision Name, width: 327}
+          - {data_key: vision_statement, expand: true, id: WIBBFD, title: Vision Statement, width: 465}
+          - {data_key: column_1, expand: false, id: SZXPUH, title: '', width: 146}
+          - {data_key: column_2, expand: false, id: NGGFVP, title: '', width: 170}
+          margin: ['0', null, '0', null]
+          role: null
+        type: DataGrid
+      layout_properties: {full_width_row: true, grid_position: 'JKJLHX,UZEYYM'}
+      name: column_panel_2
+      properties:
+        role: outlined-card
+        spacing:
+          padding: ['5', '5', '5', '5']
+      type: ColumnPanel
     layout_properties: {}
     name: column_panel_1
     properties: {}

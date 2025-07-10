@@ -13,6 +13,10 @@ components_by_slot:
           padding: ['5', '5', '5', '5']
         text: Create Steps for Your Vision
       type: Label
+    - layout_properties: {full_width_row: true, grid_position: 'QRWGKV,HSKITW'}
+      name: vision_name_label
+      properties: {}
+      type: Label
     - components:
       - components:
         - layout_properties: {col_xs: 0, row: FLAIVG, width_xs: 2}
@@ -27,7 +31,8 @@ components_by_slot:
               margin: ['10', null, null, null]
             text: Generate Steps
           type: Button
-        - layout_properties: {col_xs: 10, row: FLAIVG, width_xs: 2}
+        - event_bindings: {click: add_custom_step_btn_click}
+          layout_properties: {col_xs: 10, row: FLAIVG, width_xs: 2}
           name: add_custom_step_btn
           properties:
             align: right
@@ -40,9 +45,13 @@ components_by_slot:
         name: grid_panel_1
         properties: {}
         type: GridPanel
+      - layout_properties: {full_width_row: true, grid_position: 'YAPBVF,GCMLBI'}
+        name: label_3
+        properties: {foreground: 'theme:Primary', role: title, text: Chosen Steps}
+        type: Label
       - layout_properties: {full_width_row: true, grid_position: 'YVFGEV,AESKUO'}
         name: repeating_panel_2
-        properties: {item_template: CreateStepsPage.ItemTemplate2, role: outlined-card}
+        properties: {item_template: CreateStepsPage.GenerateStepItem, role: outlined-card}
         type: RepeatingPanel
       - components:
         - layout_properties: {full_width_row: true, grid_position: 'DJBKRA,CDKSID'}
@@ -55,7 +64,7 @@ components_by_slot:
         type: ColumnPanel
       - layout_properties: {full_width_row: true, grid_position: 'VUQGSX,OJBLUB'}
         name: repeating_panel_1
-        properties: {item_template: CreateStepsPage.ItemTemplate1, role: outlined-card}
+        properties: {item_template: CreateStepsPage.ChosenStepItem, role: outlined-card}
         type: RepeatingPanel
       layout_properties: {full_width_row: true, grid_position: 'UBTNUC,VILUTG'}
       name: column_panel_2

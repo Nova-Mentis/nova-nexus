@@ -10,8 +10,18 @@ components_by_slot:
         role: headline
         spacing:
           margin: ['5', '5', '5', '5']
-          padding: ['5', '5', '5', '5']
+          padding: ['5', '5', '0', '0']
         text: Create a Vision
+      type: Label
+    - layout_properties: {full_width_row: true, grid_position: 'MNQAJK,BMWOSP'}
+      name: label_5
+      properties:
+        foreground: theme:Accent3
+        italic: true
+        spacing:
+          margin: ['5', '5', '5', '5']
+          padding: ['0', null, '0', null]
+        text: Create a custom or guided vision
       type: Label
     - components:
       - layout_properties: {full_width_row: true, grid_position: 'TZEXVL,SSNOVG'}

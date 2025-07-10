@@ -30,14 +30,14 @@ class CreateVisionPage(CreateVisionPageTemplate):
 
   def create_custom_vision_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call('create_vision', 
+    created_vision = anvil.server.call('create_vision', 
                       vision_name=self.custom_vision_name_input.text, 
                       vision_statement=self.custom_vision_statement_input.text, 
                       user=anvil.users.get_user(), 
                       vision_type=self.vision_type_dropdown.selected_value,
                       tenant=State.tenant
                      )
-    open_form('VisionsPage')
+    open_form('CreateStepsPage', created_vision)
     pass
 
   def vision_type_dropdown_change(self, **event_args):

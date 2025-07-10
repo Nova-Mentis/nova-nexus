@@ -15,6 +15,5 @@ class VisionItem(VisionItemTemplate):
 
   def open_vision_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
-    vision = self.item
-    open_form('ViewVisionPage', vision=vision)
+    open_form('ViewVisionPage', self.item)
     pass

@@ -1,41 +1,11 @@
 components:
-- components:
-  - data_bindings:
-    - {code: 'self.item[''first_name'']', property: text, writeback: false}
-    layout_properties: {col_xs: 0, row: QTCNRN, width_xs: 2}
-    name: first_name
-    properties: {}
-    type: Label
-  - data_bindings:
-    - {code: 'self.item[''email'']', property: text, writeback: false}
-    layout_properties: {col_xs: 2, row: QTCNRN, width_xs: 2}
-    name: email
-    properties: {}
-    type: Label
-  - data_bindings:
-    - {code: 'self.item[''signed_up'']', property: text, writeback: false}
-    layout_properties: {col_xs: 4, row: QTCNRN, width_xs: 2}
-    name: signed_up
-    properties: {}
-    type: Label
-  - layout_properties: {col_xs: 8, row: QTCNRN, width_xs: 2}
-    name: button_2
-    properties: {align: right, background: 'theme:Primary', foreground: 'theme:BodyWhite', role: elevated-button, text: Edit User}
-    type: Button
-  - layout_properties: {col_xs: 10, row: QTCNRN, width_xs: 2}
-    name: button_1
-    properties: {align: right, background: 'theme:Accent1', foreground: 'theme:BodyWhite', role: elevated-button, text: Delete User}
-    type: Button
-  layout_properties: {full_width_row: true, grid_position: 'MBGZPO,KPVAZX'}
-  name: grid_panel_1
-  properties: {}
-  type: GridPanel
-- layout_properties: {full_width_row: true, grid_position: 'AQFNGX,LYHQLK', row_background: 'theme:Outline'}
-  name: spacer_1
-  properties: {height: ''}
-  type: Spacer
-container: {type: ColumnPanel}
-custom_component: false
+- layout_properties: {column: KEUNEH}
+  name: edit_user_btn
+  properties: {align: right, role: elevated-button, text: Edit User}
+  type: Button
+- layout_properties: {column: 'null'}
+  name: delete_user_btn
+  properties: {align: right, role: elevated-button, text: Delete User}
+  type: Button
+container: {type: DataRowPanel}
 is_package: true
-properties:
-- {default_binding_prop: true, important: true, name: user, type: object}
