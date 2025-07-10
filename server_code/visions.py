@@ -49,3 +49,8 @@ def create_vision(vision_name, vision_statement, user, vision_type, tenant):
 
 #@anvil.server.callable
 #def delete_vision(vision):
+
+@anvil.server.callable
+def get_questions_for_vision_type(vision_type):
+  questions_list = app_tables.vision_guide_questions.search(vision_type=vision_type)
+  return questions_list

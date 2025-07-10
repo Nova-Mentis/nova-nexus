@@ -1,0 +1,28 @@
+components:
+- components:
+  - components:
+    - data_bindings:
+      - {code: 'self.item[''vision_guide_question'']', property: text, writeback: false}
+      layout_properties: {col_xs: 0, row: ZOOGIA, width_xs: 6}
+      name: question_label
+      properties: {}
+      type: Label
+    - event_bindings: {click: question_info_btn_click}
+      layout_properties: {col_xs: 9, row: ZOOGIA, width_xs: 3}
+      name: question_info_btn
+      properties: {align: right, icon: 'fa:info-circle', role: elevated-button, text: ''}
+      type: Button
+    layout_properties: {full_width_row: true, grid_position: 'UWMRJD,CBJZSR'}
+    name: grid_panel_1
+    properties: {}
+    type: GridPanel
+  - layout_properties: {full_width_row: true, grid_position: 'XRSGYL,GBYICB'}
+    name: question_input
+    properties: {}
+    type: TextBox
+  layout_properties: {full_width_row: true, grid_position: 'BNTEEP,OHTBYX'}
+  name: column_panel_1
+  properties: {}
+  type: ColumnPanel
+container: {type: ColumnPanel}
+is_package: true

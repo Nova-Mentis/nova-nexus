@@ -1,3 +1,7 @@
-components: []
-container: {type: ColumnPanel}
+components:
+- layout_properties: {column: OJLQEN}
+  name: button_2
+  properties: {icon: 'fa:close', role: elevated-button, text: ''}
+  type: Button
+container: {type: DataRowPanel}
 is_package: true

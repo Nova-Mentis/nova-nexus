@@ -57,7 +57,21 @@ components_by_slot:
         name: type_column_panel
         properties: {visible: false}
         type: ColumnPanel
-      - layout_properties: {full_width_row: true, grid_position: 'IJPOTR,ZOQXXP'}
+      - components:
+        - layout_properties: {full_width_row: true, grid_position: 'OUZRVO,OLJIQK'}
+          name: label_6
+          properties: {text: 'Please respond to the follow questions:'}
+          type: Label
+        - data_bindings: []
+          layout_properties: {full_width_row: true, grid_position: 'ENWMZK,APXIDJ'}
+          name: questions_panel
+          properties: {item_template: CreateVisionPage.QuestionItem}
+          type: RepeatingPanel
+        - layout_properties: {full_width_row: true, grid_position: 'IZUPFG,FGAWKD'}
+          name: button_1
+          properties: {align: left, background: 'theme:Primary', foreground: 'theme:BodyWhite', role: elevated-button, text: Confirm Answers}
+          type: Button
+        layout_properties: {full_width_row: true, grid_position: 'IJPOTR,ZOQXXP'}
         name: guided_questions_panel
         properties: {visible: false}
         type: ColumnPanel

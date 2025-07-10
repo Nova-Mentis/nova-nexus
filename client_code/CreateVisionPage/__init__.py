@@ -15,6 +15,7 @@ class CreateVisionPage(CreateVisionPageTemplate):
     # Setup form options
     # Vision Types
     self.vision_type_dropdown.items = anvil.server.call('get_vision_types')
+    self.questions_panel.items = anvil.server.call('get_questions_for_vision_type', self.vision_type_dropdown.selected_value)
 
   def guided_vision_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -42,5 +43,7 @@ class CreateVisionPage(CreateVisionPageTemplate):
 
   def vision_type_dropdown_change(self, **event_args):
     """This method is called when an item is selected"""
+    self.questions_panel.items = anvil.server.call('get_questions_for_vision_type', self.vision_type_dropdown.selected_value)
+    self.guided_questions_panel.visible = True
     pass
     

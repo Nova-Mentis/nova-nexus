@@ -4,7 +4,8 @@ components:
   name: open_vision_btn
   properties: {align: right, role: elevated-button, text: Open Vision}
   type: Button
-- layout_properties: {column: NGGFVP}
+- event_bindings: {click: delete_vision_btn_click}
+  layout_properties: {column: NGGFVP}
   name: delete_vision_btn
   properties: {align: right, role: elevated-button, text: Delete Vision}
   type: Button

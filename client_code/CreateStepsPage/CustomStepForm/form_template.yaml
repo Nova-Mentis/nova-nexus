@@ -19,6 +19,10 @@ components:
   name: text_box_2
   properties: {}
   type: TextBox
+- layout_properties: {grid_position: 'SYXZXC,RHUAPJ'}
+  name: confirm_add_custom_btn
+  properties: {align: left, background: 'theme:Primary', foreground: 'theme:BodyWhite', role: elevated-button, text: Confirm}
+  type: Button
 container:
   properties: {col_widths: '{"XRDKHE":60}'}
   type: ColumnPanel

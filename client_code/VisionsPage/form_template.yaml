@@ -17,6 +17,7 @@ components_by_slot:
       - layout_properties: {col_xs: 8, row: MVPMRM, width_xs: 2}
         name: com_btn
         properties:
+          align: right
           role: elevated-button
           spacing:
             margin: ['10', null, null, null]
@@ -26,6 +27,7 @@ components_by_slot:
         layout_properties: {col_xs: 10, row: MVPMRM, width_xs: 2}
         name: vision_btn
         properties:
+          align: right
           background: theme:Primary
           foreground: theme:BodyWhite
           role: elevated-button

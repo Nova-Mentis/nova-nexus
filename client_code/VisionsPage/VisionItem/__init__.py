@@ -17,3 +17,7 @@ class VisionItem(VisionItemTemplate):
     """This method is called when the button is clicked"""
     open_form('ViewVisionPage', self.item)
     pass
+
+  def delete_vision_btn_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pass

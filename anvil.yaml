@@ -18,9 +18,24 @@ db_schema:
       type: number
     server: full
     title: question_response_options
+  resource_types:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: resource_type
+      type: string
+    server: full
+    title: resource_types
   resources:
-    client: full
-    columns: []
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: resource_name
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: resource_type
+      target: resource_types
+      type: link_single
     server: full
     title: resources
   step_questions:
@@ -39,7 +54,7 @@ db_schema:
     server: full
     title: step_questions
   steps:
-    client: full
+    client: none
     columns:
     - admin_ui: {order: 0, width: 200}
       name: step_name
@@ -219,7 +234,7 @@ db_schema:
     server: full
     title: vision_guide_questions
   vision_types:
-    client: search
+    client: none
     columns:
     - admin_ui: {order: 0, width: 200}
       name: vision_type_name
