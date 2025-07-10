@@ -44,8 +44,8 @@ components_by_slot:
           columns:
           - {data_key: first_name, id: LUREVI, title: First Name}
           - {data_key: last_name, id: GRYMPC, title: Last Name}
-          - {data_key: email, id: TFRLPZ, title: Email}
-          - {data_key: enabled, id: LAQZPB, title: Enable}
+          - {data_key: email, expand: true, id: TFRLPZ, title: Email}
+          - {data_key: enabled, id: LAQZPB, title: Active}
           - {data_key: last_login, id: ODUBEB, title: Last Login}
           - {data_key: signed_up, id: ZQJJWJ, title: Signed Up}
           - {data_key: role, id: HUERGG, title: Role}

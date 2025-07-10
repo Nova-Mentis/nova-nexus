@@ -3,7 +3,7 @@ components:
   name: edit_user_btn
   properties: {align: right, role: elevated-button, text: Edit User}
   type: Button
-- layout_properties: {column: 'null'}
+- layout_properties: {column: PWPHFN}
   name: delete_user_btn
   properties: {align: right, role: elevated-button, text: Delete User}
   type: Button
