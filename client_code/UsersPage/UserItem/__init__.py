@@ -10,5 +10,7 @@ class UserItem(UserItemTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.user_name_label = self.user['first_name']
+    self.user_email_name = self.user['email']
 
     # Any code you write here will run before the form opens.

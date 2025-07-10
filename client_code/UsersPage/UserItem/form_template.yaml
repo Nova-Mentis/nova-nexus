@@ -5,7 +5,7 @@ components:
     properties: {text: user_name}
     type: Label
   - layout_properties: {col_xs: 2, row: QTCNRN, width_xs: 2}
-    name: user_email_name
+    name: user_email_label
     properties: {text: user_email}
     type: Label
   - layout_properties: {col_xs: 4, row: QTCNRN, width_xs: 2}
