@@ -1,18 +1,36 @@
 components_by_slot:
   content_slot:
   - components:
-    - layout_properties: {full_width_row: true, grid_position: 'PGOARC,MDHZGU'}
-      name: label_1
-      properties:
-        bold: true
-        font: Roboto
-        foreground: theme:Primary
-        role: headline
-        spacing:
-          margin: ['5', '5', '5', '5']
-          padding: ['5', '5', '5', '5']
-        text: Users
-      type: Label
+    - components:
+      - layout_properties: {col_xs: 0, row: HXYUET, width_xs: 3}
+        name: label_1
+        properties:
+          bold: true
+          font: Roboto
+          foreground: theme:Primary
+          role: headline
+          spacing:
+            margin: ['5', '5', '5', '5']
+            padding: ['5', '5', '5', '5']
+          text: Users
+        type: Label
+      - layout_properties: {col_xs: 10, row: HXYUET, width_xs: 2}
+        name: add_user_btn
+        properties: {role: elevated-button, text: Add User}
+        type: Button
+      layout_properties: {full_width_row: true, grid_position: 'WURMFG,XJCPYB'}
+      name: grid_panel_1
+      properties: {}
+      type: GridPanel
+    - layout_properties: {full_width_row: true, grid_position: 'RAXHDM,FPYFRC', row_background: 'theme:Outline'}
+      name: spacer_1
+      properties: {height: '0'}
+      type: Spacer
+    - data_bindings: []
+      layout_properties: {full_width_row: true, grid_position: 'BOESTB,NSYJIT'}
+      name: user_list
+      properties: {item_template: UsersPage.UserItem}
+      type: RepeatingPanel
     layout_properties: {}
     name: column_panel_1
     properties: {}

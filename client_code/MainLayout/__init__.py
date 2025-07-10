@@ -17,7 +17,6 @@ class MainLayout(MainLayoutTemplate):
 
     # Setup up super admin and admin view
 
-    #Super Admin
     # Tenant Drop Down
     current_user = anvil.users.get_user()
     
@@ -38,9 +37,12 @@ class MainLayout(MainLayoutTemplate):
       State.tenant = self.tenant_dropdown.selected_value
     print("Selected Tenant is now " + self.tenant_dropdown.selected_value['tenant_name'])
 
+    # Set Visibility for Super Admin
     if is_super_admin:
       self.tenant_dropdown.visible = True
       self.user_link.visible = True
+      self.system_link.visible = True
+      self.tenant_manager_link.visible = True
     else:
       self.tenant_dropdown.visible = False
 
@@ -74,4 +76,24 @@ class MainLayout(MainLayoutTemplate):
     State.tenant = self.tenant_dropdown.selected_value
     print("Selected Tenant is now " + self.tenant_dropdown.selected_value['tenant_name'])
     open_form('DashboardPage')
+    pass
+
+  def user_link_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form('UsersPage')
+    pass
+
+  def resources_link_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form('ResourcesPage')
+    pass
+
+  def system_link_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form('TenantSettingsPage')
+    pass
+
+  def tenant_manager_link_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form('TenantManagerPage')
     pass

@@ -33,6 +33,9 @@ db_schema:
       name: step
       target: steps
       type: link_single
+    - admin_ui: {order: 2, width: 200}
+      name: created_at
+      type: datetime
     server: full
     title: step_questions
   steps:
@@ -51,15 +54,47 @@ db_schema:
     - admin_ui: {order: 3, width: 200}
       name: ai_generated
       type: bool
+    - admin_ui: {order: 4, width: 200}
+      name: step_questions
+      target: step_questions
+      type: link_multiple
     server: full
     title: steps
+  team_vision_components:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: team_vision_components
+      type: string
+    server: full
+    title: team_vision_components
+  team_visions:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: team_vision_name
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: vision
+      target: visions
+      type: link_single
+    - admin_ui: {order: 2, width: 200}
+      name: participants
+      target: users
+      type: link_multiple
+    - admin_ui: {order: 3, width: 200}
+      name: tenant
+      target: tenants
+      type: link_single
+    server: full
+    title: team_visions
   tenants:
     client: none
     columns:
     - admin_ui: {order: 0, width: 200}
       name: tenant_name
       type: string
-    - admin_ui: {order: 1, width: 200}
+    - admin_ui: {order: 1, width: 286}
       name: users
       target: users
       type: link_multiple
@@ -154,8 +189,20 @@ db_schema:
     - admin_ui: {order: -0.5, width: 200}
       name: last_name
       type: string
+    - admin_ui: {width: 200}
+      name: assigned_tenant
+      target: tenants
+      type: link_single
     server: full
     title: users
+  vision_components:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: vision_component
+      type: string
+    server: full
+    title: vision_components
   vision_guide_questions:
     client: none
     columns:
@@ -184,7 +231,7 @@ db_schema:
     server: full
     title: vision_types
   visions:
-    client: full
+    client: none
     columns:
     - admin_ui: {order: 1, width: 200}
       name: vision_statement

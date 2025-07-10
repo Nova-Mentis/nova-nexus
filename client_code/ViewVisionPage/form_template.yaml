@@ -14,12 +14,17 @@ components_by_slot:
       name: grid_panel_1
       properties: {}
       type: GridPanel
-    - layout_properties: {full_width_row: true, grid_position: 'CVNOYX,WLVONA'}
-      name: view_vision_layout_1
+    - event_bindings: {change: vision_component_dropdown_change}
+      layout_properties: {full_width_row: true, grid_position: 'WMZLZL,KGIUOB'}
+      name: vision_component_dropdown
+      properties: {align: left}
+      type: DropDown
+    - layout_properties: {full_width_row: true, grid_position: 'OGFRGA,OIDDVF'}
+      name: content_panel
       properties: {}
-      type: form:ViewVisionPage.ViewVisionLayout
+      type: ColumnPanel
     layout_properties: {}
-    name: column_panel_1
+    name: parent_panel
     properties: {}
     type: ColumnPanel
 is_package: true

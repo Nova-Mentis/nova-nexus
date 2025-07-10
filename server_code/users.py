@@ -29,5 +29,10 @@ def update_user_profile(first_name, last_name, email):
   except UpdateUserFailedError:
     print("Failed to update user " + email)
     return False
+
+@anvil.server.callable
+def get_users_by_tenant(tenant):
+  user_list = app_tables.users.get(assigned_tenant=tenant)
+  return user_list
     
   

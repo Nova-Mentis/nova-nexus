@@ -32,18 +32,30 @@ components:
     name: visions_link
     properties: {font: Roboto, foreground: 'theme:BodyWhite', text: Visions}
     type: Link
+  - event_bindings: {click: resources_link_click}
+    layout_properties: {grid_position: 'ZNWZLE,XDRQIY'}
+    name: resources_link
+    properties: {foreground: 'theme:BodyWhite', text: Resources}
+    type: Link
   - event_bindings: {click: profile_link_click}
     layout_properties: {grid_position: 'DOSCGI,URUPZX'}
     name: profile_link
     properties: {font: Roboto, foreground: 'theme:BodyWhite', text: Profile}
     type: Link
-  - layout_properties: {grid_position: 'KDOHPO,CTOPEJ'}
+  - event_bindings: {click: user_link_click}
+    layout_properties: {grid_position: 'KDOHPO,CTOPEJ'}
     name: user_link
     properties: {foreground: 'theme:BodyWhite', text: Users, visible: false}
     type: Link
-  - layout_properties: {grid_position: 'PTSRBX,QJHSKA'}
+  - event_bindings: {click: system_link_click}
+    layout_properties: {grid_position: 'PTSRBX,QJHSKA'}
     name: system_link
     properties: {foreground: 'theme:BodyWhite', text: System, visible: false}
+    type: Link
+  - event_bindings: {click: tenant_manager_link_click}
+    layout_properties: {grid_position: 'GFSJUS,PQDDUV'}
+    name: tenant_manager_link
+    properties: {foreground: 'theme:BodyWhite', text: Tenant Manager, visible: false}
     type: Link
   layout_properties: {slot: left-nav}
   name: column_panel_1

@@ -11,7 +11,7 @@ class VisionsPage(VisionsPageTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.vision_list.items = app_tables.visions.search(user=anvil.users.get_user(), tenant=State.tenant)
+    self.vision_list.items = anvil.server.call('get_visions_list',user=anvil.users.get_user(), tenant=State.tenant)
 
     # Any code you write here will run before the form opens.
 

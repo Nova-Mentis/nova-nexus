@@ -27,6 +27,19 @@ def get_vision_types():
   return vision_type_list
 
 @anvil.server.callable
+def get_vision_components():
+  vision_components_list = []
+  for row in app_tables.vision_components.search():
+    vision_components_list.append((row["vision_component"], row))
+  return vision_components_list
+
+@anvil.server.callable
+def get_visions_list(user, tenant):
+  vision_list = app_tables.visions.search(user=user, tenant=tenant)
+  return vision_list
+
+
+@anvil.server.callable
 def create_vision(vision_name, vision_statement, user, vision_type, tenant):
   print("Adding " + vision_name + " vision")
   current_datetime = datetime.now()
