@@ -15,7 +15,7 @@ components_by_slot:
       type: Label
     - layout_properties: {full_width_row: true, grid_position: 'OJQACU,NTVVLW'}
       name: label_1
-      properties: {font: Roboto, foreground: 'theme:Accent3', italic: true, text: Generate and create steps to measure your progress in you vision}
+      properties: {font: Roboto, foreground: 'theme:Accent3', italic: true, text: Generate and create steps to measure your progress in your vision}
       type: Label
     - components:
       - components:
@@ -87,6 +87,10 @@ components_by_slot:
         name: column_panel_5
         properties: {role: outlined-card}
         type: ColumnPanel
+      - layout_properties: {full_width_row: true, grid_position: 'WJTQRD,HMKYXB'}
+        name: confirm_steps_btn
+        properties: {align: right, background: 'theme:Primary', foreground: 'theme:BodyWhite', role: elevated-button, text: Confirm Steps}
+        type: Button
       layout_properties: {full_width_row: true, grid_position: 'UBTNUC,VILUTG'}
       name: column_panel_2
       properties: {role: outlined-card}

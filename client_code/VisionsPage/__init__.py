@@ -38,7 +38,7 @@ class VisionsPage(VisionsPageTemplate):
   
   def new_vision_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.vision_btn.raise_event('x-create-vision')
+    self.new_vision_btn.raise_event('x-create-vision')
     pass
 
   def refresh_vision_list(self):
