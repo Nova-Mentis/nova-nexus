@@ -22,7 +22,21 @@ components_by_slot:
       name: grid_panel_1
       properties: {}
       type: GridPanel
-    - layout_properties: {full_width_row: true, grid_position: 'OGFRGA,OIDDVF'}
+    - components:
+      - layout_properties: {col_xs: 0, row: TKTYOP, width_xs: 3}
+        name: manage_steps_btn
+        properties: {align: left, role: elevated-button, text: Manage Steps}
+        type: Button
+      layout_properties: {full_width_row: true, grid_position: 'HCYPEF,HHCMHA'}
+      name: grid_panel_2
+      properties: {}
+      type: GridPanel
+    - components:
+      - layout_properties: {full_width_row: true, grid_position: 'XWVDUI,OYQIAI'}
+        name: vision_overview_1
+        properties: {}
+        type: form:ViewVisionPage.VisionOverview
+      layout_properties: {full_width_row: true, grid_position: 'OGFRGA,OIDDVF'}
       name: content_panel
       properties: {}
       type: ColumnPanel
