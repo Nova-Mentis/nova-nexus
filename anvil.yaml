@@ -116,6 +116,9 @@ db_schema:
     - admin_ui: {order: 2, width: 200}
       name: created_at
       type: datetime
+    - admin_ui: {order: 3, width: 200}
+      name: team_visions_enabled
+      type: bool
     server: full
     title: tenants
   user_question_scores:
@@ -243,6 +246,10 @@ db_schema:
       name: vision_guide_questions
       target: vision_guide_questions
       type: link_multiple
+    - admin_ui: {order: 2, width: 200}
+      name: tenant
+      target: vision_types
+      type: link_single
     server: full
     title: vision_types
   visions:

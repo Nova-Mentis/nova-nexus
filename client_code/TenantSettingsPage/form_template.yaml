@@ -9,6 +9,10 @@ components_by_slot:
       name: check_box_1
       properties: {text: Enable Team Visions, visible: false}
       type: CheckBox
+    - layout_properties: {full_width_row: true, grid_position: 'TCURKI,TCDZDF'}
+      name: button_1
+      properties: {align: left, role: elevated-button, text: Manage Vision Types}
+      type: Button
     layout_properties: {}
     name: column_panel_1
     properties: {}
