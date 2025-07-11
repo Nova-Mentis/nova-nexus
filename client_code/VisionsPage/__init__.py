@@ -14,8 +14,8 @@ class VisionsPage(VisionsPageTemplate):
     self.init_components(**properties)
     self.refresh_vision_list()
     self.new_vision_btn.add_event_handler('x-create-vision', self.handle_create_vision)
-    self.vision_data_grid.add_event_handler('x-view-vision', self.handle_view_vision)
-    self.vision_data_grid.add_event_handler('x-delete-vision', self.handle_delete_vision)
+    self.vision_repeating_panel.add_event_handler('x-view-vision', self.handle_view_vision)
+    self.vision_repeating_panel.add_event_handler('x-delete-vision', self.handle_delete_vision)
     # Any code you write here will run before the form opens.
 
 
