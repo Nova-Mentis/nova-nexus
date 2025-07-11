@@ -66,7 +66,7 @@ class CreateVisionPage(CreateVisionPageTemplate):
                       vision_type=self.vision_type_dropdown.selected_value,
                       tenant=State.tenant
                      )
-    open_form('CreateStepsPage', created_vision)
+    open_form('ManageStepsPage', created_vision)
     pass
 
   def vision_type_dropdown_change(self, **event_args):

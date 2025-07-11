@@ -11,7 +11,7 @@ components_by_slot:
         spacing:
           margin: ['5', '5', '5', '5']
           padding: ['5', '5', '5', '5']
-        text: Create Steps for Your Vision
+        text: Manage Steps for Your Vision
       type: Label
     - layout_properties: {full_width_row: true, grid_position: 'QRWGKV,HSKITW'}
       name: vision_name_label
@@ -52,7 +52,7 @@ components_by_slot:
       - components:
         - components:
           - name: repeating_panel_1
-            properties: {item_template: CreateStepsPage.ChosenStepItem}
+            properties: {item_template: ManageStepsPage.ChosenStepItem}
             type: RepeatingPanel
           layout_properties: {full_width_row: true, grid_position: 'WLXTSZ,FTKAJL'}
           name: data_grid_1
@@ -73,7 +73,7 @@ components_by_slot:
       - components:
         - components:
           - name: repeating_panel_2
-            properties: {item_template: CreateStepsPage.GeneratedStepItem}
+            properties: {item_template: ManageStepsPage.GeneratedStepItem}
             type: RepeatingPanel
           layout_properties: {full_width_row: true, grid_position: 'LUBGAB,IENBNI'}
           name: data_grid_2

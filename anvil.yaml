@@ -248,7 +248,7 @@ db_schema:
       type: link_multiple
     - admin_ui: {order: 2, width: 200}
       name: tenant
-      target: vision_types
+      target: tenants
       type: link_single
     server: full
     title: vision_types

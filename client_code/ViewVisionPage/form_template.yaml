@@ -22,11 +22,6 @@ components_by_slot:
       name: grid_panel_1
       properties: {}
       type: GridPanel
-    - event_bindings: {change: vision_component_dropdown_change}
-      layout_properties: {full_width_row: true, grid_position: 'WMZLZL,KGIUOB'}
-      name: vision_component_dropdown
-      properties: {align: left}
-      type: DropDown
     - layout_properties: {full_width_row: true, grid_position: 'OGFRGA,OIDDVF'}
       name: content_panel
       properties: {}
