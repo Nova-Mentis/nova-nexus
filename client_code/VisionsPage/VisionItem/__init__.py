@@ -10,8 +10,6 @@ class VisionItem(VisionItemTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.delete_vision_btn.add_event_handler('x-delete-vision', self.handle_delete_vision)
-    self.open_vision_btn.add_event_handler('x-view-vision', self.handle_view_vision)
 
     # Any code you write here will run before the form opens.
 

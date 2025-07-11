@@ -35,8 +35,11 @@ def get_vision_components():
 
 @anvil.server.callable
 def get_visions_list(user, tenant):
-  vision_list = app_tables.visions.search(user=user, tenant=tenant)
-  return vision_list
+  return app_tables.visions.search(
+    tables.order_by("created_at", ascending=False), 
+    user=user, 
+    tenant=tenant
+  )
 
 
 @anvil.server.callable
