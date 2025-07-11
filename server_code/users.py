@@ -20,10 +20,26 @@ from .exceptions import UpdateUserFailedError
 #
 
 @anvil.server.callable
-def update_user_profile(first_name, last_name, email):
+def update_user_profile(first_name, last_name, email, role, tenant):
+  print("Updating user " + email)
   try:
-    user = app_tables.users.get(email=email)
-    user.update(first_name=first_name, last_name=last_name)
+    print("Getting user object from DB")
+    user = get_user_by_email(email)
+
+    # Check role change
+    if user['role']['role_name'] != role['role_name']:
+      print("Old role is " + user['role']['role_name'] + " new role will be " + role['role_name'])
+      new_role = app_tables.user_role_types.search(role_name=role)
+      user.update(role=new_role)
+      print("Updated user role to" + new_role['role_name'])
+
+    # Check tenant change
+    if user['assigned_tenant']['tenant_name'] != tenant['tenant_name']:
+      new_tenant = app_tables.tenants.search(tenant_name=tenant['tenant_name'])
+      user.update(assigned_tenant=new_tenant)
+      print("Updated user tenant to" + new_tenant['tenant_name'])
+    
+    user.update(first_name=first_name, last_name=last_name, email=email)
     print("Successfully updated " + email)
     return True
   except Exception as e:
@@ -34,16 +50,6 @@ def update_user_profile(first_name, last_name, email):
 def get_users_by_tenant(tenant):
   user_list = app_tables.users.search(assigned_tenant=tenant)
   return user_list
-
-@anvil.server.callable(require_user=True)
-def change_email(email):
-  user = anvil.users.get_user()
-  try:
-    user["email"] = email
-    print("Customer email updated successfully")
-  except Exception as e:
-    print("An error occurred when updating a user's email:", e)
-  return user
 
 @anvil.server.callable(require_user=True)
 def delete_user():
@@ -60,5 +66,17 @@ def verify_subscription(user):
     return True
   else:
     return False
+
+@anvil.server.callable
+def get_user_roles():
+  user_roles = []
+  for row in app_tables.user_role_types.search():
+    user_roles.append((row["role_name"], row))
+  return user_roles
+
+@anvil.server.callable
+def get_user_by_email(email):
+  user = app_tables.users.get(email=email)
+  return user
     
   

@@ -1,45 +1,60 @@
 components:
 - components:
-  - layout_properties: {grid_position: 'BYXQFH,NXBIGX'}
-    name: label_1
-    properties: {text: Edit User}
-    type: Label
   - layout_properties: {grid_position: 'XZQQJV,YVKZYX'}
     name: label_2
-    properties: {}
+    properties: {text: 'First Name:'}
     type: Label
   - layout_properties: {grid_position: 'BZFEJU,YNCCOO'}
-    name: text_box_1
+    name: first_name_input
     properties: {}
     type: TextBox
   - layout_properties: {grid_position: 'BYEEUX,ZOGLZR'}
     name: label_3
-    properties: {}
+    properties: {text: 'Last Name:'}
     type: Label
   - layout_properties: {grid_position: 'NTBLEE,EXTATQ'}
-    name: text_box_2
+    name: last_name_input
     properties: {}
     type: TextBox
   - layout_properties: {grid_position: 'YEMZPY,GTXOOJ'}
     name: label_4
-    properties: {}
+    properties: {text: 'Email:'}
     type: Label
   - layout_properties: {grid_position: 'YNGRDA,KNQZDU'}
-    name: text_box_3
+    name: email_input
     properties: {}
     type: TextBox
   - layout_properties: {grid_position: 'JMRJBY,JASIKC'}
     name: label_5
-    properties: {}
+    properties: {text: 'Role:'}
     type: Label
   - layout_properties: {grid_position: 'NBPGHM,OIOHSU'}
-    name: drop_down_1
+    name: role_dropdown
     properties: {}
     type: DropDown
-  - layout_properties: {grid_position: 'MZGCDA,GLYAQV'}
-    name: save_user_edits_btn
-    properties: {text: Save}
-    type: Button
+  - layout_properties: {grid_position: 'BJGNYD,HYXNGO'}
+    name: label_1
+    properties: {text: Tenant}
+    type: Label
+  - layout_properties: {grid_position: 'EMHRTS,CXZHZK'}
+    name: tenant_dropdown
+    properties: {}
+    type: DropDown
+  - components:
+    - event_bindings: {click: save_user_edits_btn_click}
+      layout_properties: {col_xs: 0, row: YHJSRP, width_xs: 2}
+      name: save_user_edits_btn
+      properties: {align: left, background: 'theme:Primary', foreground: 'theme:BodyWhite', role: elevated-button, text: Save}
+      type: Button
+    - event_bindings: {click: cancel_btn_click}
+      layout_properties: {col_xs: 9, row: YHJSRP, width_xs: 3}
+      name: cancel_btn
+      properties: {align: right, role: elevated-button, text: Cancel}
+      type: Button
+    layout_properties: {grid_position: 'GJJURV,QRASAZ'}
+    name: grid_panel_1
+    properties: {}
+    type: GridPanel
   layout_properties: {grid_position: 'FZPVMK,FZLHUV'}
   name: column_panel_1
   properties: {}
