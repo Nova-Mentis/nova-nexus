@@ -35,7 +35,6 @@ class MainLayout(MainLayoutTemplate):
       self.tenant_dropdown.selected_value = State.tenant
     else:
       State.tenant = self.tenant_dropdown.selected_value
-    print("Selected Tenant is now " + self.tenant_dropdown.selected_value['tenant_name'])
 
     # Set Visibility for Super Admin
     if is_super_admin:

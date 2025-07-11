@@ -1,11 +1,16 @@
 components:
-- layout_properties: {column: KEUNEH}
+- event_bindings: {click: edit_user_btn_click}
+  layout_properties: {column: KEUNEH}
   name: edit_user_btn
   properties: {align: right, role: elevated-button, text: Edit User}
   type: Button
 - layout_properties: {column: PWPHFN}
   name: delete_user_btn
-  properties: {align: right, role: elevated-button, text: Delete User}
+  properties: {align: right, background: 'theme:Accent1', foreground: 'theme:BodyWhite', role: elevated-button, text: Delete User}
   type: Button
+- layout_properties: {column: HUERGG}
+  name: role_label
+  properties: {}
+  type: Label
 container: {type: DataRowPanel}
 is_package: true

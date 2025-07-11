@@ -119,6 +119,9 @@ db_schema:
     - admin_ui: {order: 3, width: 200}
       name: team_visions_enabled
       type: bool
+    - admin_ui: {order: -1, width: 200}
+      name: tenant_id
+      type: string
     server: full
     title: tenants
   user_question_scores:
@@ -145,6 +148,14 @@ db_schema:
       type: link_single
     server: full
     title: user_question_scores
+  user_role_types:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: role_name
+      type: string
+    server: full
+    title: user_role_types
   user_step_scores:
     client: none
     columns:
@@ -195,9 +206,6 @@ db_schema:
     - admin_ui: {order: 7, width: 200}
       name: signed_up
       type: datetime
-    - admin_ui: {order: 8, width: 200}
-      name: role
-      type: string
     - admin_ui: {width: 200}
       name: email_confirmation_key
       type: string
@@ -211,6 +219,13 @@ db_schema:
       name: assigned_tenant
       target: tenants
       type: link_single
+    - admin_ui: {order: 11, width: 200}
+      name: role
+      target: user_role_types
+      type: link_single
+    - admin_ui: {order: 12, width: 200}
+      name: subscription
+      type: bool
     server: full
     title: users
   vision_components:

@@ -1,8 +1,8 @@
 components_by_slot:
   content_slot:
   - components:
-    - layout_properties: {full_width_row: true, grid_position: 'JIKMPJ,DWZKKG'}
-      name: label_1
+    - layout_properties: {full_width_row: true, grid_position: 'QGGUJW,NQNXEK'}
+      name: main_label
       properties:
         background: ''
         bold: true
@@ -13,9 +13,9 @@ components_by_slot:
           padding: ['5', '5', '5', '5']
         text: Manage Steps for Your Vision
       type: Label
-    - layout_properties: {full_width_row: true, grid_position: 'QRWGKV,HSKITW'}
-      name: vision_name_label
-      properties: {}
+    - layout_properties: {full_width_row: true, grid_position: 'OJQACU,NTVVLW'}
+      name: label_1
+      properties: {font: Roboto, foreground: 'theme:Accent3', italic: true, text: Generate and create steps to measure your progress in you vision}
       type: Label
     - components:
       - components:
@@ -51,7 +51,7 @@ components_by_slot:
         type: Label
       - components:
         - components:
-          - name: repeating_panel_1
+          - name: chosen_step_repeating_panel
             properties: {item_template: ManageStepsPage.ChosenStepItem}
             type: RepeatingPanel
           layout_properties: {full_width_row: true, grid_position: 'WLXTSZ,FTKAJL'}
@@ -72,7 +72,7 @@ components_by_slot:
         type: Label
       - components:
         - components:
-          - name: repeating_panel_2
+          - name: generate_step_repeating_panel
             properties: {item_template: ManageStepsPage.GeneratedStepItem}
             type: RepeatingPanel
           layout_properties: {full_width_row: true, grid_position: 'LUBGAB,IENBNI'}

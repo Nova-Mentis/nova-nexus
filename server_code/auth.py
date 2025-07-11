@@ -30,7 +30,7 @@ def print_my_permissions():
 
 @anvil.server.callable
 def is_super_admin(current_user):
-  current_user_role = current_user['role'] if current_user else None
+  current_user_role = current_user['role']['role_name'] if current_user else None
   if current_user_role == "super_admin":
     return True
   else:

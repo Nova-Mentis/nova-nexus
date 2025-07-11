@@ -12,5 +12,8 @@ class UsersPage(UsersPageTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.user_list_panel.items = anvil.server.call('get_users_by_tenant', tenant=State.tenant)
-
+    self.user_list_panel.add_event_handler('x-edit-user', self.handle_edit_user)
     # Any code you write here will run before the form opens.
+
+  def handle_edit_user(self, user, **event_args):
+    pass

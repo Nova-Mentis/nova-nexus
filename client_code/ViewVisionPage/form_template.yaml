@@ -23,9 +23,14 @@ components_by_slot:
       properties: {}
       type: GridPanel
     - components:
-      - layout_properties: {col_xs: 0, row: TKTYOP, width_xs: 3}
+      - event_bindings: {click: manage_steps_btn_click}
+        layout_properties: {col_xs: 0, row: TKTYOP, width_xs: 2}
         name: manage_steps_btn
         properties: {align: left, role: elevated-button, text: Manage Steps}
+        type: Button
+      - layout_properties: {col_xs: 2, row: TKTYOP, width_xs: 2}
+        name: manage_questions_btn
+        properties: {align: left, role: elevated-button, text: Manage Questions}
         type: Button
       layout_properties: {full_width_row: true, grid_position: 'HCYPEF,HHCMHA'}
       name: grid_panel_2

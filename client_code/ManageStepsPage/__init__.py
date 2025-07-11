@@ -11,7 +11,7 @@ class ManageStepsPage(ManageStepsPageTemplate):
   def __init__(self, vision, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.vision_name_label.text = vision['vision_name']
+    self.main_label.text = "Manage Vision Steps for " + vision['vision_name']
 
     # Any code you write here will run before the form opens.
 
