@@ -23,9 +23,9 @@ components_by_slot:
             margin: ['10', null, null, null]
           text: Community Visions
         type: Button
-      - event_bindings: {click: vision_btn_click}
+      - event_bindings: {click: new_vision_btn_click}
         layout_properties: {col_xs: 10, row: MVPMRM, width_xs: 2}
-        name: vision_btn
+        name: new_vision_btn
         properties:
           align: right
           background: theme:Primary

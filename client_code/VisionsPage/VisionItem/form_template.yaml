@@ -7,7 +7,7 @@ components:
 - event_bindings: {click: delete_vision_btn_click}
   layout_properties: {column: NGGFVP}
   name: delete_vision_btn
-  properties: {align: right, role: elevated-button, text: Delete Vision}
+  properties: {align: right, background: 'theme:Accent1', foreground: 'theme:BodyWhite', role: elevated-button, text: Delete Vision}
   type: Button
 container: {type: DataRowPanel}
 is_package: true

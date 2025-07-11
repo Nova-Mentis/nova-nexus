@@ -47,8 +47,13 @@ def create_vision(vision_name, vision_statement, user, vision_type, tenant):
   created_vision = app_tables.visions.search(vision_name=vision_name)
   return created_vision
 
-#@anvil.server.callable
-#def delete_vision(vision):
+@anvil.server.callable
+def delete_vision(vision):
+  # check that the vision being deleted exists in the Data Table
+  if app_tables.visions.has_row(vision):
+    vision.delete()
+  else:
+    raise Exception("Vision does not exist")
 
 @anvil.server.callable
 def get_questions_for_vision_type(vision_type):
