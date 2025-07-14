@@ -15,7 +15,7 @@ components_by_slot:
       type: Label
     - layout_properties: {full_width_row: true, grid_position: 'OJQACU,NTVVLW'}
       name: label_1
-      properties: {font: Roboto, foreground: 'theme:Accent3', italic: true, text: Generate and create steps to measure your progress in your vision}
+      properties: {font: Roboto, foreground: 'theme:Accent3', italic: true, text: Managed steps used to measure the progress in your Vision}
       type: Label
     - components:
       - components:

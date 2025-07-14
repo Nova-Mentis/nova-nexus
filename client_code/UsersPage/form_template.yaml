@@ -14,7 +14,8 @@ components_by_slot:
             padding: ['5', '5', '0', '0']
           text: Users
         type: Label
-      - layout_properties: {col_xs: 10, row: HXYUET, width_xs: 2}
+      - event_bindings: {click: add_user_btn_click}
+        layout_properties: {col_xs: 10, row: HXYUET, width_xs: 2}
         name: add_user_btn
         properties: {role: elevated-button, text: Add User}
         type: Button
@@ -26,7 +27,7 @@ components_by_slot:
           spacing:
             margin: ['0', null, '0', '5']
             padding: ['0', null, '0', '0']
-          text: Manage Users and Profiles
+          text: Manage users and profiles
         type: Label
       layout_properties: {full_width_row: true, grid_position: 'WURMFG,XJCPYB'}
       name: grid_panel_1

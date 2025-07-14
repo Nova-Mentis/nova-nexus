@@ -21,7 +21,7 @@ components_by_slot:
         spacing:
           margin: ['5', '5', '5', '5']
           padding: ['0', null, '0', null]
-        text: Create a custom or guided vision
+        text: Create a custom or guided vision. A Vision is the path you see before you.
       type: Label
     - components:
       - layout_properties: {full_width_row: true, grid_position: 'TZEXVL,SSNOVG'}

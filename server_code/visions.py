@@ -41,6 +41,13 @@ def get_visions_list(user, tenant):
     tenant=tenant
   )
 
+@anvil.server.callable
+def count_visions(user, tenant):
+  vision_list = app_tables.visions.search(
+    user=user, 
+    tenant=tenant
+  )
+  return len(vision_list)
 
 @anvil.server.callable
 def create_vision(vision_name, vision_statement, user, vision_type, tenant):

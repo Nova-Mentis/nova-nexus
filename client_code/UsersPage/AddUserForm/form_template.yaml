@@ -1,20 +1,61 @@
 components:
 - components:
-  - layout_properties: {grid_position: 'EKJWDH,WUBOXO'}
+  - data_bindings: []
+    layout_properties: {grid_position: 'EKJWDH,WUBOXO'}
     name: label_1
-    properties: {text: Add New User}
+    properties: {bold: true, font: Roboto, foreground: 'theme:Primary', role: title, text: Add New User}
+    type: Label
+  - layout_properties: {grid_position: 'FYQPAM,PRYRPC'}
+    name: label_7
+    properties: {foreground: 'theme:Accent3', italic: true, text: Enter the new users details and they will be invited to reset their password}
     type: Label
   - layout_properties: {grid_position: 'UWWOAS,YGRWMO'}
     name: label_2
-    properties: {}
+    properties: {text: 'First Name:'}
     type: Label
   - layout_properties: {grid_position: 'HPRVHE,LLWTVF'}
-    name: text_box_1
+    name: first_name_input
+    properties: {}
+    type: TextBox
+  - layout_properties: {grid_position: 'NPBILT,SPIXLD'}
+    name: label_3
+    properties: {text: 'Last Name:'}
+    type: Label
+  - layout_properties: {grid_position: 'ORLGHP,XCSNQE'}
+    name: last_name_input
+    properties: {}
+    type: TextBox
+  - layout_properties: {grid_position: 'MRALCS,KPWTMI'}
+    name: label_4
+    properties: {text: 'Email:'}
+    type: Label
+  - layout_properties: {grid_position: 'FBPLJT,NQNYTN'}
+    name: email_input
     properties: {}
     type: TextBox
   - layout_properties: {grid_position: 'GVUJXF,CJZYSQ'}
-    name: button_1
-    properties: {text: Send Invite}
+    name: create_user_btn
+    properties: {align: left, background: 'theme:Primary', foreground: 'theme:BodyWhite', role: elevated-button, text: Create User and Send Invite}
+    type: Button
+  - layout_properties: {grid_position: 'ZDUXRO,ZEBFVC'}
+    name: spacer_1
+    properties: {height: 32}
+    type: Spacer
+  - layout_properties: {grid_position: 'LMGLUF,LDLBYX'}
+    name: label_5
+    properties: {bold: true, font: Roboto, foreground: 'theme:Primary', role: title, text: Organization Access Code}
+    type: Label
+  - layout_properties: {grid_position: 'LYBRLJ,XLQBUM'}
+    name: label_6
+    properties: {foreground: 'theme:Accent3', italic: true, text: Invite users to join your organization through an access code}
+    type: Label
+  - layout_properties: {grid_position: 'PFNDVM,VDHJRX'}
+    name: access_code_label
+    properties: {font_size: 18, foreground: 'theme:Accent3', role: headline, text: No Access Code Generated}
+    type: Label
+  - layout_properties: {grid_position: 'IFSCHE,KYXBSS'}
+    name: generate_access_code
+    properties: {align: left, background: 'theme:Primary', foreground: 'theme:BodyWhite', role: elevated-button, text: Regenerate Access Code}
     type: Button
   layout_properties: {grid_position: 'DAXJPH,RWXALF'}
   name: column_panel_1

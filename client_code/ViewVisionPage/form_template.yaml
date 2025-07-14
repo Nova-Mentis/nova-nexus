@@ -16,7 +16,7 @@ components_by_slot:
         type: Button
       - layout_properties: {col_xs: 0, row: ABWRKA, width_xs: 4}
         name: label_1
-        properties: {text: 'View the overview, steps and resources of your Vision'}
+        properties: {foreground: 'theme:Accent3', italic: true, text: 'View the overview, steps, tiers and resources of your Vision'}
         type: Label
       layout_properties: {full_width_row: true, grid_position: 'AXVFHF,YELAGS'}
       name: grid_panel_1
@@ -28,9 +28,13 @@ components_by_slot:
         name: manage_steps_btn
         properties: {align: left, role: elevated-button, text: Manage Steps}
         type: Button
-      - layout_properties: {col_xs: 2, row: TKTYOP, width_xs: 2}
+      - layout_properties: {col_xs: 0, row: OYOZWY, width_xs: 2}
         name: manage_questions_btn
         properties: {align: left, role: elevated-button, text: Manage Questions}
+        type: Button
+      - layout_properties: {col_xs: 0, row: BFVMYV, width_xs: 2}
+        name: manage_tiers_btn
+        properties: {align: left, role: elevated-button, text: Manage Tiers}
         type: Button
       layout_properties: {full_width_row: true, grid_position: 'HCYPEF,HHCMHA'}
       name: grid_panel_2

@@ -21,7 +21,6 @@ class UsersPage(UsersPageTemplate):
   def handle_edit_user(self, user, **event_args):
     alert(
       content=EditUserForm(user=user),
-      title="Edit User",
       large=True,
       buttons=""
     )
@@ -32,3 +31,12 @@ class UsersPage(UsersPageTemplate):
 
   def handle_refresh_user_list(self):
     self.refresh_user_list()
+
+  def add_user_btn_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    alert(
+      content=AddUserForm(),
+      large=True,
+      buttons=""
+    )
+    pass

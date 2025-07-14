@@ -35,7 +35,7 @@ components_by_slot:
             margin: ['10', null, null, null]
           text: New Vision
         type: Button
-      - layout_properties: {col_xs: 0, row: DROZXD, width_xs: 3}
+      - layout_properties: {col_xs: 0, row: DROZXD, width_xs: 5}
         name: label_2
         properties:
           foreground: theme:Accent3
@@ -43,7 +43,7 @@ components_by_slot:
           spacing:
             margin: ['0', null, '0', null]
             padding: ['0', null, '0', null]
-          text: View and Manage Your Visions
+          text: View and manage Your Visions. A Vision is the path you see before you.
         type: Label
       layout_properties: {full_width_row: true, grid_position: 'XVNFSN,ALFTDB'}
       name: grid_panel_1

@@ -46,6 +46,10 @@ components_by_slot:
         name: reset_password_btn
         properties: {align: left, role: elevated-button, text: Reset Password}
         type: Button
+      - layout_properties: {full_width_row: true, grid_position: 'HLAPDO,XSKOFO'}
+        name: button_1
+        properties: {align: left, role: elevated-button, text: Join an Organization}
+        type: Button
       - layout_properties: {full_width_row: true, grid_position: 'KGETWB,RVMLKM'}
         name: spacer_1
         properties: {height: 32}
