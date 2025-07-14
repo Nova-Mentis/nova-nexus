@@ -4,6 +4,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
+import random
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
@@ -24,3 +25,10 @@ def get_tenants():
   for row in app_tables.tenants.search():
     tenant_list.append((row["tenant_name"], row))
   return tenant_list
+
+@anvil.server.callable
+def generate_tenant_id(tenant_name):
+  base_id = tenant_name.lower().replace(' ', '')
+  suffix = str(random.randint(100, 999))  # 3-digit random number
+  tenant_id = f"{base_id}_{suffix}"
+  return tenant_id

@@ -58,8 +58,8 @@ components_by_slot:
           name: data_grid_1
           properties:
             columns:
-            - {data_key: step, expand: false, id: JKSDUP, title: Step Name, width: 317}
-            - {data_key: column_1, expand: false, id: EEPGQW, title: Step Description, width: 918}
+            - {data_key: step_name, expand: false, id: JKSDUP, title: Step Name, width: 317}
+            - {data_key: step_description, expand: false, id: EEPGQW, title: Step Description, width: '900'}
             - {data_key: column_3, id: OJLQEN, title: ''}
           type: DataGrid
         layout_properties: {full_width_row: true, grid_position: 'TGNLQA,FWYOQV'}
@@ -79,8 +79,8 @@ components_by_slot:
           name: data_grid_2
           properties:
             columns:
-            - {data_key: column_1, expand: false, id: JKSDUP, title: Generate Step Name, width: 319}
-            - {data_key: column_1, expand: false, id: YBYFFD, title: Generate Step Description, width: 923}
+            - {data_key: gen_step_name, expand: false, id: JKSDUP, title: Generate Step Name, width: 319}
+            - {data_key: gen_step_description, expand: false, id: YBYFFD, title: Generate Step Description, width: '900'}
             - {data_key: column_2, id: MZMDJE, title: ''}
           type: DataGrid
         layout_properties: {full_width_row: true, grid_position: 'KPFRQS,VLREBY'}

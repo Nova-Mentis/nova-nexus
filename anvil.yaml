@@ -1,23 +1,5 @@
 allow_embedding: false
 db_schema:
-  question_response_options:
-    client: none
-    columns:
-    - admin_ui: {order: 0, width: 200}
-      name: response_option
-      type: string
-    - admin_ui: {order: 1, width: 200}
-      name: question
-      target: step_questions
-      type: link_single
-    - admin_ui: {order: -1, width: 200}
-      name: created_at
-      type: datetime
-    - admin_ui: {order: 3, width: 200}
-      name: score
-      type: number
-    server: full
-    title: question_response_options
   resource_types:
     client: none
     columns:
@@ -38,6 +20,32 @@ db_schema:
       type: link_single
     server: full
     title: resources
+  step_question_response_options:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: response_option
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: question
+      target: step_questions
+      type: link_single
+    - admin_ui: {order: -1, width: 200}
+      name: created_at
+      type: datetime
+    - admin_ui: {order: 3, width: 200}
+      name: score
+      type: number
+    server: full
+    title: step_question_response_options
+  step_question_types:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: question_type_name
+      type: string
+    server: full
+    title: step_question_types
   step_questions:
     client: none
     columns:
@@ -51,6 +59,13 @@ db_schema:
     - admin_ui: {order: 2, width: 200}
       name: created_at
       type: datetime
+    - admin_ui: {order: 3, width: 200}
+      name: ai_generated
+      type: bool
+    - admin_ui: {order: 2.5, width: 200}
+      name: question_type
+      target: step_question_types
+      type: link_single
     server: full
     title: step_questions
   steps:
@@ -122,6 +137,9 @@ db_schema:
     - admin_ui: {order: -1, width: 200}
       name: tenant_id
       type: string
+    - admin_ui: {order: 4, width: 200}
+      name: licensed_users
+      type: number
     server: full
     title: tenants
   user_question_scores:
@@ -144,7 +162,7 @@ db_schema:
       type: link_single
     - admin_ui: {order: -1, width: 200}
       name: response_option
-      target: question_response_options
+      target: step_question_response_options
       type: link_single
     server: full
     title: user_question_scores
@@ -182,7 +200,7 @@ db_schema:
   users:
     client: none
     columns:
-    - admin_ui: {order: 0, width: 200}
+    - admin_ui: {order: -2, width: 200}
       name: email
       type: string
     - admin_ui: {order: 1, width: 200}

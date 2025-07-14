@@ -61,6 +61,28 @@ def create_vision(vision_name, vision_statement, user, vision_type, tenant):
 def delete_vision(vision):
   # check that the vision being deleted exists in the Data Table
   if app_tables.visions.has_row(vision):
+    
+    # First clean up vision steps, step questions, question response options and user scores
+    # Question Scores
+    for user_question_scores_row in app_tables.user_question_scores.search(vision=vision):
+      user_question_scores_row.delete()
+
+    # Step Scores
+    for user_step_score_row in app_tables.user_step_scores.search(vision=vision):
+      user_step_score_row.delete()
+
+    # Step Questions
+    for step_questions_row in app_tables.step_questions.search(vision=vision):
+      # Step Question Response Options
+      for step_question_response_type_row in app_tables.step_question_response_options.search(question=step_questions_row):
+        step_question_response_type_row.delete()
+      step_questions_row.delete() 
+
+    # Steps
+    for steps_row in app_tables.steps.search(vision=vision):
+      steps_row.delete() 
+      
+    # Finally remove vision
     vision.delete()
   else:
     raise Exception("Vision does not exist")

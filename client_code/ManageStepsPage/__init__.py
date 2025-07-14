@@ -12,10 +12,17 @@ class ManageStepsPage(ManageStepsPageTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.main_label.text = "Manage Vision Steps for " + vision['vision_name']
+    self.chosen_step_repeating_panel.add_event_handler('x-add-step', self.handle_add_step)
 
     # Any code you write here will run before the form opens.
 
   def add_custom_step_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
-    alert(CustomStepForm, large=True)
+    alert(content=CustomStepForm(), 
+          large=True,
+          buttons=""
+         )
+    pass
+
+  def handle_add_step(self, **event_args):
     pass

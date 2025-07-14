@@ -1,7 +1,7 @@
 components:
 - layout_properties: {grid_position: 'HTPTRP,VMPRWY'}
   name: label_1
-  properties: {role: title, text: Add Custom Step}
+  properties: {bold: true, foreground: 'theme:Primary', role: title, text: Add Custom Step}
   type: Label
 - layout_properties: {grid_position: 'HWCBKB,DWPTOI'}
   name: label_2
