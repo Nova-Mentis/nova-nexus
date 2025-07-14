@@ -13,17 +13,17 @@ components_by_slot:
       name: button_1
       properties: {text: Manage Steps}
       type: Button
-    - layout_properties: {grid_position: 'QZETXU,EEBSUF'}
-      name: button_2
-      properties: {text: Manage Participants}
+    - layout_properties: {grid_position: 'JZNFOZ,JOMEZT'}
+      name: button_4
+      properties: {text: Manage Questions}
       type: Button
-    - layout_properties: {grid_position: 'QGPXWC,VBCYZS'}
+    - layout_properties: {grid_position: 'OMJITD,REECBN'}
       name: button_3
       properties: {text: Manage Tiers}
       type: Button
-    - layout_properties: {grid_position: 'IOZQFY,DAWHGA'}
-      name: button_4
-      properties: {text: button_4}
+    - layout_properties: {grid_position: 'QZETXU,EEBSUF'}
+      name: button_2
+      properties: {text: Manage Participants}
       type: Button
     - layout_properties: {grid_position: 'TTEDDG,POTMOZ'}
       name: label_3
