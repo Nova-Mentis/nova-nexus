@@ -26,6 +26,7 @@ class CreateVisionPage(CreateVisionPageTemplate):
     self.custom_vision_statement_panel.visible = False
     if self.vision_guidance_level == "Guided":
       self.guided_questions_panel.visible = True
+      self.guide_questions_by_vision_type_panel.visible = True
       self.rough_idea_panel.visible = False
       self.custom_vision_statement_panel.visible = False
     elif self.vision_guidance_level == "Assisted":
@@ -71,7 +72,19 @@ class CreateVisionPage(CreateVisionPageTemplate):
 
   def vision_type_dropdown_change(self, **event_args):
     """This method is called when an item is selected"""
-    self.questions_panel.items = anvil.server.call('get_questions_for_vision_type', self.vision_type_dropdown.selected_value)
+    if self.vision_type_dropdown.selected_value['vision_type_name'] == "Other":
+      print("Other choice made, setting up rough idea for questions to ask")
+      self.guide_questions_by_vision_type_panel.visible = False
+      self.other_category_guided_option_panel.visible = True
+    else:
+      print("Setting questions to " + self.vision_type_dropdown.selected_value['vision_type_name'])
+      self.guide_questions_by_vision_type_panel.visible = True
+      self.other_category_guided_option_panel.visible = False
+      self.questions_panel.items = anvil.server.call('get_questions_for_vision_type', self.vision_type_dropdown.selected_value)
+    pass
+
+  def confirm_answers_btn_click(self, **event_args):
+    """This method is called when the button is clicked"""
     pass
 
 

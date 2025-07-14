@@ -90,19 +90,42 @@ components_by_slot:
         properties: {visible: false}
         type: ColumnPanel
       - components:
-        - layout_properties: {full_width_row: true, grid_position: 'OUZRVO,OLJIQK'}
-          name: label_6
-          properties: {text: 'Please respond to the follow questions:'}
-          type: Label
-        - data_bindings: []
-          layout_properties: {full_width_row: true, grid_position: 'ENWMZK,APXIDJ'}
-          name: questions_panel
-          properties: {item_template: CreateVisionPage.QuestionItem}
-          type: RepeatingPanel
-        - layout_properties: {full_width_row: true, grid_position: 'IZUPFG,FGAWKD'}
-          name: confirm_answers_btn
-          properties: {align: left, background: 'theme:Primary', foreground: 'theme:BodyWhite', role: elevated-button, text: Confirm Answers}
-          type: Button
+        - components:
+          - layout_properties: {full_width_row: true, grid_position: 'KFVHSN,AROOCC'}
+            name: guide_questions_instruction_label
+            properties: {text: 'Please respond to the following questions:'}
+            type: Label
+          - data_bindings: []
+            layout_properties: {full_width_row: true, grid_position: 'BQSJAD,QHAPYK'}
+            name: questions_panel
+            properties: {item_template: CreateVisionPage.QuestionItem}
+            type: RepeatingPanel
+          - event_bindings: {click: confirm_answers_btn_click}
+            layout_properties: {full_width_row: true, grid_position: 'AQTAVE,GRTIJP'}
+            name: confirm_answers_btn
+            properties: {align: left, background: 'theme:Primary', foreground: 'theme:BodyWhite', role: elevated-button, text: Confirm Answers}
+            type: Button
+          layout_properties: {full_width_row: true, grid_position: 'PWWQGJ,ANOMWO'}
+          name: guide_questions_by_vision_type_panel
+          properties: {visible: false}
+          type: ColumnPanel
+        - components:
+          - layout_properties: {full_width_row: true, grid_position: 'MVFASL,OISYAW'}
+            name: label_6
+            properties: {text: 'Please enter a rough idea of what you''d like to do:'}
+            type: Label
+          - layout_properties: {full_width_row: true, grid_position: 'CSDCZI,JZAZRJ'}
+            name: other_vision_type_input
+            properties: {}
+            type: TextBox
+          - layout_properties: {full_width_row: true, grid_position: 'UYMVJL,HPTXZH'}
+            name: confirm_other_idea_btn
+            properties: {align: left, background: 'theme:Primary', foreground: 'theme:BodyWhite', role: elevated-button, text: Confirm Rough Idea}
+            type: Button
+          layout_properties: {full_width_row: true, grid_position: 'MKBDXG,RDAQVN'}
+          name: other_category_guided_option_panel
+          properties: {visible: false}
+          type: ColumnPanel
         layout_properties: {full_width_row: true, grid_position: 'IJPOTR,ZOQXXP'}
         name: guided_questions_panel
         properties: {visible: false}
