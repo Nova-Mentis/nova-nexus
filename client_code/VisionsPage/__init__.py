@@ -6,7 +6,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from .. import State
-from .. import ViewVisionPage
+from .. import ManageVisionPage
 
 class VisionsPage(VisionsPageTemplate):
   def __init__(self, **properties):
@@ -27,7 +27,7 @@ class VisionsPage(VisionsPageTemplate):
 
   def handle_view_vision(self, vision, **event_args):
     print("View Vision event raised")
-    open_form('ViewVisionPage', vision=vision)
+    open_form('ManageVisionPage', vision=vision)
     pass
 
     
