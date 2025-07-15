@@ -12,3 +12,9 @@ class ChosenStepItem(ChosenStepItemTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+
+  def remove_step_btn_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    if confirm("Are you sure you wan to remove this step?"):
+      self.parent.raise_event('x-remove-step', step=self.item)
+    pass

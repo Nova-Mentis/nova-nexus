@@ -36,6 +36,14 @@ db_schema:
     - admin_ui: {order: 3, width: 200}
       name: score
       type: number
+    - admin_ui: {order: 4, width: 200}
+      name: vision
+      target: visions
+      type: link_single
+    - admin_ui: {order: 5, width: 200}
+      name: step
+      target: steps
+      type: link_single
     server: full
     title: step_question_response_options
   step_question_types:
@@ -66,6 +74,10 @@ db_schema:
       name: question_type
       target: step_question_types
       type: link_single
+    - admin_ui: {order: 4, width: 200}
+      name: vision
+      target: visions
+      type: link_single
     server: full
     title: step_questions
   steps:
@@ -88,6 +100,9 @@ db_schema:
       name: step_questions
       target: step_questions
       type: link_multiple
+    - admin_ui: {order: 0.5, width: 200}
+      name: step_description
+      type: string
     server: full
     title: steps
   team_visions:
