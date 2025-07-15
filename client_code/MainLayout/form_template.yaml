@@ -35,7 +35,7 @@ components:
   - event_bindings: {click: resources_link_click}
     layout_properties: {grid_position: 'ZNWZLE,XDRQIY'}
     name: resources_link
-    properties: {foreground: 'theme:BodyWhite', text: Resources}
+    properties: {foreground: 'theme:BodyWhite', text: Resources, visible: false}
     type: Link
   - event_bindings: {click: profile_link_click}
     layout_properties: {grid_position: 'DOSCGI,URUPZX'}
@@ -58,7 +58,7 @@ components:
     properties: {foreground: 'theme:BodyWhite', text: Tenant Manager, visible: false}
     type: Link
   layout_properties: {slot: left-nav}
-  name: column_panel_1
+  name: sidebar
   properties: {}
   type: ColumnPanel
 - layout_properties: {slot: title}

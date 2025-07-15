@@ -40,11 +40,13 @@ components_by_slot:
         name: manage_steps_btn
         properties: {align: left, role: elevated-button, text: Manage Steps}
         type: Button
-      - layout_properties: {col_xs: 0, row: OYOZWY, width_xs: 2}
+      - event_bindings: {click: manage_questions_btn_click}
+        layout_properties: {col_xs: 0, row: OYOZWY, width_xs: 2}
         name: manage_questions_btn
         properties: {align: left, role: elevated-button, text: Manage Questions}
         type: Button
-      - layout_properties: {col_xs: 0, row: BFVMYV, width_xs: 2}
+      - event_bindings: {click: manage_tiers_btn_click}
+        layout_properties: {col_xs: 0, row: BFVMYV, width_xs: 2}
         name: manage_tiers_btn
         properties: {align: left, role: elevated-button, text: Manage Tiers}
         type: Button

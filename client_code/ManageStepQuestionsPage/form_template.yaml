@@ -2,8 +2,8 @@ components_by_slot:
   content_slot:
   - components:
     - layout_properties: {full_width_row: true, grid_position: 'LCRYLD,YLIPYY'}
-      name: label_1
-      properties: {bold: true, font: Roboto, foreground: 'theme:Primary', role: headline, text: Manage Vision Questions}
+      name: main_label
+      properties: {bold: true, font: Roboto, foreground: 'theme:Primary', role: headline, text: Manage Questions for Your Vision}
       type: Label
     - layout_properties: {full_width_row: true, grid_position: 'TLRPEF,TRCWRJ'}
       name: label_2
