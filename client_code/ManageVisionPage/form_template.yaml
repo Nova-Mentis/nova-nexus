@@ -44,7 +44,7 @@ components_by_slot:
       - layout_properties: {full_width_row: true, grid_position: 'XWVDUI,OYQIAI'}
         name: vision_overview_1
         properties: {}
-        type: form:ViewVisionPage.VisionOverview
+        type: form:ManageVisionPage.VisionOverview
       layout_properties: {full_width_row: true, grid_position: 'OGFRGA,OIDDVF'}
       name: content_panel
       properties: {}

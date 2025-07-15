@@ -1,4 +1,4 @@
-from ._anvil_designer import ViewVisionPageTemplate
+from ._anvil_designer import ManageVisionPageTemplate
 from anvil import *
 import anvil.server
 import anvil.users
@@ -7,7 +7,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from .VisionOverview import VisionOverview
 
-class ViewVisionPage(ViewVisionPageTemplate):
+class ManageVisionPage(ManageVisionPageTemplate):
   def __init__(self, vision, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
