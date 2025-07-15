@@ -92,7 +92,7 @@ components_by_slot:
         properties: {align: right, background: 'theme:Primary', foreground: 'theme:BodyWhite', role: elevated-button, text: Confirm Steps}
         type: Button
       layout_properties: {full_width_row: true, grid_position: 'UBTNUC,VILUTG'}
-      name: column_panel_2
+      name: manage_steps_top_panel
       properties: {role: outlined-card}
       type: ColumnPanel
     layout_properties: {}

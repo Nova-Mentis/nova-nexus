@@ -12,7 +12,7 @@ class ManageStepsPage(ManageStepsPageTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.main_label.text = "Manage Vision Steps for " + vision['vision_name']
-    self.step_actions_panel.add_event_handler('x-add-step', self.handle_add_step)
+    self.manage_steps_top_panel.add_event_handler('x-add-step', self.handle_add_step)
 
     # Any code you write here will run before the form opens.
 
