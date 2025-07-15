@@ -14,6 +14,10 @@ components_by_slot:
         name: evaluate_vision_btn
         properties: {background: 'theme:Primary', foreground: 'theme:BodyWhite', role: elevated-button, text: Evaluate Vision}
         type: Button
+      - layout_properties: {col_xs: 0, row: ZPBDTJ, width_xs: 5}
+        name: vision_statement_label
+        properties: {role: title}
+        type: Label
       - layout_properties: {col_xs: 0, row: ABWRKA, width_xs: 4}
         name: label_1
         properties: {foreground: 'theme:Accent3', italic: true, text: 'View the overview, steps, tiers and resources of your Vision'}
@@ -23,6 +27,14 @@ components_by_slot:
       properties: {}
       type: GridPanel
     - components:
+      - layout_properties: {col_xs: 0, row: KBFDWC, width_xs: 2}
+        name: edit_vision_name_btn
+        properties: {align: left, role: elevated-button, text: Edit Vision Name}
+        type: Button
+      - layout_properties: {col_xs: 0, row: UNRXAD, width_xs: 2}
+        name: edit_statement_btn
+        properties: {align: left, role: elevated-button, text: Edit Vision Statement}
+        type: Button
       - event_bindings: {click: manage_steps_btn_click}
         layout_properties: {col_xs: 0, row: TKTYOP, width_xs: 2}
         name: manage_steps_btn

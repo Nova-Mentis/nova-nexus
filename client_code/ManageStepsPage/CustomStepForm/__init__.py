@@ -12,3 +12,11 @@ class CustomStepForm(CustomStepFormTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+
+  def confirm_add_custom_btn_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.parent.raise_event('x-add-step', 
+                                  step_name=self.step_name_input.text, 
+                                  step_description=self.step_description_input.text
+                                 )
+    pass

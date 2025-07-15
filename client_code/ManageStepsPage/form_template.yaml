@@ -42,7 +42,7 @@ components_by_slot:
             text: Add a Custom Step
           type: Button
         layout_properties: {full_width_row: true, grid_position: 'UQAXFM,HZOKFN'}
-        name: grid_panel_1
+        name: step_actions_panel
         properties: {}
         type: GridPanel
       - layout_properties: {full_width_row: true, grid_position: 'YAPBVF,GCMLBI'}

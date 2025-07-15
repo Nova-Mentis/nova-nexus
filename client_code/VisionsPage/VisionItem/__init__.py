@@ -15,7 +15,7 @@ class VisionItem(VisionItemTemplate):
 
   def open_vision_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.parent.raise_event('x-view-vision', vision=self.item)
+    self.parent.raise_event('x-manage-vision', vision=self.item)
     pass
 
   def delete_vision_btn_click(self, **event_args):
