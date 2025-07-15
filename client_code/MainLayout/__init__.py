@@ -41,16 +41,19 @@ class MainLayout(MainLayoutTemplate):
         self.user_link.visible = True
         self.system_link.visible = True
         self.tenant_manager_link.visible = True
+        self.resources_link.visible = True
       elif current_user_role == "admin":
         self.tenant_dropdown.visible = False
         self.user_link.visible = True
         self.system_link.visible = True
         self.tenant_manager_link.visible = False
+        self.resources_link.visible = True
       else:
         self.tenant_dropdown.visible = False
         self.user_link.visible = False
         self.system_link.visible = False
         self.tenant_manager_link.visible = False
+        self.resources_link.visible = False
 
 
     # Any code you write here will run before the form opens.
