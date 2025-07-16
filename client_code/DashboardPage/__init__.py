@@ -16,4 +16,4 @@ class DashboardPage(DashboardPageTemplate):
 
   def refresh_cards(self):
     print("Refreshing Dashboard")
-    self.num_visions_card_label.text = anvil.server.call('count_visions', user=anvil.users.get_user(), tenant=anvil.server.call('get_session_tenant'))
+    self.num_visions_card_label.text = anvil.server.call('count_visions', user=anvil.users.get_user(), tenant=anvil.server.call('get_cookies_tenant'))
