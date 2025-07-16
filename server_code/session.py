@@ -1,23 +1,20 @@
 import anvil.secrets
 import anvil.users
-import anvil.tables as tables
-import anvil.tables.query as q
-from anvil.tables import app_tables
 import anvil.server
 
-# This is a server module. It runs on the Anvil server,
-# rather than in the user's browser.
-#
-# To allow anvil.server.call() to call functions here, we mark
-# them with @anvil.server.callable.
-# Here is an example - you can replace it with your own:
-#
-# @anvil.server.callable
-# def say_hello(name):
-#   print("Hello, " + name + "!")
-#   return 42
-#
+# Called at login
+@anvil.server.callable 
+def set_up_session():
+  # Session ID already available on anvil.server.get_session_id
+  # Current User already available on anvil.users.get_user()
+  anvil.server.session['tenant'] = anvil.server.call('get_assigned_tenant', anvil.users.get_user())
+
+# Called to setup tenant
+@anvil.server.callable
+def get_session_tenant():
+  return anvil.server.session['tenant']
 
 @anvil.server.callable
-def get_session_id():
-  return anvil.server.get_session_id()
+def switch_session_tenant(tenant):
+  print("Switching tenant to " + tenant['tenant_name'])
+  anvil.server.session['tenant'] = tenant

@@ -32,3 +32,8 @@ def generate_tenant_id(tenant_name):
   suffix = str(random.randint(100, 999))  # 3-digit random number
   tenant_id = f"{base_id}_{suffix}"
   return tenant_id
+
+@anvil.server.callable
+def get_assigned_tenant(user):
+  return user['asssigned_tenant']
+  

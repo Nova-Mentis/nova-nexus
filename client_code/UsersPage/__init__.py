@@ -5,7 +5,6 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-from .. import State
 from .EditUserForm import EditUserForm
 from .AddUserForm import AddUserForm
 
@@ -27,7 +26,7 @@ class UsersPage(UsersPageTemplate):
     pass
 
   def refresh_user_list(self):
-    self.user_list_panel.items = anvil.server.call('get_users_by_tenant', tenant=State.tenant)
+    self.user_list_panel.items = anvil.server.call('get_users_by_tenant', tenant=anvil.server.call('get_session_tenant'))
 
   def handle_refresh_user_list(self):
     self.refresh_user_list()
