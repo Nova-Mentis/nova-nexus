@@ -64,7 +64,7 @@ class CreateVisionPage(CreateVisionPageTemplate):
                       vision_statement=self.custom_vision_statement_input.text, 
                       user=anvil.users.get_user(), 
                       vision_type=self.vision_type_dropdown.selected_value,
-                      tenant=anvil.server.call('get_session_tenant')
+                      tenant=anvil.server.call('get_cookies_tenant')
                      )
     open_form('ManageStepsPage', created_vision)
     pass
