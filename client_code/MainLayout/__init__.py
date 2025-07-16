@@ -7,22 +7,17 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from ..VisionsPage import VisionsPage
 from ..DashboardPage import DashboardPage
-from anvil.designer import in_designer
-if in_designer:
-  anvil.server.reset_session()
-  anvil.server.call('set_up_session')
 
 class MainLayout(MainLayoutTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    '''
+    
     try:
       anvil.server.call('server_heartbeat')
     except anvil.server.SessionExpiredError:
       anvil.server.reset_session()
       anvil.server.call('set_up_session')
-    '''
   
     # Set Tenant
     tenant_list = anvil.server.call("get_tenants")
