@@ -12,9 +12,13 @@ class MainLayout(MainLayoutTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-
-    if not anvil.server.call('server_heartbeat'):
+    '''
+    try:
+      anvil.server.call('server_heartbeat')
+    except anvil.server.SessionExpiredError:
       anvil.server.reset_session()
+      anvil.server.call('set_up_session')
+    '''
   
     # Set Tenant
     tenant_list = anvil.server.call("get_tenants")
