@@ -19,6 +19,6 @@ class Login(LoginTemplate):
     print("Current User is " + anvil.users.get_user()['email'])
     print("Permissions are: " + anvil.users.get_user()['role']['role_name'])
     print("Session ID is " + anvil.server.call('get_session_id'))
-    anvil.server.call('set_up_session')
+    anvil.server.call('set_up_cookies')
     open_form('DashboardPage')
     pass
