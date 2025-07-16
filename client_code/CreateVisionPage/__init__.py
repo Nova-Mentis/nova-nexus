@@ -5,7 +5,6 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-from .. import State
 
 vision_guidance_level = ""
 
@@ -65,7 +64,7 @@ class CreateVisionPage(CreateVisionPageTemplate):
                       vision_statement=self.custom_vision_statement_input.text, 
                       user=anvil.users.get_user(), 
                       vision_type=self.vision_type_dropdown.selected_value,
-                      tenant=State.tenant
+                      tenant=anvil.server.call('get_session_tenant')
                      )
     open_form('ManageStepsPage', created_vision)
     pass
