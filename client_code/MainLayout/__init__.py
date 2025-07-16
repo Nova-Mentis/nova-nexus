@@ -10,6 +10,7 @@ from ..DashboardPage import DashboardPage
 from anvil.designer import in_designer
 if in_designer:
   anvil.server.reset_session()
+  anvil.server.call('set_up_session')
 
 class MainLayout(MainLayoutTemplate):
   def __init__(self, **properties):
