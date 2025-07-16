@@ -18,3 +18,7 @@ def get_session_tenant():
 def switch_session_tenant(tenant):
   print("Switching tenant to " + tenant['tenant_name'])
   anvil.server.session['tenant'] = tenant
+
+@anvil.server.callable
+def get_session_id():
+  return anvil.server.get_session_id()

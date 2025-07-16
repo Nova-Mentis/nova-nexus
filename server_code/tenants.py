@@ -35,5 +35,5 @@ def generate_tenant_id(tenant_name):
 
 @anvil.server.callable
 def get_assigned_tenant(user):
-  return user['asssigned_tenant']
+  return user['assigned_tenant']
   

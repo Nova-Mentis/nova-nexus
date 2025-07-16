@@ -5,7 +5,6 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-from .. import State
 from .. import ManageVisionPage
 
 class VisionsPage(VisionsPageTemplate):
@@ -42,4 +41,4 @@ class VisionsPage(VisionsPageTemplate):
     pass
 
   def refresh_vision_list(self):
-    self.vision_repeating_panel.items = anvil.server.call('get_visions_list', user=anvil.users.get_user(), tenant=State.tenant)
+    self.vision_repeating_panel.items = anvil.server.call('get_visions_list', user=anvil.users.get_user(), tenant=anvil.server.call('get_session_tenant'))
