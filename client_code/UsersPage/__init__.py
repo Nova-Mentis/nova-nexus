@@ -26,7 +26,7 @@ class UsersPage(UsersPageTemplate):
     pass
 
   def refresh_user_list(self):
-    self.user_list_panel.items = anvil.server.call('get_users_by_tenant', tenant=anvil.server.call('get_session_tenant'))
+    self.user_list_panel.items = anvil.server.call('get_users_by_tenant', tenant=anvil.server.call('get_cookies_tenant'))
 
   def handle_refresh_user_list(self):
     self.refresh_user_list()
