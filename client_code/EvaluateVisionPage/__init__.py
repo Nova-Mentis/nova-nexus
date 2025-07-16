@@ -5,6 +5,9 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from anvil.designer import in_designer
+if not in_designer:
+  import anvil.tz
 
 class EvaluateVisionPage(EvaluateVisionPageTemplate):
   def __init__(self, **properties):

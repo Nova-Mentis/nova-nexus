@@ -7,6 +7,9 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from ..VisionsPage import VisionsPage
 from ..DashboardPage import DashboardPage
+from anvil.designer import in_designer
+if not in_designer:
+  import anvil.tz
 
 class MainLayout(MainLayoutTemplate):
   def __init__(self, **properties):
