@@ -17,13 +17,12 @@ class MainLayout(MainLayoutTemplate):
       anvil.server.call('server_heartbeat')
     except anvil.server.SessionExpiredError:
       anvil.server.reset_session()
-      anvil.server.call('set_up_session')
   
     # Set Tenant
     tenant_list = anvil.server.call("get_tenants")
     self.tenant_dropdown.items = tenant_list
-    if anvil.server.call('get_session_tenant') is not None:
-      self.tenant_dropdown.selected_value = anvil.server.call('get_session_tenant')
+    if anvil.server.call('get_cookies_tenant') is not None:
+      self.tenant_dropdown.selected_value = anvil.server.call('get_cookies_tenant')
     else:
       anvil.server.call('switch_session_tenant', self.tenant_dropdown.selected_value)
 
