@@ -9,7 +9,27 @@ from pydantic_ai.models.openai import OpenAIModel
 from pydantic import BaseModel
 
 from .llm_provider import openai_provider  # Import the shared provider
+from .output_models import all_models
+from .prompts import all_prompts
 
+'''
+Example Client Usage
+
+# For a fixed prompt
+result = anvil.server.call("ask_model", {
+    "prompt_key": "generate_user_info",
+    "output_model": "UserInfo"
+})
+
+# For a dynamic prompt
+result = anvil.server.call("ask_model", {
+    "prompt_key": "create_vision_scorecard",
+    "prompt_args": {
+        "vision": "I want to live a life of creativity and connection through music and storytelling."
+    },
+    "output_model": "VisionScorecard"
+})
+'''
 
 def send_prompt(
   prompt: str,
@@ -19,9 +39,6 @@ def send_prompt(
   temperature: float = 0.7,
   max_tokens: int = 512,
 ):
-  """
-    Sends a prompt to the specified OpenAI model using a structured or unstructured output.
-    """
   model = OpenAIModel(
     model_name,
     provider=openai_provider,
@@ -33,18 +50,20 @@ def send_prompt(
 
 
 @anvil.server.callable
-def ask_model(payload: dict):
-  """
-    Anvil callable function to send a prompt from the client.
-    """
-  prompt = payload["prompt"]
+def agent_request(payload: dict):
+  prompt_name = payload.get("prompt_key")  # Lookup key, not raw string!
+  output_model_name = payload.get("output_model")
   model_name = payload.get("model", "gpt-4.1-mini")
-  output_model_name = payload.get("output_model", None)
   temperature = payload.get("temperature", 0.7)
   max_tokens = payload.get("max_tokens", 512)
 
-  # Optionally resolve the output model class by name if defined in this module
-  output_model_class = globals().get(output_model_name)
+  # Resolve prompt function and model class
+  prompt_func = all_prompts.get(prompt_name)
+  if prompt_func is None:
+    raise ValueError(f"Unknown prompt key: {prompt_name}")
+  prompt = prompt_func(**payload.get("prompt_args", {}))
+
+  output_model_class = all_models.get(output_model_name)
 
   return send_prompt(
     prompt,

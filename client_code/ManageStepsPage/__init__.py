@@ -42,3 +42,7 @@ class ManageStepsPage(ManageStepsPageTemplate):
     self.chosen_step_repeating_panel.items = anvil.server.call('get_steps_list',
                                                                vision=self.current_vision
                                                               )
+
+  def generate_steps_btn_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pass

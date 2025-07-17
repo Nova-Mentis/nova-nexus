@@ -19,7 +19,8 @@ components_by_slot:
       type: Label
     - components:
       - components:
-        - layout_properties: {col_xs: 0, row: FLAIVG, width_xs: 2}
+        - event_bindings: {click: generate_steps_btn_click}
+          layout_properties: {col_xs: 0, row: FLAIVG, width_xs: 2}
           name: generate_steps_btn
           properties:
             align: left
