@@ -23,7 +23,7 @@ db_schema:
   step_question_response_options:
     client: none
     columns:
-    - admin_ui: {order: 0, width: 200}
+    - admin_ui: {order: -2, width: 200}
       name: response_option
       type: string
     - admin_ui: {order: 1, width: 200}
@@ -78,6 +78,10 @@ db_schema:
       name: vision
       target: visions
       type: link_single
+    - admin_ui: {order: 5, width: 200}
+      name: response_options
+      target: step_question_response_options
+      type: link_multiple
     server: full
     title: step_questions
   steps:
@@ -171,6 +175,9 @@ db_schema:
       name: response_option
       target: step_question_response_options
       type: link_single
+    - admin_ui: {order: -4, width: 200}
+      name: score_id
+      type: string
     server: full
     title: user_question_scores
   user_role_types:
@@ -202,6 +209,9 @@ db_schema:
     - admin_ui: {order: -1, width: 200}
       name: recorded_on
       type: datetime
+    - admin_ui: {order: -2, width: 200}
+      name: step_score_id
+      type: string
     server: full
     title: user_step_scores
   users:
@@ -364,9 +374,9 @@ runtime_options:
   server_version: python3-sandbox
   version: 3
 secrets:
-  openai_api_key:
+  OPENAI_API_KEY:
     type: secret
-    value: {BF6KUOR6DAO5M6JL: ''}
+    value: {BF6KUOR6DAO5M6JL: U8uYNvrcofFiRv5e8Sc9c1/r9lQmzsJ9eQwyNtFZ4vL4Z7NYkRFa/K7Xu101g+QI1DOeJecv+QKRUZX9YsigTynRfSguejgXkYGki9GfldUtvytl0PQh9Sp0rrIcC1QYjEzrUrFUFI4TBJX5//xQtLOauXVPM6GEujaCJ62s/4hLMFiVdj1+xZ6J80Oc+AYnnZvr2fetI8bRiFxpwNV45wsJiYe3PdcEZO9NA82/XMeXnfQVzZfZmlfv0yYb/GyeELqhO6AcvbMojXVMqmFSf3GDOlSXO1A1w0ce+kNbHVDji9jIy8dqmsanpyYCIEZVElAxv/T7rnMW+5zsBlLNcWWrRw==}
 services:
 - client_config: {}
   server_config: {auto_create_missing_columns: false}

@@ -38,8 +38,7 @@ def remove_step(step):
   if app_tables.steps.has_row(step):
     # First clean up step questions, question response options and user scores
     # Question Scores
-    for user_question_scores_row in app_tables.user_question_scores.search(step=step):
-      user_question_scores_row.delete()
+    anvil.server.call('delete_score', step=step)
 
     # Step Scores
     for user_step_score_row in app_tables.user_step_scores.search(step=step):
