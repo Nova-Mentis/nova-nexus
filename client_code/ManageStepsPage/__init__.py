@@ -45,11 +45,11 @@ class ManageStepsPage(ManageStepsPageTemplate):
                                                               )
 
   def generate_steps_btn_click(self, **event_args):
-    """This method is called when the generate button is clicked"""
+    """This method is called when the button is clicked"""
 
-    # Get existing steps from the chosen panel
-    existing_steps = self.chosen_step_repeating_panel.items or []
-    print(existing_steps)
+    # Convert existing steps into a list of step names
+    existing_steps_raw = self.chosen_step_repeating_panel.items or []
+    existing_step_names = [step['step_name'] for step in existing_steps_raw]
 
     # Call the backend to generate steps, excluding existing ones
     gen_steps = anvil.server.call("agent_request", {
@@ -57,7 +57,7 @@ class ManageStepsPage(ManageStepsPageTemplate):
       "output_model": "StepModel",
       "prompt_args": {
         "vision": self.current_vision,
-        "existing_steps": existing_steps  # Add this line
+        "existing_steps": existing_step_names
       }
     })
 
