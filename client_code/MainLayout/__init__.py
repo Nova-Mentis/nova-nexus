@@ -76,7 +76,7 @@ class MainLayout(MainLayoutTemplate):
 
   def tenant_dropdown_change(self, **event_args):
     """This method is called when an item is selected"""
-    anvil.server.call('switch_session_tenant', tenant=self.tenant_dropdown.selected_value)
+    anvil.server.call('switch_cookies_tenant', tenant=self.tenant_dropdown.selected_value)
     print("Selected Tenant is now " + self.tenant_dropdown.selected_value['tenant_name'])
     open_form('DashboardPage')
     pass

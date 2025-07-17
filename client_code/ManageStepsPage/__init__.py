@@ -45,4 +45,16 @@ class ManageStepsPage(ManageStepsPageTemplate):
 
   def generate_steps_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
+    gen_steps = anvil.server.call("agent_request", {
+      "prompt_key": "generate_steps",
+      "output_model": "StepModel",
+      "prompt_args": {
+        "vision": self.current_vision
+      }
+    })
+    print(gen_steps)
+    anvil.server.call('add_cookie_generated_steps', steps=gen_steps)
+    
+
+    
     pass

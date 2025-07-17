@@ -10,6 +10,7 @@ import anvil.server
 def set_up_cookies():
   print("Setting up cookies")
   anvil.server.cookies.local['tenant'] = anvil.server.call('get_assigned_tenant', anvil.users.get_user())
+  anvil.server.cookies.local['generate_steps'] = []
 
 # Called to setup tenant
 @anvil.server.callable
@@ -20,3 +21,11 @@ def get_cookies_tenant():
 def switch_cookies_tenant(tenant):
   print("Switching tenant to " + tenant['tenant_name'])
   anvil.server.cookies.local['tenant'] = tenant
+
+@anvil.server.callable
+def add_cookie_generated_steps(steps):
+  anvil.server.cookies.local['generate_steps'] = steps
+
+@anvil.server.callable
+def get_cookie_generated_steps():
+  return anvil.server.cookies.local['generate_steps']

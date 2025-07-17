@@ -3,5 +3,13 @@ components:
   name: add_generated_step_btn
   properties: {align: center, icon: 'fa:check', role: elevated-button, text: ''}
   type: Button
+- layout_properties: {column: JKSDUP}
+  name: label_1
+  properties: {text: generated_step_name}
+  type: Label
+- layout_properties: {column: YBYFFD}
+  name: label_2
+  properties: {text: generate_step_description}
+  type: Label
 container: {type: DataRowPanel}
 is_package: true

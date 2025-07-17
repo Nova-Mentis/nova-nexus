@@ -16,13 +16,13 @@ from .prompts import all_prompts
 Example Client Usage
 
 # For a fixed prompt
-result = anvil.server.call("ask_model", {
+result = anvil.server.call("agent_request", {
     "prompt_key": "generate_user_info",
     "output_model": "UserInfo"
 })
 
 # For a dynamic prompt
-result = anvil.server.call("ask_model", {
+result = anvil.server.call("agent_requested", {
     "prompt_key": "create_vision_scorecard",
     "prompt_args": {
         "vision": "I want to live a life of creativity and connection through music and storytelling."
@@ -46,7 +46,15 @@ def send_prompt(
   )
   agent = Agent(model, output_type=output_model)
   result = agent.run_sync(prompt)
-  return result.output
+  
+  # Ensure the output is serialized to a dict if it's a BaseModel instance
+  output = result.output
+  if isinstance(output, BaseModel):
+    return output.dict()
+  elif isinstance(output, list) and all(isinstance(item, BaseModel) for item in output):
+    return [item.dict() for item in output]
+  else:
+    return output
 
 
 @anvil.server.callable

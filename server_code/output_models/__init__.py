@@ -19,3 +19,9 @@ class UserInfo(BaseModel):
     email: str
     age: int
 '''
+
+from .step_model import StepModel
+
+all_models = {
+  "StepModel": StepModel
+}
