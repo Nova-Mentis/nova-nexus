@@ -61,7 +61,14 @@ def remove_step(step):
       # Step Question Response Options
       for step_question_response_type_row in app_tables.step_question_response_options.search(question=step_questions_row):
         step_question_response_type_row.delete()
-      step_questions_row.delete() 
+      step_questions_row.delete()
+
+    # Remove step from Vision
+    vision = step['vision']
+    if vision and app_tables.visions.has_row(vision):
+      if step in vision['steps']:
+        vision['steps'].remove(step)
+        vision.update(steps=vision['steps'])
 
     # Finally remove step
     step.delete()

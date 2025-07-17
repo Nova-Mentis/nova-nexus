@@ -16,8 +16,9 @@ class GeneratedStepItem(GeneratedStepItemTemplate):
 
   def add_generated_step_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
-    generated_step = []
-    generated_step.append(self.generated_step_name_label)
-    generated_step.append(self.add_gen)
-    self.parent.raise_event('x-add-generated-step')
+    generated_step = {
+      "name": self.item['name'],
+      "description": self.item['description']
+    }
+    self.parent.raise_event('x-add-generated-step', generated_step=generated_step)
     pass

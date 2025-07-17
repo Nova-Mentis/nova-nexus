@@ -45,22 +45,41 @@ class ManageStepsPage(ManageStepsPageTemplate):
                                                               )
 
   def generate_steps_btn_click(self, **event_args):
-    """This method is called when the button is clicked"""
+    """This method is called when the generate button is clicked"""
+
+    # Get existing steps from the chosen panel
+    existing_steps = self.chosen_step_repeating_panel.items or []
+    print(existing_steps)
+
+    # Call the backend to generate steps, excluding existing ones
     gen_steps = anvil.server.call("agent_request", {
       "prompt_key": "generate_steps",
       "output_model": "StepModel",
       "prompt_args": {
-        "vision": self.current_vision
+        "vision": self.current_vision,
+        "existing_steps": existing_steps  # Add this line
       }
     })
+
     self.generate_step_repeating_panel.items = gen_steps["steps"]
     pass
 
-  def handle_add_generated_step(self, generated_step):
-    anvil.server.call('add_new_step', 
-                      step_name=generated_step[0], 
-                      step_description=generated_step[1],
-                      vision=self.current_vision,
-                      ai_generated=True
-                     )
+  def handle_add_generated_step(self, generated_step, **event_args):
+    # Add the step to the database via server call
+    step_name = generated_step['name']
+    step_description = generated_step['description']
+    anvil.server.call(
+      'add_new_step', 
+      step_name=step_name, 
+      step_description=step_description,
+      vision=self.current_vision,
+      ai_generated=True
+    )
+
+    # Remove the step from the generated panel
+    current_items = list(self.generate_step_repeating_panel.items)
+    current_items = [step for step in current_items if step['name'] != step_name]
+    self.generate_step_repeating_panel.items = current_items
+
+    # Refresh the chosen steps panel
     self.refresh_chosen_steps()
