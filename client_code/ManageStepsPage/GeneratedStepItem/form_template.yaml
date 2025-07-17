@@ -1,14 +1,15 @@
 components:
-- layout_properties: {column: MZMDJE}
+- event_bindings: {click: add_generated_step_btn_click}
+  layout_properties: {column: MZMDJE}
   name: add_generated_step_btn
   properties: {align: center, icon: 'fa:check', role: elevated-button, text: ''}
   type: Button
 - layout_properties: {column: JKSDUP}
-  name: label_1
+  name: generated_step_name_label
   properties: {text: generated_step_name}
   type: Label
 - layout_properties: {column: YBYFFD}
-  name: label_2
+  name: generate_step_description_label
   properties: {text: generate_step_description}
   type: Label
 container: {type: DataRowPanel}

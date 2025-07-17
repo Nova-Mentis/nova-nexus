@@ -27,7 +27,8 @@ components_by_slot:
       properties: {}
       type: GridPanel
     - components:
-      - layout_properties: {col_xs: 0, row: KBFDWC, width_xs: 2}
+      - event_bindings: {click: edit_vision_name_btn_click}
+        layout_properties: {col_xs: 0, row: KBFDWC, width_xs: 2}
         name: edit_vision_name_btn
         properties: {align: left, role: elevated-button, text: Edit Vision Name}
         type: Button

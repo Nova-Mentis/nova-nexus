@@ -4,7 +4,8 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
-from datetime import datetime
+from . import tools
+from . import time
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
@@ -18,6 +19,10 @@ from datetime import datetime
 #   print("Hello, " + name + "!")
 #   return 42
 #
+
+@anvil.server.callable
+def get_vision(vision_name):
+  return app_tables.visions.get(vision_name=vision_name)
 
 @anvil.server.callable
 def get_vision_types():
@@ -52,10 +57,15 @@ def count_visions(user, tenant):
 @anvil.server.callable
 def create_vision(vision_name, vision_statement, user, vision_type, tenant):
   print("Adding " + vision_name + " vision")
-  current_datetime = datetime.now()
-  app_tables.visions.add_row(vision_name=vision_name, vision_statement=vision_statement, user=user, vision_type=vision_type, created_at=current_datetime, tenant=tenant)
-  created_vision = app_tables.visions.search(vision_name=vision_name)
-  return created_vision
+  vision_id = tools.generate_hash_id(seed=vision_name)
+  current_datetime = time.get_utc_time()
+  app_tables.visions.add_row(vision_name=vision_name, 
+                             vision_statement=vision_statement, 
+                             user=user, vision_type=vision_type, 
+                             created_at=current_datetime, 
+                             tenant=tenant, 
+                             published_on_community=False, 
+                             vision_id=vision_id)
 
 @anvil.server.callable
 def delete_vision(vision):
@@ -90,3 +100,33 @@ def delete_vision(vision):
 def get_questions_for_vision_type(vision_type):
   questions_list = app_tables.vision_guide_questions.search(vision_type=vision_type)
   return questions_list
+
+@anvil.server.callable
+def add_step_to_vision(step, vision):
+  """
+    Adds a step row to a vision's list of steps and saves the updated vision.
+    
+    Args:
+        step (Row): The Step row object to add.
+        vision (Row): The Vision row object to update.
+    
+    Returns:
+        Row: The updated Vision row.
+    """
+  if not vision or not step:
+    raise ValueError("Both step and vision are required")
+
+    # Get current list of steps, ensure it's not None
+  steps = vision['steps'] or []
+
+  # Append the step if it isn't already there
+  if step not in steps:
+    steps.append(step)
+    vision['steps'] = steps
+    vision.update()
+
+  return vision
+
+# TODO Update Vision with Steps
+
+

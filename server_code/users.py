@@ -20,28 +20,61 @@ from .exceptions import UpdateUserFailedError
 #
 
 @anvil.server.callable
-def update_user_profile(first_name, last_name, email, role, tenant):
-  print("Updating user " + email)
+def update_user_profile(email, updates):
+  """
+  Updates a user's profile using partial updates via a dictionary.
+  Example `updates`: {
+      "first_name": "John",
+      "last_name": "Doe",
+      "role": {"role_name": "admin"},
+      "tenant": {"tenant_name": "Acme Corp"}
+  }
+  """
+  print(f"Updating user: {email}")
   try:
-    print("Getting user object from DB")
     user = get_user_by_email(email)
+    if not user:
+      print("User not found.")
+      return False
 
-    # Check role change
-    if user['role']['role_name'] != role['role_name']:
-      print("Old role is " + user['role']['role_name'] + " new role will be " + role['role_name'])
-      new_role = app_tables.user_role_types.search(role_name=role)
-      user.update(role=new_role)
-      print("Updated user role to" + new_role['role_name'])
+    fields_to_update = {}
 
-    # Check tenant change
-    if user['assigned_tenant']['tenant_name'] != tenant['tenant_name']:
-      new_tenant = app_tables.tenants.search(tenant_name=tenant['tenant_name'])
-      user.update(assigned_tenant=new_tenant)
-      print("Updated user tenant to" + new_tenant['tenant_name'])
-    
-    user.update(first_name=first_name, last_name=last_name, email=email)
-    print("Successfully updated " + email)
+    # Update name/email fields if present
+    for field in ['first_name', 'last_name', 'email']:
+      if field in updates and updates[field] != user[field]:
+        fields_to_update[field] = updates[field]
+        print(f"Updating {field} to {updates[field]}")
+
+    # Handle role update
+    if 'role' in updates and updates['role']:
+      new_role_name = updates['role'].get('role_name')
+      if user['role']['role_name'] != new_role_name:
+        new_role = app_tables.user_role_types.get(role_name=new_role_name)
+        if new_role:
+          fields_to_update['role'] = new_role
+          print(f"Updating role to {new_role_name}")
+        else:
+          print(f"Role '{new_role_name}' not found in DB")
+
+    # Handle tenant update
+    if 'tenant' in updates and updates['tenant']:
+      new_tenant_name = updates['tenant'].get('tenant_name')
+      if user['assigned_tenant']['tenant_name'] != new_tenant_name:
+        new_tenant = app_tables.tenants.get(tenant_name=new_tenant_name)
+        if new_tenant:
+          fields_to_update['assigned_tenant'] = new_tenant
+          print(f"Updating tenant to {new_tenant_name}")
+        else:
+          print(f"Tenant '{new_tenant_name}' not found in DB")
+
+    if fields_to_update:
+      user.update(**fields_to_update)
+      print("User profile updated successfully.")
+    else:
+      print("No updates were necessary.")
+
     return True
+
   except Exception as e:
     print("An unexpected error occurred:", e)
     return False

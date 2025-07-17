@@ -31,3 +31,7 @@ class ManageVisionPage(ManageVisionPageTemplate):
     open_form('ManageVisionTiersPage', vision=self.current_vision)
     pass
 
+  def edit_vision_name_btn_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pass
+

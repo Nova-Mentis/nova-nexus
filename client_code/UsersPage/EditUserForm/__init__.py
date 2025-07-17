@@ -10,34 +10,55 @@ class EditUserForm(EditUserFormTemplate):
   def __init__(self, user, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.first_name_input.text = user['first_name']
-    self.last_name_input.text = user['last_name']
-    self.email_input.text = user['email']
+    self.user = user
+    self.first_name_input.text = self.user['first_name']
+    self.last_name_input.text = self.user['last_name']
+    self.email_input.text = self.user['email']
     
     user_roles = anvil.server.call('get_user_roles')
     self.role_dropdown.items = user_roles
+    self.role_dropdown.selected_value = self.user['role']
 
     tenant_list = anvil.server.call('get_tenants')
     self.tenant_dropdown.items = tenant_list
+    self.tenant_dropdown.selected_value = self.user['assigned_tenant'] 
 
     # Any code you write here will run before the form opens.
 
   def save_user_edits_btn_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    # Save Method
-    result = anvil.server.call('update_user_profile',
-                      first_name=self.first_name_input.text,
-                      last_name=self.last_name_input.text,
-                      email=self.email_input.text,
-                      role=self.role_dropdown.selected_value,
-                      tenant=self.tenant_dropdown.selected_value                     
-                     )
-    if result:
-      self.parent.raise_event('x-edits-made-to-user')
-    else:
+    """This method is called when the Save button is clicked"""
+  
+    updates = {}
+  
+    # Compare and collect changes
+    if self.first_name_input.text != self.user['first_name']:
+      updates['first_name'] = self.first_name_input.text
+  
+    if self.last_name_input.text != self.user['last_name']:
+      updates['last_name'] = self.last_name_input.text
+  
+    if self.email_input.text != self.user['email']:
+      updates['email'] = self.email_input.text
+  
+      # Handle role change (compare by role_name)
+    if self.role_dropdown.selected_value['role_name'] != self.user['role']['role_name']:
+      updates['role'] = {'role_name': self.role_dropdown.selected_value['role_name']}
+  
+      # Handle tenant change (compare by tenant_name)
+    if self.tenant_dropdown.selected_value['tenant_name'] != self.user['assigned_tenant']['tenant_name']:
+      updates['tenant'] = {'tenant_name': self.tenant_dropdown.selected_value['tenant_name']}
+  
+    if not updates:
+      alert("No changes detected.")
+      return
+  
+      # Call updated server function with the primary key email and only changed fields
+    result = anvil.server.call('update_user_profile', email=self.user['email'], updates=updates)
+  
+    if not result:
       alert("An error occurred when updating the user")
+  
     self.raise_event("x-close-alert", value=42)
-    pass
 
   def cancel_btn_click(self, **event_args):
     """This method is called when the button is clicked"""

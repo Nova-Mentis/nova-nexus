@@ -13,16 +13,17 @@ class UsersPage(UsersPageTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.refresh_user_list()
-    self.user_list_panel.add_event_handler('x-edit-user', self.handle_edit_user)
+    self.user_list_panel.add_event_handler('x-edit-user', self.handle_edits_user)
     self.user_list_panel.add_event_handler('x-refresh-user-list', self.handle_refresh_user_list)
     # Any code you write here will run before the form opens.
 
-  def handle_edit_user(self, user, **event_args):
+  def handle_edits_user(self, user, **event_args):
     alert(
       content=EditUserForm(user=user),
       large=True,
       buttons=""
     )
+    self.refresh_user_list()
     pass
 
   def refresh_user_list(self):

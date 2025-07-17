@@ -14,6 +14,7 @@ class ManageStepsPage(ManageStepsPageTemplate):
     self.current_vision = vision
     self.main_label.text = "Manage Vision Steps for " + vision['vision_name']
     self.chosen_step_repeating_panel.add_event_handler('x-remove-step', self.handle_remove_step)
+    self.generate_step_repeating_panel.add_event_handler('x-add-generated-step', self.handle_add_generated_step)
     self.refresh_chosen_steps()
 
     # Any code you write here will run before the form opens.
@@ -52,9 +53,14 @@ class ManageStepsPage(ManageStepsPageTemplate):
         "vision": self.current_vision
       }
     })
-    print(gen_steps)
-    anvil.server.call('add_cookie_generated_steps', steps=gen_steps)
-    
-
-    
+    self.generate_step_repeating_panel.items = gen_steps["steps"]
     pass
+
+  def handle_add_generated_step(self, generated_step):
+    anvil.server.call('add_new_step', 
+                      step_name=generated_step[0], 
+                      step_description=generated_step[1],
+                      vision=self.current_vision,
+                      ai_generated=True
+                     )
+    self.refresh_chosen_steps()
