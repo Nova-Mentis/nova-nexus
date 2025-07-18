@@ -1,0 +1,20 @@
+components:
+- layout_properties: {grid_position: 'NCJLFL,UOOLBW'}
+  name: label_2
+  properties: {background: '', bold: true, foreground: 'theme:Primary', role: title, text: Edit Vision Name}
+  type: Label
+- layout_properties: {grid_position: 'HVASAW,FDEIYX'}
+  name: label_1
+  properties: {text: 'Vision Name:'}
+  type: Label
+- layout_properties: {grid_position: 'LVRHDC,CBMYCM'}
+  name: vision_name_input
+  properties: {}
+  type: TextBox
+- event_bindings: {click: save_btn_click}
+  layout_properties: {grid_position: 'VMPOSC,BKKAHQ'}
+  name: save_btn
+  properties: {align: left, background: 'theme:Primary', foreground: 'theme:BodyWhite', role: elevated-button, text: Save}
+  type: Button
+container: {type: ColumnPanel}
+is_package: true

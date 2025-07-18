@@ -1,9 +1,3 @@
-import anvil.secrets
-import anvil.users
-import anvil.tables as tables
-import anvil.tables.query as q
-from anvil.tables import app_tables
-import anvil.server
 from pydantic_ai import Agent
 from pydantic_ai.models.openai import OpenAIModel
 from pydantic import BaseModel

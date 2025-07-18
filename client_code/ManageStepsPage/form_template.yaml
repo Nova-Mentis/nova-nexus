@@ -9,9 +9,13 @@ components_by_slot:
         foreground: theme:Primary
         role: headline
         spacing:
-          margin: ['5', '5', '5', '5']
-          padding: ['5', '5', '5', '5']
+          margin: ['5', '5', '5', '0']
+          padding: ['5', '5', '5', '0']
         text: Manage Steps for Your Vision
+      type: Label
+    - layout_properties: {full_width_row: true, grid_position: 'CBLXXJ,OMKSRR'}
+      name: vision_statement_label
+      properties: {role: title}
       type: Label
     - layout_properties: {full_width_row: true, grid_position: 'OJQACU,NTVVLW'}
       name: label_1

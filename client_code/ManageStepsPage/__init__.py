@@ -13,6 +13,7 @@ class ManageStepsPage(ManageStepsPageTemplate):
     self.init_components(**properties)
     self.current_vision = vision
     self.main_label.text = "Manage Vision Steps for " + vision['vision_name']
+    self.vision_statement_label.text = vision['vision_statement']
     self.chosen_step_repeating_panel.add_event_handler('x-remove-step', self.handle_remove_step)
     self.generate_step_repeating_panel.add_event_handler('x-add-generated-step', self.handle_add_generated_step)
     self.refresh_chosen_steps()

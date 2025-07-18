@@ -19,19 +19,16 @@ class VisionsPage(VisionsPageTemplate):
 
 
   def handle_delete_vision(self, vision, **event_args):
-    print("Delete Vision event raised")
     anvil.server.call('delete_vision', vision=vision)
     self.refresh_vision_list()
     pass
 
   def handle_manage_vision(self, vision, **event_args):
-    print("Manage Vision event raised")
     open_form('ManageVisionPage', vision=vision)
     pass
 
     
   def handle_create_vision(self, **event_args):
-    print("Create Vision event raised")
     open_form('CreateVisionPage')
     pass
   

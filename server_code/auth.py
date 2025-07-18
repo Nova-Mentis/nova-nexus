@@ -19,16 +19,6 @@ import anvil.server
 #
 
 @anvil.server.callable
-def print_my_permissions():
-  super_user = 'lcraddock@nova-mentis.com'
-  if anvil.users.get_user() is None:
-    print("Nobody is logged in.")
-  elif anvil.users.get_user()['email'] == super_user:
-    print(f"{super_user} is allowed to see this.")
-  else:
-    print("This path is for minimum-access users.")
-
-@anvil.server.callable
 def is_super_admin(current_user):
   current_user_role = current_user['role']['role_name'] if current_user else None
   if current_user_role == "super_admin":

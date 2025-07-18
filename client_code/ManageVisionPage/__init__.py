@@ -5,7 +5,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-from .VisionOverview import VisionOverview
+from .EditVisionNameForm import EditVisionNameForm
 
 class ManageVisionPage(ManageVisionPageTemplate):
   def __init__(self, vision, **properties):
@@ -33,5 +33,10 @@ class ManageVisionPage(ManageVisionPageTemplate):
 
   def edit_vision_name_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
+    with self.current_vision.buffer_changes():
+    # Pop up an editor for this row
+      if confirm(EditVisionNameForm(vision=self.current_vision)):
+        self.current_vision.save()
+      # else, discard changes
     pass
 
