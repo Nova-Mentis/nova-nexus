@@ -61,16 +61,18 @@ components_by_slot:
       - components:
         - components:
           - data_bindings: []
+            layout_properties: {}
             name: chosen_step_repeating_panel
-            properties: {item_template: ManageStepsPage.ChosenStepItem}
+            properties: {item_template: ManageStepsPage.ChosenStepItem, role: null}
             type: RepeatingPanel
           layout_properties: {full_width_row: true, grid_position: 'WLXTSZ,FTKAJL'}
           name: data_grid_1
           properties:
             columns:
-            - {data_key: step_name, expand: false, id: JKSDUP, title: Step Name, width: 317}
-            - {data_key: step_description, expand: true, id: EEPGQW, title: Step Description, width: '900'}
-            - {data_key: column_3, id: OJLQEN, title: ''}
+            - {data_key: step_name, expand: false, id: JKSDUP, title: Step Name, width: '300'}
+            - {data_key: step_description, expand: true, id: EEPGQW, title: Step Description, width: 828}
+            - {data_key: column_1, expand: false, id: FCJESA, title: '', width: '80'}
+            - {data_key: column_3, id: OJLQEN, title: '', width: '80'}
           type: DataGrid
         layout_properties: {full_width_row: true, grid_position: 'TGNLQA,FWYOQV'}
         name: column_panel_4
@@ -89,9 +91,9 @@ components_by_slot:
           name: data_grid_2
           properties:
             columns:
-            - {data_key: gen_step_name, expand: false, id: JKSDUP, title: Generated Step Name, width: 319}
+            - {data_key: gen_step_name, expand: false, id: JKSDUP, title: Generated Step Name, width: '300'}
             - {data_key: gen_step_description, expand: true, id: YBYFFD, title: Generated Step Description, width: '900'}
-            - {data_key: column_2, id: MZMDJE, title: ''}
+            - {data_key: column_2, id: MZMDJE, title: '', width: '80'}
           type: DataGrid
         layout_properties: {full_width_row: true, grid_position: 'KPFRQS,VLREBY'}
         name: column_panel_5

@@ -74,3 +74,6 @@ def remove_step(step):
     step.delete()
   else:
     raise Exception("Step does not exist")
+
+@anvil.server.callable
+def update_step(step, **updates)

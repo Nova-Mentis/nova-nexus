@@ -1,0 +1,22 @@
+components:
+- layout_properties: {column: GSVEOT}
+  name: button_1
+  properties:
+    align: center
+    icon: fa:check
+    role: elevated-button
+    spacing:
+      padding: [null, '15', null, '15']
+    text: ''
+  type: Button
+- layout_properties: {column: UKJGDP}
+  name: button_2
+  properties:
+    icon: fa:eye
+    role: elevated-button
+    spacing:
+      padding: [null, '15', null, '15']
+    text: ''
+  type: Button
+container: {type: DataRowPanel}
+is_package: true

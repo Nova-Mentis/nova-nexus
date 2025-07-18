@@ -2,7 +2,11 @@ components:
 - event_bindings: {click: remove_step_btn_click}
   layout_properties: {column: OJLQEN}
   name: remove_step_btn
-  properties: {background: 'theme:Accent1', foreground: 'theme:BodyWhite', icon: 'fa:close', role: elevated-button, text: ''}
+  properties: {background: '', foreground: '', icon: 'fa:close', role: elevated-button, text: ''}
+  type: Button
+- layout_properties: {column: FCJESA}
+  name: edit_step_btn
+  properties: {icon: 'fa:edit', role: elevated-button, text: ''}
   type: Button
 container: {type: DataRowPanel}
 is_package: true

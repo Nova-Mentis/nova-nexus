@@ -1,0 +1,24 @@
+components:
+- layout_properties: {column: SAREWR}
+  name: button_1
+  properties:
+    align: center
+    icon: fa:close
+    role: elevated-button
+    spacing:
+      margin: [null, '5', null, null]
+      padding: ['5', '15', '5', '15']
+    text: ''
+  type: Button
+- layout_properties: {column: BSZVOD}
+  name: button_2
+  properties:
+    icon: fa:eye
+    role: elevated-button
+    spacing:
+      margin: ['4', '5', '4', '5']
+      padding: ['5', '15', '5', '15']
+    text: ''
+  type: Button
+container: {type: DataRowPanel}
+is_package: true

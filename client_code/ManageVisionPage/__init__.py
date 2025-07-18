@@ -22,7 +22,7 @@ class ManageVisionPage(ManageVisionPageTemplate):
 
   def manage_questions_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form('ManageStepQuestionsPage', vision=self.item)
+    open_form('ManageQuestionsPage', vision=self.item)
     pass
 
   def manage_tiers_btn_click(self, **event_args):

@@ -1,0 +1,95 @@
+components_by_slot:
+  content_slot:
+  - components:
+    - data_bindings:
+      - {code: '"Manage Questions for " + self.item[''vision_name'']', property: text, writeback: false}
+      layout_properties: {full_width_row: true, grid_position: 'LCRYLD,YLIPYY'}
+      name: main_label
+      properties: {bold: true, font: Roboto, foreground: 'theme:Primary', role: headline, text: Manage Questions for Your Vision}
+      type: Label
+    - data_bindings:
+      - {code: 'self.item[''vision_statement'']', property: text, writeback: false}
+      layout_properties: {full_width_row: true, grid_position: 'KJLJQP,IEYMZP'}
+      name: vision_statement_label
+      properties: {text: ''}
+      type: Label
+    - layout_properties: {full_width_row: true, grid_position: 'TLRPEF,TRCWRJ'}
+      name: label_2
+      properties: {foreground: 'theme:Accent3', italic: true, text: Manage the questions that measure the progress in your Steps}
+      type: Label
+    - components:
+      - components:
+        - layout_properties: {col_xs: 0, row: SJSROY, width_xs: 2}
+          name: generate_questions_btn
+          properties: {align: left, background: 'theme:Primary', foreground: 'theme:BodyWhite', role: elevated-button, text: Generate Questions}
+          type: Button
+        - layout_properties: {col_xs: 10, row: SJSROY, width_xs: 2}
+          name: add_custom_question_btn
+          properties: {align: right, role: elevated-button, text: Add Custom Question}
+          type: Button
+        layout_properties: {full_width_row: true, grid_position: 'RBNEZY,GOUBTG'}
+        name: grid_panel_1
+        properties: {}
+        type: GridPanel
+      - layout_properties: {full_width_row: true, grid_position: 'NCPDCZ,JQZOQS'}
+        name: label_1
+        properties: {foreground: 'theme:Primary', role: title, text: Chosen Questions}
+        type: Label
+      - components:
+        - components:
+          - name: repeating_panel_1
+            properties: {item_template: ManageQuestionsPage.ChosenQuestionItem}
+            type: RepeatingPanel
+          layout_properties: {full_width_row: true, grid_position: 'LRNWDF,XARKRE'}
+          name: data_grid_1
+          properties:
+            columns:
+            - {data_key: step_question, expand: true, id: QAGTUS, title: Question}
+            - {data_key: step, expand: false, id: AVVALF, title: Step, width: '250'}
+            - {data_key: question_type, expand: false, id: DISWNI, title: Question Type, width: '250'}
+            - {data_key: response_options, expand: false, id: HIWSSS, title: Response Options, width: '250'}
+            - {data_key: column_1, id: BSZVOD, title: '', width: '50'}
+            - {data_key: column_1, expand: false, id: SAREWR, title: '', width: '50'}
+          type: DataGrid
+        layout_properties: {full_width_row: true, grid_position: 'CGXKBU,HMPUCA'}
+        name: column_panel_3
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {full_width_row: true, grid_position: 'PZRXNL,NLJFEI'}
+        name: label_3
+        properties: {foreground: 'theme:Primary', role: title, text: Generated Questions}
+        type: Label
+      - components:
+        - components:
+          - name: repeating_panel_2
+            properties: {item_template: ManageQuestionsPage.GeneratedQuestionItem}
+            type: RepeatingPanel
+          layout_properties: {full_width_row: true, grid_position: 'XFGVXH,MRVPGW'}
+          name: data_grid_2
+          properties:
+            columns:
+            - {data_key: column_1, expand: true, id: JKSDUP, title: Question}
+            - {data_key: column_2, id: VJQQOR, title: Step, width: '250'}
+            - {data_key: column_3, id: OJLQEN, title: Question Type, width: '250'}
+            - {data_key: column_4, id: FXNEFG, title: Response Options, width: '250'}
+            - {data_key: column_1, id: UKJGDP, title: '', width: '50'}
+            - {data_key: column_5, id: GSVEOT, title: '', width: '50'}
+          type: DataGrid
+        - layout_properties: {full_width_row: true, grid_position: 'KLOXSO,OWCZXL'}
+          name: confirm_questions_btn
+          properties: {align: right, background: 'theme:Primary', foreground: 'theme:BodyWhite', role: elevated-button, text: Confirm Questions}
+          type: Button
+        layout_properties: {full_width_row: true, grid_position: 'OWEEAY,VQFVYW'}
+        name: column_panel_4
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      layout_properties: {full_width_row: true, grid_position: 'MSJSHG,OPOBOI'}
+      name: column_panel_2
+      properties: {role: outlined-card}
+      type: ColumnPanel
+    layout_properties: {}
+    name: column_panel_1
+    properties: {}
+    type: ColumnPanel
+is_package: true
+layout: {type: 'form:MainLayout'}
