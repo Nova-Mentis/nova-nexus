@@ -6,6 +6,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from .CustomStepForm import CustomStepForm
+from .EditStepForm import EditStepForm
 
 class ManageStepsPage(ManageStepsPageTemplate):
   def __init__(self, vision, **properties):
@@ -13,6 +14,7 @@ class ManageStepsPage(ManageStepsPageTemplate):
     self.init_components(**properties)
     self.item = vision
     self.chosen_step_repeating_panel.add_event_handler('x-remove-step', self.handle_remove_step)
+    self.chosen_step_repeating_panel.add_event_handler('x-edit-step', self.handle_edit_step)
     self.generate_step_repeating_panel.add_event_handler('x-add-generated-step', self.handle_add_generated_step)
     self.refresh_chosen_steps()
 
@@ -37,6 +39,22 @@ class ManageStepsPage(ManageStepsPageTemplate):
     anvil.server.call('remove_step', step=step)
     self.refresh_chosen_steps()
     pass
+
+  def handle_edit_step(self, step, **event_args):
+    edits = alert(content=EditStepForm(step), 
+                  large=True, 
+                  buttons=""
+                 )
+    if edits is not None:
+      step_id = step['step_id']
+      new_step_name = edits[0]
+      new_step_description = edits[1]
+      anvil.server.call('update_step', step_id=step_id,
+                       step_name=new_step_name,
+                       step_description=new_step_description
+                       )
+      self.refresh_chosen_steps()
+    
 
   def refresh_chosen_steps(self):
     self.chosen_step_repeating_panel.items = anvil.server.call('get_steps_list',

@@ -53,14 +53,11 @@ def remove_step(step):
     scores.delete_score(step=step)
 
     # Step Scores
-    for user_step_score_row in app_tables.user_step_scores.search(step=step):
+    for user_step_score_row in app_tables.step_scores.search(step=step):
       user_step_score_row.delete()
 
     # Step Questions
     for step_questions_row in app_tables.step_questions.search(step=step):
-      # Step Question Response Options
-      for step_question_response_type_row in app_tables.step_question_response_options.search(question=step_questions_row):
-        step_question_response_type_row.delete()
       step_questions_row.delete()
 
     # Remove step from Vision
@@ -76,4 +73,30 @@ def remove_step(step):
     raise Exception("Step does not exist")
 
 @anvil.server.callable
-def update_step(step, **updates)
+def update_step(step_id, **updates):
+  """
+  Updates a step row dynamically based on a dictionary of field:value pairs.
+  `step_id`: ID of the step to update.
+  `updates`: Dictionary with keys matching the step table column names.
+  """
+  print(f"[update_step] Updating step: {step_id}")
+
+  # Get the step row
+  step_row = app_tables.steps.get(step_id=step_id)
+  if not step_row:
+    print("[update_step] step not found.")
+    return False
+
+  # Get list of valid column names
+  valid_columns = [col['name'] for col in app_tables.steps.list_columns()]
+
+  for key, value in updates.items():
+    if key in valid_columns:
+      try:
+        step_row[key] = value  # ✅ This is correct if key is a string
+      except Exception as e:
+        print(f"[update_step] Failed to update '{key}': {e}")
+    else:
+      print(f"[update_step] Warning: Column '{key}' does not exist on the step table and was skipped.")
+
+  return step_row

@@ -18,3 +18,8 @@ class ChosenStepItem(ChosenStepItemTemplate):
     if confirm("Are you sure you wan to remove this step?"):
       self.parent.raise_event('x-remove-step', step=self.item)
     pass
+
+  def edit_step_btn_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.parent.raise_event('x-edit-step', step=self.item)
+    pass

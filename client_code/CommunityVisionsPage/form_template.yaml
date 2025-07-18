@@ -1,0 +1,36 @@
+components_by_slot:
+  content_slot:
+  - components:
+    - layout_properties: {full_width_row: true, grid_position: 'DYZJZF,KWSIOJ'}
+      name: label_1
+      properties: {bold: true, foreground: 'theme:Primary', role: headline, text: Community Visions}
+      type: Label
+    - layout_properties: {full_width_row: true, grid_position: 'NVZHRD,UGHVRO'}
+      name: label_2
+      properties: {foreground: 'theme:Accent3', italic: true, text: Explore community visions created by other members}
+      type: Label
+    - components:
+      - components:
+        - layout_properties: {col_xs: 0, row: ZNXBMS, width_xs: 3}
+          name: column_panel_3
+          properties: {role: outlined-card}
+          type: ColumnPanel
+        - components: []
+          layout_properties: {col_xs: 3, row: ZNXBMS, width_xs: 9}
+          name: column_panel_4
+          properties: {}
+          type: ColumnPanel
+        layout_properties: {full_width_row: true, grid_position: 'HTMXID,UTAFUM'}
+        name: grid_panel_1
+        properties: {}
+        type: GridPanel
+      layout_properties: {full_width_row: true, grid_position: 'SSRYIW,KZYQQZ'}
+      name: column_panel_2
+      properties: {role: outlined-card}
+      type: ColumnPanel
+    layout_properties: {}
+    name: column_panel_1
+    properties: {}
+    type: ColumnPanel
+is_package: true
+layout: {type: 'form:MainLayout'}

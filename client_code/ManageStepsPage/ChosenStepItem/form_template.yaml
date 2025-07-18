@@ -4,7 +4,8 @@ components:
   name: remove_step_btn
   properties: {background: '', foreground: '', icon: 'fa:close', role: elevated-button, text: ''}
   type: Button
-- layout_properties: {column: FCJESA}
+- event_bindings: {click: edit_step_btn_click}
+  layout_properties: {column: FCJESA}
   name: edit_step_btn
   properties: {icon: 'fa:edit', role: elevated-button, text: ''}
   type: Button

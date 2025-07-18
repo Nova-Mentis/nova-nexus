@@ -11,18 +11,18 @@ def create_score_id(vision, step, question, response_option):
 @anvil.server.callable
 def create_score(vision, step, question, response_option):
   score_id = create_score(vision=vision, step=step, question=question, response_option=response_option)
-  app_tables.user_question_scores.add_row(recorded_on=anvil.server.call('get_utc_time'), step=step, question=question, vision=vision, response_option=response_option, score_id=score_id)
+  app_tables.question_scores.add_row(recorded_on=anvil.server.call('get_utc_time'), step=step, question=question, vision=vision, response_option=response_option, score_id=score_id)
 
 @anvil.server.callable
 def delete_score(vision=None, step=None, score_id=None):
   if score_id is not None:
-    for user_question_scores_row in app_tables.user_question_scores.search(score_id=score_id):
-      user_question_scores_row.delete()
+    for question_scores_row in app_tables.question_scores.search(score_id=score_id):
+      question_scores_row.delete()
   elif step is not None:
-    for user_question_scores_row in app_tables.user_question_scores.search(step=step):
-      user_question_scores_row.delete()
+    for question_scores_row in app_tables.question_scores.search(step=step):
+      question_scores_row.delete()
   elif vision is not None:
-    for user_question_scores_row in app_tables.user_question_scores.search(vision=vision):
-      user_question_scores_row.delete()
+    for question_scores_row in app_tables.question_scores.search(vision=vision):
+      question_scores_row.delete()
   else:
     print("Score not found")

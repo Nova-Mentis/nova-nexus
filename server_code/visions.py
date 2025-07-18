@@ -71,14 +71,11 @@ def delete_vision(vision):
     anvil.server.call('delete_score', vision=vision)
 
     # Step Scores
-    for user_step_score_row in app_tables.user_step_scores.search(vision=vision):
+    for user_step_score_row in app_tables.step_scores.search(vision=vision):
       user_step_score_row.delete()
 
     # Step Questions
     for step_questions_row in app_tables.step_questions.search(vision=vision):
-      # Step Question Response Options
-      for step_question_response_type_row in app_tables.step_question_response_options.search(question=step_questions_row):
-        step_question_response_type_row.delete()
       step_questions_row.delete() 
 
     # Steps
