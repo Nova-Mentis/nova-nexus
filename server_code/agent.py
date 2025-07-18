@@ -1,12 +1,5 @@
 import anvil.server
-from pydantic_ai import Agent
-from pydantic_ai.models.openai import OpenAIModel
 from pydantic import BaseModel
-
-from .llm_provider import openai_provider  # Import the shared provider
-from .output_models import all_models
-from .prompts import all_prompts
-
 '''
 Example Client Usage
 
@@ -34,6 +27,9 @@ def send_prompt(
   temperature: float = 0.7,
   max_tokens: int = 512,
 ):
+  from pydantic_ai.models.openai import OpenAIModel
+  from pydantic_ai import Agent
+  from .llm_provider import openai_provider
   model = OpenAIModel(
     model_name,
     provider=openai_provider,
@@ -54,6 +50,13 @@ def send_prompt(
 
 @anvil.server.callable
 def agent_request(payload: dict):
+  from pydantic_ai.models.openai import OpenAIModel
+  from pydantic_ai import Agent
+  from .llm_provider import openai_provider
+  from .output_models import all_models
+  from .prompts import all_prompts
+  print("[agent] Processing agent_request...")
+  
   prompt_name = payload.get("prompt_key")  # Lookup key, not raw string!
   output_model_name = payload.get("output_model")
   model_name = payload.get("model", "gpt-4.1-mini")

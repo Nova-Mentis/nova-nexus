@@ -1,7 +1,9 @@
 components_by_slot:
   content_slot:
   - components:
-    - layout_properties: {full_width_row: true, grid_position: 'QGGUJW,NQNXEK'}
+    - data_bindings:
+      - {code: '"Manage Steps for " + self.item[''vision_name'']', property: text, writeback: false}
+      layout_properties: {full_width_row: true, grid_position: 'QGGUJW,NQNXEK'}
       name: main_label
       properties:
         background: ''
@@ -13,7 +15,9 @@ components_by_slot:
           padding: ['5', '5', '5', '0']
         text: Manage Steps for Your Vision
       type: Label
-    - layout_properties: {full_width_row: true, grid_position: 'CBLXXJ,OMKSRR'}
+    - data_bindings:
+      - {code: 'self.item[''vision_statement'']', property: text, writeback: false}
+      layout_properties: {full_width_row: true, grid_position: 'CBLXXJ,OMKSRR'}
       name: vision_statement_label
       properties: {role: title}
       type: Label
@@ -56,7 +60,8 @@ components_by_slot:
         type: Label
       - components:
         - components:
-          - name: chosen_step_repeating_panel
+          - data_bindings: []
+            name: chosen_step_repeating_panel
             properties: {item_template: ManageStepsPage.ChosenStepItem}
             type: RepeatingPanel
           layout_properties: {full_width_row: true, grid_position: 'WLXTSZ,FTKAJL'}

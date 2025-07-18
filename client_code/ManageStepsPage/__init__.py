@@ -11,9 +11,7 @@ class ManageStepsPage(ManageStepsPageTemplate):
   def __init__(self, vision, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.current_vision = vision
-    self.main_label.text = "Manage Vision Steps for " + vision['vision_name']
-    self.vision_statement_label.text = vision['vision_statement']
+    self.item = vision
     self.chosen_step_repeating_panel.add_event_handler('x-remove-step', self.handle_remove_step)
     self.generate_step_repeating_panel.add_event_handler('x-add-generated-step', self.handle_add_generated_step)
     self.refresh_chosen_steps()
@@ -29,7 +27,7 @@ class ManageStepsPage(ManageStepsPageTemplate):
     anvil.server.call('add_new_step', 
                       step_name=custom_step[0], 
                       step_description=custom_step[1],
-                      vision=self.current_vision,
+                      vision=self.item,
                       ai_generated=False
                      )
     self.refresh_chosen_steps()
@@ -42,7 +40,7 @@ class ManageStepsPage(ManageStepsPageTemplate):
 
   def refresh_chosen_steps(self):
     self.chosen_step_repeating_panel.items = anvil.server.call('get_steps_list',
-                                                               vision=self.current_vision
+                                                               vision=self.item
                                                               )
 
   def generate_steps_btn_click(self, **event_args):
@@ -57,7 +55,7 @@ class ManageStepsPage(ManageStepsPageTemplate):
       "prompt_key": "generate_steps",
       "output_model": "StepModel",
       "prompt_args": {
-        "vision": self.current_vision,
+        "vision": self.item,
         "existing_steps": existing_step_names
       }
     })
@@ -73,7 +71,7 @@ class ManageStepsPage(ManageStepsPageTemplate):
       'add_new_step', 
       step_name=step_name, 
       step_description=step_description,
-      vision=self.current_vision,
+      vision=self.item,
       ai_generated=True
     )
 

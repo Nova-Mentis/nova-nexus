@@ -21,8 +21,8 @@ from . import time
 #
 
 @anvil.server.callable
-def get_vision(vision_name):
-  return app_tables.visions.get(vision_name=vision_name)
+def get_vision(vision_id):
+  return app_tables.visions.get(vision_id=vision_id)
 
 @anvil.server.callable
 def get_vision_types():
@@ -30,13 +30,6 @@ def get_vision_types():
   for row in app_tables.vision_types.search():
     vision_type_list.append((row["vision_type_name"], row))
   return vision_type_list
-
-@anvil.server.callable
-def get_vision_components():
-  vision_components_list = []
-  for row in app_tables.vision_components.search():
-    vision_components_list.append((row["vision_component"], row))
-  return vision_components_list
 
 @anvil.server.callable
 def get_visions_list(user, tenant):
@@ -66,6 +59,7 @@ def create_vision(vision_name, vision_statement, user, vision_type, tenant):
                              tenant=tenant, 
                              published_on_community=False, 
                              vision_id=vision_id)
+  return vision_id
 
 @anvil.server.callable
 def delete_vision(vision):
@@ -128,5 +122,32 @@ def add_step_to_vision(step, vision):
   return vision
 
 # TODO Update Vision with Steps
+@anvil.server.callable
+def update_vision(vision_id, **updates):
+  """
+  Updates a vision row dynamically based on a dictionary of field:value pairs.
+  `vision_id`: ID of the vision to update.
+  `updates`: Dictionary with keys matching the Vision table column names.
+  """
+  print(f"[update_vision] Updating vision: {vision_id}")
 
+  # Get the vision row
+  vision_row = app_tables.visions.get(vision_id=vision_id)
+  if not vision_row:
+    print("[update_vision] Vision not found.")
+    return False
+
+  # Get list of valid column names
+  valid_columns = [col['name'] for col in app_tables.visions.list_columns()]
+
+  for key, value in updates.items():
+    if key in valid_columns:
+      try:
+        vision_row[key] = value  # ✅ This is correct if key is a string
+      except Exception as e:
+        print(f"[update_vision] Failed to update '{key}': {e}")
+    else:
+      print(f"[update_vision] Warning: Column '{key}' does not exist on the vision table and was skipped.")
+
+  return vision_row
 

@@ -16,8 +16,8 @@ class Login(LoginTemplate):
   def login_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.users.login_with_form()
-    print("Current User is " + anvil.users.get_user()['email'])
-    print("Permissions are: " + anvil.users.get_user()['role']['role_name'])
+    print("[Login] Current User is " + anvil.users.get_user()['email'])
+    print("[Login] Permissions are: " + anvil.users.get_user()['role']['role_name'])
     anvil.server.call('set_up_cookies')
     open_form('DashboardPage')
     pass

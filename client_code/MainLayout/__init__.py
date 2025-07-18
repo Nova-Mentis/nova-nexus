@@ -30,7 +30,7 @@ class MainLayout(MainLayoutTemplate):
       # Set Visibility for Admins
   
       current_user_role = anvil.users.get_user()['role']['role_name']
-      print("User role is " + current_user_role)
+      print("[MainLayout] User role is " + current_user_role)
       if current_user_role == "super_admin":
         self.tenant_dropdown.visible = True
         self.user_link.visible = True
@@ -77,7 +77,7 @@ class MainLayout(MainLayoutTemplate):
   def tenant_dropdown_change(self, **event_args):
     """This method is called when an item is selected"""
     anvil.server.call('switch_cookies_tenant', tenant=self.tenant_dropdown.selected_value)
-    print("Selected Tenant is now " + self.tenant_dropdown.selected_value['tenant_name'])
+    print("[MainLayout] Selected Tenant is now " + self.tenant_dropdown.selected_value['tenant_name'])
     open_form('DashboardPage')
     pass
 

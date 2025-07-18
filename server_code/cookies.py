@@ -8,7 +8,7 @@ import anvil.server
 # Called at login
 @anvil.server.callable 
 def set_up_cookies():
-  print("Setting up cookies")
+  print("[Cookies] Setting up cookies")
   anvil.server.cookies.local['tenant'] = anvil.server.call('get_assigned_tenant', anvil.users.get_user())
 
 # Called to setup tenant

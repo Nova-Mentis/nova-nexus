@@ -1,4 +1,4 @@
-from ._anvil_designer import EditVisionNameFormTemplate
+from ._anvil_designer import EditVisionStatementFormTemplate
 from anvil import *
 import anvil.server
 import anvil.users
@@ -7,7 +7,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 
-class EditVisionNameForm(EditVisionNameFormTemplate):
+class EditVisionStatementForm(EditVisionStatementFormTemplate):
   def __init__(self, vision, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
@@ -18,8 +18,8 @@ class EditVisionNameForm(EditVisionNameFormTemplate):
 
   def save_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
-    if self.item['vision_name'] != self.vision_name_input.text:
-      self.raise_event("x-close-alert", value=self.vision_name_input.text)
+    if self.item['vision_statement'] != self.vision_statement_input.text:
+      self.raise_event("x-close-alert", value=self.vision_statement_input.text)
     else:
       self.raise_event("x-close-alert", value=None)
     pass
