@@ -7,7 +7,7 @@ unique_ids:
     theme.css: VQCAUXXHT7I2UEU3AO25IFCLFLORZDH5
   forms:
     CommunityVisionsPage: '1752850576633590155680815.1465'
-    CommunityVisionsPage.ItemTemplate1: '1752850725606278990182204.51385'
+    CommunityVisionsPage.CommunityVIsionItem: '1752850725606278990182204.51385'
     CreateVisionPage: '1752060326930758650409575.9933'
     CreateVisionPage.QuestionItem: '1752167150810842107491253.0399'
     DashboardPage: '1752056155072152338024052.03488'
@@ -27,6 +27,7 @@ unique_ids:
     ManageVisionPage: '1752056766682699820601726.3694'
     ManageVisionPage.EditVisionNameForm: '175282694426337349094626.35205'
     ManageVisionPage.EditVisionStatementForm: '1752837699919216854020401.27466'
+    ManageVisionPage.StepProgressionItem: '1752851952034450614159391.4277'
     ManageVisionTiersPage: '1752593027843878820024436.1716'
     ManageVisionTypePage: '1752228835331421334019680.991'
     ResourcesPage: '175215645764328791699553.096794'
@@ -40,6 +41,7 @@ unique_ids:
     UsersPage.AddUserForm: '1752237608719438229810641.6189'
     UsersPage.EditUserForm: '1752237632433767296839478.6083'
     UsersPage.UserItem: '1752163441084308071510557.9076'
+    ViewCommunityVisionPage: '1752851158037332384320481.2579'
     VisionsPage: '1752056443123381287401120.1527'
     VisionsPage.VisionItem: '1752162109072349803498246.77893'
   modules: {}

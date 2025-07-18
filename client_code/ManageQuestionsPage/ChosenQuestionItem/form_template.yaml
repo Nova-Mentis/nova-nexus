@@ -20,5 +20,14 @@ components:
       padding: ['5', '15', '5', '15']
     text: ''
   type: Button
+- layout_properties: {column: WMDXDH}
+  name: button_3
+  properties:
+    icon: fa:edit
+    role: elevated-button
+    spacing:
+      padding: ['5', '15', '5', '15']
+    text: ''
+  type: Button
 container: {type: DataRowPanel}
 is_package: true

@@ -1,5 +1,6 @@
 from ._anvil_designer import ManageVisionPageTemplate
 from anvil import *
+import plotly.graph_objects as go
 import anvil.server
 import anvil.users
 import anvil.tables as tables
@@ -54,5 +55,12 @@ class ManageVisionPage(ManageVisionPageTemplate):
                         vision_statement=new_vision_statement
                       )
       self.refresh_labels()
+    pass
+
+  def publish_vision_btn_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    c = confirm("Are you sure you want to publish this Vision to the community?")
+    if c:
+      anvil.server.call('publish_vision', vision=self.item)
     pass
 

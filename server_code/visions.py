@@ -57,7 +57,8 @@ def create_vision(vision_name, vision_statement, user, vision_type, tenant):
                              user=user, vision_type=vision_type, 
                              created_at=current_datetime, 
                              tenant=tenant, 
-                             published_on_community=False, 
+                             published_on_community=False,
+                             evaluated=False,
                              vision_id=vision_id)
   return vision_id
 
@@ -147,4 +148,10 @@ def update_vision(vision_id, **updates):
       print(f"[update_vision] Warning: Column '{key}' does not exist on the vision table and was skipped.")
 
   return vision_row
+
+@anvil.server.callable
+def publish_vision(vision):
+  vision_row = app_tables.visions.get(vision_id=vision['vision_id'])
+  vision_row['published_on_community'] = True
+  print("[Visions] Vision published to community")
 

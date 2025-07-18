@@ -39,3 +39,8 @@ class VisionsPage(VisionsPageTemplate):
 
   def refresh_vision_list(self):
     self.vision_repeating_panel.items = anvil.server.call('get_visions_list', user=anvil.users.get_user(), tenant=anvil.server.call('get_cookies_tenant'))
+
+  def com_btn_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('CommunityVisionsPage')
+    pass

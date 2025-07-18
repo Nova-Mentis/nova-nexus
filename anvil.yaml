@@ -286,6 +286,20 @@ db_schema:
     - admin_ui: {order: 4, width: 200}
       name: percent_high
       type: number
+    - admin_ui: {order: 0.5, width: 200}
+      name: tier_id
+      type: string
+    - admin_ui: {order: 5, width: 200}
+      name: tier_colour_hex
+      type: string
+    - admin_ui: {order: 6, width: 200}
+      name: user
+      target: users
+      type: link_single
+    - admin_ui: {order: 7, width: 200}
+      name: tenant
+      target: tenants
+      type: link_single
     server: full
     title: vision_tiers
   vision_types:
@@ -338,6 +352,9 @@ db_schema:
     - admin_ui: {order: 1.5, width: 200}
       name: vision_id
       type: string
+    - admin_ui: {order: 8, width: 200}
+      name: evaluated
+      type: bool
     server: full
     title: visions
 dependencies: []

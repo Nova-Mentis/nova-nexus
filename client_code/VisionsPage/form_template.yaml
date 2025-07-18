@@ -14,7 +14,8 @@ components_by_slot:
             padding: ['5', '5', '0', '5']
           text: Visions
         type: Label
-      - layout_properties: {col_xs: 8, row: MVPMRM, width_xs: 2}
+      - event_bindings: {click: com_btn_click}
+        layout_properties: {col_xs: 8, row: MVPMRM, width_xs: 2}
         name: com_btn
         properties:
           align: right

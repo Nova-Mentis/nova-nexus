@@ -49,6 +49,7 @@ components_by_slot:
             - {data_key: question_type, expand: false, id: DISWNI, title: Question Type, width: '250'}
             - {data_key: response_options, expand: false, id: HIWSSS, title: Response Options, width: '250'}
             - {data_key: column_1, id: BSZVOD, title: '', width: '50'}
+            - {data_key: column_1, id: WMDXDH, title: '', width: '50'}
             - {data_key: column_1, expand: false, id: SAREWR, title: '', width: '50'}
           type: DataGrid
         layout_properties: {full_width_row: true, grid_position: 'CGXKBU,HMPUCA'}
