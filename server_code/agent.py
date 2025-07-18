@@ -1,3 +1,4 @@
+import anvil.server
 from pydantic_ai import Agent
 from pydantic_ai.models.openai import OpenAIModel
 from pydantic import BaseModel

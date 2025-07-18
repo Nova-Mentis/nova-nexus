@@ -17,5 +17,5 @@ class EditVisionNameForm(EditVisionNameFormTemplate):
 
   def save_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.raise_event('')
+    self.raise_event("x-close-confirm", value=True)
     pass
